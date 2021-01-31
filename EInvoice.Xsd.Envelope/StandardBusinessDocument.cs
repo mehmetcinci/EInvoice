@@ -14,7 +14,7 @@ namespace EInvoice.Xsd.Envelope {
         [XmlElement(Order = 0)]
         public StandardBusinessDocumentHeader StandardBusinessDocumentHeader { get; set; }
 
-        [XmlAnyElementAttribute(Order = 1)]
+        [XmlAnyElementAttribute(Order = 1a)]
         public System.Xml.XmlElement Any { get; set; }
     }
 }
