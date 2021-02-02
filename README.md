@@ -1,3 +1,6 @@
+# EInvoice.Xsd.Invoice
+EInvoice.Xsd.Invoice
+
 # EInvoice.Xsd.Envelope
 EInvoice.Xsd.Envelope
 
