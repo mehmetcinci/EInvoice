@@ -10,7 +10,7 @@ namespace EInvoice.Xsd.Invoice {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
     public partial class BillingReferenceType {                
-        [XmlElement(Order = 0a)]
+        [XmlElement(Order = 0)]
         public DocumentReferenceType InvoiceDocumentReference { get; set; }
 
         [XmlElement(Order = 1)]
