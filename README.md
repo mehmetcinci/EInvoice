@@ -11,3 +11,8 @@ EInvoice.Xsd.Envelope
 
 # EInvoice.Xsd.NewUserList
 EInvoice.Xsd.NewUserList
+
+```c#
+string fileNameXml = "newUserPkList.xml";
+UserList.LoadFromFile(fileNameXml, out UserList userList, out Exception exception);
+```
