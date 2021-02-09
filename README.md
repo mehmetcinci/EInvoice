@@ -15,4 +15,13 @@ EInvoice.Xsd.NewUserList
 ```c#
 string fileNameXml = "newUserPkList.xml";
 UserList.LoadFromFile(fileNameXml, out UserList userList, out Exception exception);
+if (exception == null) {
+    if (userList.User.Count == 335553)
+        Assert.True(true);
+    else
+        Assert.False(true);
+}
+else {
+    Assert.False(true, $"Exception: {exception.Message}");
+}
 ```
