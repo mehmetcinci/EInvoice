@@ -10,7 +10,7 @@ EInvoice.Xsd.Envelope
 
 
 # EInvoice.Xsd.NewUserList
-EInvoice.Xsd.NewUserList
+A simple C# code for EInvoice.Xsd.NewUserList
 
 ```c#
 string fileNameXml = "newUserPkList.xml";
