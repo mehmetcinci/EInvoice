@@ -4,12 +4,12 @@ using System.Diagnostics;
 using System.Xml.Serialization;
 
 namespace EInvoice.Xsd.Invoice.Bases {
-    [XmlIncludeAttribute(typeof(EmbeddedDocumentBinaryObjectType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(EmbeddedDocumentBinaryObjectType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName = "BinaryObjectType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class BinaryObjectType1 : BinaryObjectType {
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName = "BinaryObjectType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class BinaryObjectType1 : BinaryObjectType {
     }
 }

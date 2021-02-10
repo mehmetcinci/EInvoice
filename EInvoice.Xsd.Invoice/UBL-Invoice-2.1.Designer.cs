@@ -1,5 +1,14 @@
 using EInvoice.Xsd.Invoice.Bases;
+using EInvoice.Xsd.Invoice.Bases.Amount;
+using EInvoice.Xsd.Invoice.Bases.Code;
+using EInvoice.Xsd.Invoice.Bases.Identifier;
+using EInvoice.Xsd.Invoice.Invoice.Bases.Quantity;
 using EInvoice.Xsd.Invoice.MonetaryTotal;
+using EInvoice.Xsd.Invoice.Party;
+using EInvoice.Xsd.Invoice.Party.Address;
+using EInvoice.Xsd.Invoice.PartyTaxScheme;
+using EInvoice.Xsd.Invoice.PaymentMeans;
+using EInvoice.Xsd.Invoice.TaxTotal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,158 +16,158 @@ using System.Xml;
 using System.Xml.Serialization;
 
 namespace EInvoice.Xsd.Invoice {
-    [XmlIncludeAttribute(typeof(ValueAmountType))]
-    [XmlIncludeAttribute(typeof(TransactionCurrencyTaxAmountType))]
-    [XmlIncludeAttribute(typeof(TotalTaxAmountType))]
-    [XmlIncludeAttribute(typeof(TotalTaskAmountType))]
-    [XmlIncludeAttribute(typeof(TotalPaymentAmountType))]
-    [XmlIncludeAttribute(typeof(TotalInvoiceAmountType))]
-    [XmlIncludeAttribute(typeof(TotalDebitAmountType))]
-    [XmlIncludeAttribute(typeof(TotalCreditAmountType))]
-    [XmlIncludeAttribute(typeof(TotalBalanceAmountType))]
-    [XmlIncludeAttribute(typeof(TotalAmountType))]
-    [XmlIncludeAttribute(typeof(ThresholdAmountType))]
-    [XmlIncludeAttribute(typeof(TaxableAmountType))]
-    [XmlIncludeAttribute(typeof(TaxInclusiveAmountType))]
-    [XmlIncludeAttribute(typeof(TaxExclusiveAmountType))]
-    [XmlIncludeAttribute(typeof(TaxEnergyOnAccountAmountType))]
-    [XmlIncludeAttribute(typeof(TaxEnergyBalanceAmountType))]
-    [XmlIncludeAttribute(typeof(TaxEnergyAmountType))]
-    [XmlIncludeAttribute(typeof(TaxAmountType))]
-    [XmlIncludeAttribute(typeof(SettlementDiscountAmountType))]
-    [XmlIncludeAttribute(typeof(RoundingAmountType))]
-    [XmlIncludeAttribute(typeof(RequiredFeeAmountType))]
-    [XmlIncludeAttribute(typeof(PriceAmountType))]
-    [XmlIncludeAttribute(typeof(PrepaidAmountType))]
-    [XmlIncludeAttribute(typeof(PerUnitAmountType))]
-    [XmlIncludeAttribute(typeof(PenaltyAmountType))]
-    [XmlIncludeAttribute(typeof(PayableRoundingAmountType))]
-    [XmlIncludeAttribute(typeof(PayableAmountType))]
-    [XmlIncludeAttribute(typeof(PayableAlternativeAmountType))]
-    [XmlIncludeAttribute(typeof(PartyCapacityAmountType))]
-    [XmlIncludeAttribute(typeof(PaidAmountType))]
-    [XmlIncludeAttribute(typeof(MinimumAmountType))]
-    [XmlIncludeAttribute(typeof(MaximumPaidAmountType))]
-    [XmlIncludeAttribute(typeof(MaximumAmountType))]
-    [XmlIncludeAttribute(typeof(MaximumAdvertisementAmountType))]
-    [XmlIncludeAttribute(typeof(MarketValueAmountType))]
-    [XmlIncludeAttribute(typeof(LowerTenderAmountType))]
-    [XmlIncludeAttribute(typeof(LineExtensionAmountType))]
-    [XmlIncludeAttribute(typeof(LiabilityAmountType))]
-    [XmlIncludeAttribute(typeof(InventoryValueAmountType))]
-    [XmlIncludeAttribute(typeof(InsuranceValueAmountType))]
-    [XmlIncludeAttribute(typeof(InsurancePremiumAmountType))]
-    [XmlIncludeAttribute(typeof(HigherTenderAmountType))]
-    [XmlIncludeAttribute(typeof(FreeOnBoardValueAmountType))]
-    [XmlIncludeAttribute(typeof(FeeAmountType))]
-    [XmlIncludeAttribute(typeof(FaceValueAmountType))]
-    [XmlIncludeAttribute(typeof(EstimatedOverallContractAmountType))]
-    [XmlIncludeAttribute(typeof(EstimatedAmountType))]
-    [XmlIncludeAttribute(typeof(DocumentationFeeAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredStatisticsValueAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredForCarriageValueAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredCustomsValueAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredCarriageValueAmountType))]
-    [XmlIncludeAttribute(typeof(DebitLineAmountType))]
-    [XmlIncludeAttribute(typeof(CreditLineAmountType))]
-    [XmlIncludeAttribute(typeof(CorrectionUnitAmountType))]
-    [XmlIncludeAttribute(typeof(CorrectionAmountType))]
-    [XmlIncludeAttribute(typeof(CorporateStockAmountType))]
-    [XmlIncludeAttribute(typeof(ChargeTotalAmountType))]
-    [XmlIncludeAttribute(typeof(CallExtensionAmountType))]
-    [XmlIncludeAttribute(typeof(CallBaseAmountType))]
-    [XmlIncludeAttribute(typeof(BaseAmountType))]
-    [XmlIncludeAttribute(typeof(BalanceAmountType))]
-    [XmlIncludeAttribute(typeof(AverageSubsequentContractAmountType))]
-    [XmlIncludeAttribute(typeof(AverageAmountType))]
-    [XmlIncludeAttribute(typeof(AnnualAverageAmountType))]
-    [XmlIncludeAttribute(typeof(AmountType2))]
-    [XmlIncludeAttribute(typeof(AllowanceTotalAmountType))]
-    [XmlIncludeAttribute(typeof(AdvertisementAmountType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(ValueAmountType))]
+    [XmlInclude(typeof(TransactionCurrencyTaxAmountType))]
+    [XmlInclude(typeof(TotalTaxAmountType))]
+    [XmlInclude(typeof(TotalTaskAmountType))]
+    [XmlInclude(typeof(TotalPaymentAmountType))]
+    [XmlInclude(typeof(TotalInvoiceAmountType))]
+    [XmlInclude(typeof(TotalDebitAmountType))]
+    [XmlInclude(typeof(TotalCreditAmountType))]
+    [XmlInclude(typeof(TotalBalanceAmountType))]
+    [XmlInclude(typeof(TotalAmountType))]
+    [XmlInclude(typeof(ThresholdAmountType))]
+    [XmlInclude(typeof(TaxableAmountType))]
+    [XmlInclude(typeof(TaxInclusiveAmountType))]
+    [XmlInclude(typeof(TaxExclusiveAmountType))]
+    [XmlInclude(typeof(TaxEnergyOnAccountAmountType))]
+    [XmlInclude(typeof(TaxEnergyBalanceAmountType))]
+    [XmlInclude(typeof(TaxEnergyAmountType))]
+    [XmlInclude(typeof(TaxAmountType))]
+    [XmlInclude(typeof(SettlementDiscountAmountType))]
+    [XmlInclude(typeof(RoundingAmountType))]
+    [XmlInclude(typeof(RequiredFeeAmountType))]
+    [XmlInclude(typeof(PriceAmountType))]
+    [XmlInclude(typeof(PrepaidAmountType))]
+    [XmlInclude(typeof(PerUnitAmountType))]
+    [XmlInclude(typeof(PenaltyAmountType))]
+    [XmlInclude(typeof(PayableRoundingAmountType))]
+    [XmlInclude(typeof(PayableAmountType))]
+    [XmlInclude(typeof(PayableAlternativeAmountType))]
+    [XmlInclude(typeof(PartyCapacityAmountType))]
+    [XmlInclude(typeof(PaidAmountType))]
+    [XmlInclude(typeof(MinimumAmountType))]
+    [XmlInclude(typeof(MaximumPaidAmountType))]
+    [XmlInclude(typeof(MaximumAmountType))]
+    [XmlInclude(typeof(MaximumAdvertisementAmountType))]
+    [XmlInclude(typeof(MarketValueAmountType))]
+    [XmlInclude(typeof(LowerTenderAmountType))]
+    [XmlInclude(typeof(LineExtensionAmountType))]
+    [XmlInclude(typeof(LiabilityAmountType))]
+    [XmlInclude(typeof(InventoryValueAmountType))]
+    [XmlInclude(typeof(InsuranceValueAmountType))]
+    [XmlInclude(typeof(InsurancePremiumAmountType))]
+    [XmlInclude(typeof(HigherTenderAmountType))]
+    [XmlInclude(typeof(FreeOnBoardValueAmountType))]
+    [XmlInclude(typeof(FeeAmountType))]
+    [XmlInclude(typeof(FaceValueAmountType))]
+    [XmlInclude(typeof(EstimatedOverallContractAmountType))]
+    [XmlInclude(typeof(EstimatedAmountType))]
+    [XmlInclude(typeof(DocumentationFeeAmountType))]
+    [XmlInclude(typeof(DeclaredStatisticsValueAmountType))]
+    [XmlInclude(typeof(DeclaredForCarriageValueAmountType))]
+    [XmlInclude(typeof(DeclaredCustomsValueAmountType))]
+    [XmlInclude(typeof(DeclaredCarriageValueAmountType))]
+    [XmlInclude(typeof(DebitLineAmountType))]
+    [XmlInclude(typeof(CreditLineAmountType))]
+    [XmlInclude(typeof(CorrectionUnitAmountType))]
+    [XmlInclude(typeof(CorrectionAmountType))]
+    [XmlInclude(typeof(CorporateStockAmountType))]
+    [XmlInclude(typeof(ChargeTotalAmountType))]
+    [XmlInclude(typeof(CallExtensionAmountType))]
+    [XmlInclude(typeof(CallBaseAmountType))]
+    [XmlInclude(typeof(BaseAmountType))]
+    [XmlInclude(typeof(BalanceAmountType))]
+    [XmlInclude(typeof(AverageSubsequentContractAmountType))]
+    [XmlInclude(typeof(AverageAmountType))]
+    [XmlInclude(typeof(AnnualAverageAmountType))]
+    [XmlInclude(typeof(AmountType2))]
+    [XmlInclude(typeof(AllowanceTotalAmountType))]
+    [XmlInclude(typeof(AdvertisementAmountType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="AmountType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class AmountType1 : AmountType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="AmountType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class AmountType1 : AmountType
     {
     }
     
-    [XmlIncludeAttribute(typeof(AmountType1))]
-    [XmlIncludeAttribute(typeof(ValueAmountType))]
-    [XmlIncludeAttribute(typeof(TransactionCurrencyTaxAmountType))]
-    [XmlIncludeAttribute(typeof(TotalTaxAmountType))]
-    [XmlIncludeAttribute(typeof(TotalTaskAmountType))]
-    [XmlIncludeAttribute(typeof(TotalPaymentAmountType))]
-    [XmlIncludeAttribute(typeof(TotalInvoiceAmountType))]
-    [XmlIncludeAttribute(typeof(TotalDebitAmountType))]
-    [XmlIncludeAttribute(typeof(TotalCreditAmountType))]
-    [XmlIncludeAttribute(typeof(TotalBalanceAmountType))]
-    [XmlIncludeAttribute(typeof(TotalAmountType))]
-    [XmlIncludeAttribute(typeof(ThresholdAmountType))]
-    [XmlIncludeAttribute(typeof(TaxableAmountType))]
-    [XmlIncludeAttribute(typeof(TaxInclusiveAmountType))]
-    [XmlIncludeAttribute(typeof(TaxExclusiveAmountType))]
-    [XmlIncludeAttribute(typeof(TaxEnergyOnAccountAmountType))]
-    [XmlIncludeAttribute(typeof(TaxEnergyBalanceAmountType))]
-    [XmlIncludeAttribute(typeof(TaxEnergyAmountType))]
-    [XmlIncludeAttribute(typeof(TaxAmountType))]
-    [XmlIncludeAttribute(typeof(SettlementDiscountAmountType))]
-    [XmlIncludeAttribute(typeof(RoundingAmountType))]
-    [XmlIncludeAttribute(typeof(RequiredFeeAmountType))]
-    [XmlIncludeAttribute(typeof(PriceAmountType))]
-    [XmlIncludeAttribute(typeof(PrepaidAmountType))]
-    [XmlIncludeAttribute(typeof(PerUnitAmountType))]
-    [XmlIncludeAttribute(typeof(PenaltyAmountType))]
-    [XmlIncludeAttribute(typeof(PayableRoundingAmountType))]
-    [XmlIncludeAttribute(typeof(PayableAmountType))]
-    [XmlIncludeAttribute(typeof(PayableAlternativeAmountType))]
-    [XmlIncludeAttribute(typeof(PartyCapacityAmountType))]
-    [XmlIncludeAttribute(typeof(PaidAmountType))]
-    [XmlIncludeAttribute(typeof(MinimumAmountType))]
-    [XmlIncludeAttribute(typeof(MaximumPaidAmountType))]
-    [XmlIncludeAttribute(typeof(MaximumAmountType))]
-    [XmlIncludeAttribute(typeof(MaximumAdvertisementAmountType))]
-    [XmlIncludeAttribute(typeof(MarketValueAmountType))]
-    [XmlIncludeAttribute(typeof(LowerTenderAmountType))]
-    [XmlIncludeAttribute(typeof(LineExtensionAmountType))]
-    [XmlIncludeAttribute(typeof(LiabilityAmountType))]
-    [XmlIncludeAttribute(typeof(InventoryValueAmountType))]
-    [XmlIncludeAttribute(typeof(InsuranceValueAmountType))]
-    [XmlIncludeAttribute(typeof(InsurancePremiumAmountType))]
-    [XmlIncludeAttribute(typeof(HigherTenderAmountType))]
-    [XmlIncludeAttribute(typeof(FreeOnBoardValueAmountType))]
-    [XmlIncludeAttribute(typeof(FeeAmountType))]
-    [XmlIncludeAttribute(typeof(FaceValueAmountType))]
-    [XmlIncludeAttribute(typeof(EstimatedOverallContractAmountType))]
-    [XmlIncludeAttribute(typeof(EstimatedAmountType))]
-    [XmlIncludeAttribute(typeof(DocumentationFeeAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredStatisticsValueAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredForCarriageValueAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredCustomsValueAmountType))]
-    [XmlIncludeAttribute(typeof(DeclaredCarriageValueAmountType))]
-    [XmlIncludeAttribute(typeof(DebitLineAmountType))]
-    [XmlIncludeAttribute(typeof(CreditLineAmountType))]
-    [XmlIncludeAttribute(typeof(CorrectionUnitAmountType))]
-    [XmlIncludeAttribute(typeof(CorrectionAmountType))]
-    [XmlIncludeAttribute(typeof(CorporateStockAmountType))]
-    [XmlIncludeAttribute(typeof(ChargeTotalAmountType))]
-    [XmlIncludeAttribute(typeof(CallExtensionAmountType))]
-    [XmlIncludeAttribute(typeof(CallBaseAmountType))]
-    [XmlIncludeAttribute(typeof(BaseAmountType))]
-    [XmlIncludeAttribute(typeof(BalanceAmountType))]
-    [XmlIncludeAttribute(typeof(AverageSubsequentContractAmountType))]
-    [XmlIncludeAttribute(typeof(AverageAmountType))]
-    [XmlIncludeAttribute(typeof(AnnualAverageAmountType))]
-    [XmlIncludeAttribute(typeof(AmountType2))]
-    [XmlIncludeAttribute(typeof(AllowanceTotalAmountType))]
-    [XmlIncludeAttribute(typeof(AdvertisementAmountType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(AmountType1))]
+    [XmlInclude(typeof(ValueAmountType))]
+    [XmlInclude(typeof(TransactionCurrencyTaxAmountType))]
+    [XmlInclude(typeof(TotalTaxAmountType))]
+    [XmlInclude(typeof(TotalTaskAmountType))]
+    [XmlInclude(typeof(TotalPaymentAmountType))]
+    [XmlInclude(typeof(TotalInvoiceAmountType))]
+    [XmlInclude(typeof(TotalDebitAmountType))]
+    [XmlInclude(typeof(TotalCreditAmountType))]
+    [XmlInclude(typeof(TotalBalanceAmountType))]
+    [XmlInclude(typeof(TotalAmountType))]
+    [XmlInclude(typeof(ThresholdAmountType))]
+    [XmlInclude(typeof(TaxableAmountType))]
+    [XmlInclude(typeof(TaxInclusiveAmountType))]
+    [XmlInclude(typeof(TaxExclusiveAmountType))]
+    [XmlInclude(typeof(TaxEnergyOnAccountAmountType))]
+    [XmlInclude(typeof(TaxEnergyBalanceAmountType))]
+    [XmlInclude(typeof(TaxEnergyAmountType))]
+    [XmlInclude(typeof(TaxAmountType))]
+    [XmlInclude(typeof(SettlementDiscountAmountType))]
+    [XmlInclude(typeof(RoundingAmountType))]
+    [XmlInclude(typeof(RequiredFeeAmountType))]
+    [XmlInclude(typeof(PriceAmountType))]
+    [XmlInclude(typeof(PrepaidAmountType))]
+    [XmlInclude(typeof(PerUnitAmountType))]
+    [XmlInclude(typeof(PenaltyAmountType))]
+    [XmlInclude(typeof(PayableRoundingAmountType))]
+    [XmlInclude(typeof(PayableAmountType))]
+    [XmlInclude(typeof(PayableAlternativeAmountType))]
+    [XmlInclude(typeof(PartyCapacityAmountType))]
+    [XmlInclude(typeof(PaidAmountType))]
+    [XmlInclude(typeof(MinimumAmountType))]
+    [XmlInclude(typeof(MaximumPaidAmountType))]
+    [XmlInclude(typeof(MaximumAmountType))]
+    [XmlInclude(typeof(MaximumAdvertisementAmountType))]
+    [XmlInclude(typeof(MarketValueAmountType))]
+    [XmlInclude(typeof(LowerTenderAmountType))]
+    [XmlInclude(typeof(LineExtensionAmountType))]
+    [XmlInclude(typeof(LiabilityAmountType))]
+    [XmlInclude(typeof(InventoryValueAmountType))]
+    [XmlInclude(typeof(InsuranceValueAmountType))]
+    [XmlInclude(typeof(InsurancePremiumAmountType))]
+    [XmlInclude(typeof(HigherTenderAmountType))]
+    [XmlInclude(typeof(FreeOnBoardValueAmountType))]
+    [XmlInclude(typeof(FeeAmountType))]
+    [XmlInclude(typeof(FaceValueAmountType))]
+    [XmlInclude(typeof(EstimatedOverallContractAmountType))]
+    [XmlInclude(typeof(EstimatedAmountType))]
+    [XmlInclude(typeof(DocumentationFeeAmountType))]
+    [XmlInclude(typeof(DeclaredStatisticsValueAmountType))]
+    [XmlInclude(typeof(DeclaredForCarriageValueAmountType))]
+    [XmlInclude(typeof(DeclaredCustomsValueAmountType))]
+    [XmlInclude(typeof(DeclaredCarriageValueAmountType))]
+    [XmlInclude(typeof(DebitLineAmountType))]
+    [XmlInclude(typeof(CreditLineAmountType))]
+    [XmlInclude(typeof(CorrectionUnitAmountType))]
+    [XmlInclude(typeof(CorrectionAmountType))]
+    [XmlInclude(typeof(CorporateStockAmountType))]
+    [XmlInclude(typeof(ChargeTotalAmountType))]
+    [XmlInclude(typeof(CallExtensionAmountType))]
+    [XmlInclude(typeof(CallBaseAmountType))]
+    [XmlInclude(typeof(BaseAmountType))]
+    [XmlInclude(typeof(BalanceAmountType))]
+    [XmlInclude(typeof(AverageSubsequentContractAmountType))]
+    [XmlInclude(typeof(AverageAmountType))]
+    [XmlInclude(typeof(AnnualAverageAmountType))]
+    [XmlInclude(typeof(AmountType2))]
+    [XmlInclude(typeof(AllowanceTotalAmountType))]
+    [XmlInclude(typeof(AdvertisementAmountType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public partial class AmountType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    public class AmountType
     {
         #region Private fields
         private string _currencyID;
@@ -206,2560 +215,2489 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValueAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValueAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransactionCurrencyTaxAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransactionCurrencyTaxAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalTaxAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalTaxAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalTaskAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalTaskAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalPaymentAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalPaymentAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalInvoiceAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalInvoiceAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalDebitAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalDebitAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalCreditAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalCreditAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalBalanceAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalBalanceAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ThresholdAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ThresholdAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxableAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxableAmountType : AmountType1
     {
     }
        
        
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxEnergyOnAccountAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxEnergyOnAccountAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxEnergyBalanceAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxEnergyBalanceAmountType : AmountType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxEnergyAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SettlementDiscountAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RoundingAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequiredFeeAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PriceAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrepaidAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PerUnitAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PenaltyAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PayableRoundingAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PayableAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PayableAlternativeAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PartyCapacityAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaidAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumPaidAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumAdvertisementAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MarketValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LowerTenderAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LiabilityAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InventoryValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InsuranceValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InsurancePremiumAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HigherTenderAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FreeOnBoardValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FeeAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FaceValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedOverallContractAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DocumentationFeeAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DeclaredStatisticsValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DeclaredForCarriageValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DeclaredCustomsValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DeclaredCarriageValueAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DebitLineAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CreditLineAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CorrectionUnitAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CorrectionAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CorporateStockAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChargeTotalAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CallExtensionAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CallBaseAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BaseAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BalanceAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AverageSubsequentContractAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AverageAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AnnualAverageAmountType : AmountType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="AmountType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AmountType2 : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxEnergyAmountType : AmountType1
     {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdvertisementAmountType : AmountType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SettlementDiscountAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RoundingAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequiredFeeAmountType : AmountType1
+    {
+    }
+        
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrepaidAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PerUnitAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PenaltyAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PayableRoundingAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PayableAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PayableAlternativeAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PartyCapacityAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaidAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumPaidAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumAdvertisementAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MarketValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LowerTenderAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LiabilityAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InventoryValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InsuranceValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InsurancePremiumAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HigherTenderAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FreeOnBoardValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FeeAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FaceValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedOverallContractAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DocumentationFeeAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DeclaredStatisticsValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DeclaredForCarriageValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DeclaredCustomsValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DeclaredCarriageValueAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DebitLineAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CreditLineAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CorrectionUnitAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CorrectionAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CorporateStockAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChargeTotalAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CallExtensionAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CallBaseAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BaseAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BalanceAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AverageSubsequentContractAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AverageAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AnnualAverageAmountType : AmountType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="AmountType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AmountType2 : AmountType1
+    {
+    }
+       
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdvertisementAmountType : AmountType1
     {
     }
     
         
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SourceCurrencyCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SourceCurrencyCodeType : CodeType1
     {
     }
     
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionReasonCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public class ExtensionReasonCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WorkPhaseCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class WorkPhaseCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WeightingAlgorithmCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class WeightingAlgorithmCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WeekDayCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class WeekDayCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidationResultCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidationResultCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class UtilityStatementTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class UtilityStatementTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class UrgencyCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class UrgencyCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class UNDGCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class UNDGCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportationStatusTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportationStatusTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportServiceCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportServiceCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportModeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportModeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportMeansTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportMeansTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportHandlingUnitTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportHandlingUnitTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportExecutionStatusCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportExecutionStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportEventTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportEventTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportEquipmentTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportEquipmentTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportEmergencyCardCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportEmergencyCardCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportAuthorizationCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportAuthorizationCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransitDirectionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransitDirectionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TradeServiceCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TradeServiceCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TradeItemPackingLabelingTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TradeItemPackingLabelingTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TrackingDeviceCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TrackingDeviceCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TimingComplaintCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TimingComplaintCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TimeFrequencyCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TimeFrequencyCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ThresholdValueComparisonCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ThresholdValueComparisonCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TendererRoleCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TendererRoleCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TendererRequirementTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TendererRequirementTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TenderTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TenderTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TenderResultCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TenderResultCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TenderEnvelopeTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TenderEnvelopeTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelecommunicationsSupplyTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelecommunicationsSupplyTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelecommunicationsServiceCategoryCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelecommunicationsServiceCategoryCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelecommunicationsServiceCallCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxLevelCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxExemptionReasonCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxCurrencyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TariffCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TariffClassCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TargetCurrencyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SupplyChainActivityTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubstitutionStatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubscriberTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubmissionMethodCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubcontractingConditionsCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StatusReasonCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StatementTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SpecificationTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SizeTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ShortageActionCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ShippingPriorityLevelCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ServiceTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ServiceInformationPreferenceCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SecurityClassificationCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SealStatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SealIssuerTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RoleCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RevisionStatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RetailEventStatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResponseCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResolutionCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResidenceTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequestedInvoiceCurrencyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReminderTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RejectReasonCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RejectActionCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReferenceEventCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReceiptAdviceTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class QuantityDiscrepancyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class QualityControlCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PurposeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProviderTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PromotionalEventTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProfileStatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProcurementTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProcurementSubTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProcessReasonCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProcedureCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrivacyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PricingCurrencyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PriceTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PriceEvaluationCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreviousMeterReadingMethodCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreviousCancellationReasonCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreferenceCriterionCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PositionCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PerformanceMetricTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentPurposeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentMeansCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentFrequencyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentCurrencyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentChannelCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentAlternativeCurrencyCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PartyTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PartPresentationCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ParentDocumentTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PackingCriteriaCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PackagingTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PackageLevelCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PackLevelCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OwnerTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrderTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrderResponseCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OneTimeChargeTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NotificationTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NatureCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NameCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MiscellaneousEventTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MimeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeterReadingTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeterConstantCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MedicalFirstAidGuideCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MathematicOperatorCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MandateTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LossRiskResponsibilityCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LongitudeDirectionCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LocationTypeCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LocaleCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LineStatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LifeCycleStatusCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatitudeDirectionCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestMeterReadingMethodCodeType : CodeType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ItemClassificationCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelecommunicationsServiceCallCodeType : CodeType1
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InspectionMethodCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxLevelCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InhalationToxicityZoneCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxExemptionReasonCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class IndustryClassificationCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxCurrencyCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ImportanceCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TariffCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class IdentificationCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TariffClassCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HeatingTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TargetCurrencyCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HazardousRegulationCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SupplyChainActivityTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HazardousCategoryCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubstitutionStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HandlingCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubscriberTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GuaranteeTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubmissionMethodCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GenderCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubcontractingConditionsCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FundingProgramCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class StatusReasonCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FullnessIndicationCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class StatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FreightRateClassCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class StatementTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FormatCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SpecificationTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ForecastTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SizeTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ForecastPurposeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ShortageActionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FinancingInstrumentCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ShippingPriorityLevelCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FeatureTacticTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ServiceTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExpressionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ServiceInformationPreferenceCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExpenseCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SecurityClassificationCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExemptionReasonCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SealStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExecutionRequirementCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SealIssuerTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExceptionStatusCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RoleCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExceptionResolutionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RevisionStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EvidenceTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RetailEventStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EvaluationCriterionTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResponseCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EnvironmentalEmissionTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResolutionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EncodingCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResidenceTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EmergencyProceduresCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequestedInvoiceCurrencyCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DutyCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReminderTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RejectReasonCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RejectActionCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReferenceEventCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReceiptAdviceTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class QuantityDiscrepancyCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class QualityControlCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PurposeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProviderTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PromotionalEventTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProfileStatusCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProcurementTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProcurementSubTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProcessReasonCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProcedureCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrivacyCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PricingCurrencyCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PriceTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PriceEvaluationCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreviousMeterReadingMethodCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreviousCancellationReasonCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreferenceCriterionCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PositionCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PerformanceMetricTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentPurposeCodeType : CodeType1
+    {
+    }
+    
+    
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentFrequencyCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentCurrencyCodeType : CodeType1
+    {
+    }
+    
+
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentAlternativeCurrencyCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PartyTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PartPresentationCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ParentDocumentTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PackingCriteriaCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PackagingTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PackageLevelCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PackLevelCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OwnerTypeCodeType : CodeType1
+    {
+    }
+       
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OrderResponseCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OneTimeChargeTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NotificationTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NatureCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NameCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MiscellaneousEventTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MimeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeterReadingTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeterConstantCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MedicalFirstAidGuideCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MathematicOperatorCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MandateTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LossRiskResponsibilityCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LongitudeDirectionCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LocationTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LocaleCodeType : CodeType1
+    {
+    }
+       
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LifeCycleStatusCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatitudeDirectionCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestMeterReadingMethodCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ItemClassificationCodeType : CodeType1
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DocumentStatusReasonCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InspectionMethodCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DocumentStatusCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InhalationToxicityZoneCodeType : CodeType1
+    {
+    }
+      
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ImportanceCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class IdentificationCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HeatingTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HazardousRegulationCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HazardousCategoryCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HandlingCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GuaranteeTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GenderCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FundingProgramCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FullnessIndicationCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FreightRateClassCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FormatCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ForecastTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ForecastPurposeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FinancingInstrumentCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FeatureTacticTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExpressionCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExpenseCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExemptionReasonCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExecutionRequirementCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExceptionStatusCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExceptionResolutionCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EvidenceTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EvaluationCriterionTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EnvironmentalEmissionTypeCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EncodingCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EmergencyProceduresCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DutyCodeType : CodeType1
+    {
+    }       
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DocumentStatusReasonCodeType : CodeType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DocumentStatusCodeType : CodeType1
     {
     }
     
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DispositionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DispositionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DisplayTacticTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DisplayTacticTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DirectionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DirectionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DespatchAdviceTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DespatchAdviceTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DescriptionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DescriptionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DeclarationTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DeclarationTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DataSourceCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DataSourceCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CustomsStatusCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CustomsStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CurrentChargeTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CurrentChargeTypeCodeType : CodeType1
+    {
+    }
+       
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CreditNoteTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CurrencyCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CountrySubentityCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CreditNoteTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CorrectionTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CountrySubentityCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CorporateRegistrationTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CorrectionTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CoordinateSystemCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CorporateRegistrationTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContractingSystemCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CoordinateSystemCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContractTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContractingSystemCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContractTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionLevelCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumersEnergyLevelCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionLevelCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumerIncentiveTacticTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumersEnergyLevelCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConstitutionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumerIncentiveTacticTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConditionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConstitutionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ComparisonDataSourceCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConditionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ComparisonDataCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ComparisonDataSourceCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CompanyLiquidationStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ComparisonDataCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CompanyLegalFormCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CompanyLiquidationStatusCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CommodityCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CompanyLegalFormCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CollaborationPriorityCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CommodityCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CharacterSetCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CollaborationPriorityCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChannelCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CharacterSetCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CertificateTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChannelCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CargoTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CertificateTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CardTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CargoTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CardChipCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CardTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CapabilityTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CardChipCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CalculationMethodCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CapabilityTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CalculationExpressionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CalculationMethodCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AwardingMethodTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CalculationExpressionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AwardingCriterionTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AwardingMethodTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AvailabilityStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AwardingCriterionTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ApplicationStatusCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AvailabilityStatusCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AllowanceChargeReasonCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ApplicationStatusCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdmissionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AllowanceChargeReasonCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdjustmentReasonCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdmissionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AddressTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdjustmentReasonCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AddressFormatCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AddressTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActivityTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AddressFormatCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActionCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActivityTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AccountingCostCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActionCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AccountTypeCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AccountingCostCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AccountFormatCodeType : CodeType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AccountTypeCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CalculationRateType : RateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(TargetCurrencyBaseRateType))]
+    [XmlInclude(typeof(SourceCurrencyBaseRateType))]
+    [XmlInclude(typeof(RateType1))]
+    [XmlInclude(typeof(OrderableUnitFactorRateType))]
+    [XmlInclude(typeof(CalculationRateType))]
+    [XmlInclude(typeof(AmountRateType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AccountFormatCodeType : CodeType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class RateType : NumericType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(RateType))]
+    [XmlInclude(typeof(TargetCurrencyBaseRateType))]
+    [XmlInclude(typeof(SourceCurrencyBaseRateType))]
+    [XmlInclude(typeof(RateType1))]
+    [XmlInclude(typeof(OrderableUnitFactorRateType))]
+    [XmlInclude(typeof(CalculationRateType))]
+    [XmlInclude(typeof(AmountRateType))]
+    [XmlInclude(typeof(PercentType))]
+    [XmlInclude(typeof(TierRatePercentType))]
+    [XmlInclude(typeof(TargetServicePercentType))]
+    [XmlInclude(typeof(SettlementDiscountPercentType))]
+    [XmlInclude(typeof(ReliabilityPercentType))]
+    [XmlInclude(typeof(ProgressPercentType))]
+    [XmlInclude(typeof(PercentType1))]
+    [XmlInclude(typeof(PenaltySurchargePercentType))]
+    [XmlInclude(typeof(PaymentPercentType))]
+    [XmlInclude(typeof(ParticipationPercentType))]
+    [XmlInclude(typeof(PartecipationPercentType))]
+    [XmlInclude(typeof(MinimumPercentType))]
+    [XmlInclude(typeof(MaximumPercentType))]
+    [XmlInclude(typeof(HumidityPercentType))]
+    [XmlInclude(typeof(AirFlowPercentType))]
+    [XmlInclude(typeof(ValueType1))]
+    [XmlInclude(typeof(NumericType1))]
+    [XmlInclude(typeof(WeightNumericType))]
+    [XmlInclude(typeof(SequenceNumericType))]
+    [XmlInclude(typeof(ResidentOccupantsNumericType))]
+    [XmlInclude(typeof(ReminderSequenceNumericType))]
+    [XmlInclude(typeof(PackSizeNumericType))]
+    [XmlInclude(typeof(OrderQuantityIncrementNumericType))]
+    [XmlInclude(typeof(OrderIntervalDaysNumericType))]
+    [XmlInclude(typeof(MultiplierFactorNumericType))]
+    [XmlInclude(typeof(MinimumNumberNumericType))]
+    [XmlInclude(typeof(MaximumPaymentInstructionsNumericType))]
+    [XmlInclude(typeof(MaximumNumberNumericType))]
+    [XmlInclude(typeof(MaximumCopiesNumericType))]
+    [XmlInclude(typeof(LineNumberNumericType))]
+    [XmlInclude(typeof(LineCountNumericType))]
+    [XmlInclude(typeof(FrozenPeriodDaysNumericType))]
+    [XmlInclude(typeof(CalculationSequenceNumericType))]
+    [XmlInclude(typeof(BudgetYearNumericType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CalculationRateType : RateType
-    {
-    }
-    
-    [XmlIncludeAttribute(typeof(TargetCurrencyBaseRateType))]
-    [XmlIncludeAttribute(typeof(SourceCurrencyBaseRateType))]
-    [XmlIncludeAttribute(typeof(RateType1))]
-    [XmlIncludeAttribute(typeof(OrderableUnitFactorRateType))]
-    [XmlIncludeAttribute(typeof(CalculationRateType))]
-    [XmlIncludeAttribute(typeof(AmountRateType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class RateType : NumericType
-    {
-    }
-    
-    [XmlIncludeAttribute(typeof(RateType))]
-    [XmlIncludeAttribute(typeof(TargetCurrencyBaseRateType))]
-    [XmlIncludeAttribute(typeof(SourceCurrencyBaseRateType))]
-    [XmlIncludeAttribute(typeof(RateType1))]
-    [XmlIncludeAttribute(typeof(OrderableUnitFactorRateType))]
-    [XmlIncludeAttribute(typeof(CalculationRateType))]
-    [XmlIncludeAttribute(typeof(AmountRateType))]
-    [XmlIncludeAttribute(typeof(PercentType))]
-    [XmlIncludeAttribute(typeof(TierRatePercentType))]
-    [XmlIncludeAttribute(typeof(TargetServicePercentType))]
-    [XmlIncludeAttribute(typeof(SettlementDiscountPercentType))]
-    [XmlIncludeAttribute(typeof(ReliabilityPercentType))]
-    [XmlIncludeAttribute(typeof(ProgressPercentType))]
-    [XmlIncludeAttribute(typeof(PercentType1))]
-    [XmlIncludeAttribute(typeof(PenaltySurchargePercentType))]
-    [XmlIncludeAttribute(typeof(PaymentPercentType))]
-    [XmlIncludeAttribute(typeof(ParticipationPercentType))]
-    [XmlIncludeAttribute(typeof(PartecipationPercentType))]
-    [XmlIncludeAttribute(typeof(MinimumPercentType))]
-    [XmlIncludeAttribute(typeof(MaximumPercentType))]
-    [XmlIncludeAttribute(typeof(HumidityPercentType))]
-    [XmlIncludeAttribute(typeof(AirFlowPercentType))]
-    [XmlIncludeAttribute(typeof(ValueType1))]
-    [XmlIncludeAttribute(typeof(NumericType1))]
-    [XmlIncludeAttribute(typeof(WeightNumericType))]
-    [XmlIncludeAttribute(typeof(SequenceNumericType))]
-    [XmlIncludeAttribute(typeof(ResidentOccupantsNumericType))]
-    [XmlIncludeAttribute(typeof(ReminderSequenceNumericType))]
-    [XmlIncludeAttribute(typeof(PackSizeNumericType))]
-    [XmlIncludeAttribute(typeof(OrderQuantityIncrementNumericType))]
-    [XmlIncludeAttribute(typeof(OrderIntervalDaysNumericType))]
-    [XmlIncludeAttribute(typeof(MultiplierFactorNumericType))]
-    [XmlIncludeAttribute(typeof(MinimumNumberNumericType))]
-    [XmlIncludeAttribute(typeof(MaximumPaymentInstructionsNumericType))]
-    [XmlIncludeAttribute(typeof(MaximumNumberNumericType))]
-    [XmlIncludeAttribute(typeof(MaximumCopiesNumericType))]
-    [XmlIncludeAttribute(typeof(LineNumberNumericType))]
-    [XmlIncludeAttribute(typeof(LineCountNumericType))]
-    [XmlIncludeAttribute(typeof(FrozenPeriodDaysNumericType))]
-    [XmlIncludeAttribute(typeof(CalculationSequenceNumericType))]
-    [XmlIncludeAttribute(typeof(BudgetYearNumericType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public partial class NumericType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    public class NumericType
     {
         #region Private fields
         private string _format;
@@ -2793,3226 +2731,2956 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [XmlIncludeAttribute(typeof(TierRatePercentType))]
-    [XmlIncludeAttribute(typeof(TargetServicePercentType))]
-    [XmlIncludeAttribute(typeof(SettlementDiscountPercentType))]
-    [XmlIncludeAttribute(typeof(ReliabilityPercentType))]
-    [XmlIncludeAttribute(typeof(ProgressPercentType))]
-    [XmlIncludeAttribute(typeof(PercentType1))]
-    [XmlIncludeAttribute(typeof(PenaltySurchargePercentType))]
-    [XmlIncludeAttribute(typeof(PaymentPercentType))]
-    [XmlIncludeAttribute(typeof(ParticipationPercentType))]
-    [XmlIncludeAttribute(typeof(PartecipationPercentType))]
-    [XmlIncludeAttribute(typeof(MinimumPercentType))]
-    [XmlIncludeAttribute(typeof(MaximumPercentType))]
-    [XmlIncludeAttribute(typeof(HumidityPercentType))]
-    [XmlIncludeAttribute(typeof(AirFlowPercentType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(TierRatePercentType))]
+    [XmlInclude(typeof(TargetServicePercentType))]
+    [XmlInclude(typeof(SettlementDiscountPercentType))]
+    [XmlInclude(typeof(ReliabilityPercentType))]
+    [XmlInclude(typeof(ProgressPercentType))]
+    [XmlInclude(typeof(PercentType1))]
+    [XmlInclude(typeof(PenaltySurchargePercentType))]
+    [XmlInclude(typeof(PaymentPercentType))]
+    [XmlInclude(typeof(ParticipationPercentType))]
+    [XmlInclude(typeof(PartecipationPercentType))]
+    [XmlInclude(typeof(MinimumPercentType))]
+    [XmlInclude(typeof(MaximumPercentType))]
+    [XmlInclude(typeof(HumidityPercentType))]
+    [XmlInclude(typeof(AirFlowPercentType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class PercentType : NumericType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class PercentType : NumericType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TierRatePercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TierRatePercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TargetServicePercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TargetServicePercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SettlementDiscountPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SettlementDiscountPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReliabilityPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReliabilityPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProgressPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProgressPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="PercentType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PercentType1 : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="PercentType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PercentType1 : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PenaltySurchargePercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PenaltySurchargePercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ParticipationPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ParticipationPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PartecipationPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PartecipationPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HumidityPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HumidityPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AirFlowPercentType : PercentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AirFlowPercentType : PercentType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="ValueType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class ValueType1 : NumericType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="ValueType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class ValueType1 : NumericType
     {
     }
     
-    [XmlIncludeAttribute(typeof(WeightNumericType))]
-    [XmlIncludeAttribute(typeof(SequenceNumericType))]
-    [XmlIncludeAttribute(typeof(ResidentOccupantsNumericType))]
-    [XmlIncludeAttribute(typeof(ReminderSequenceNumericType))]
-    [XmlIncludeAttribute(typeof(PackSizeNumericType))]
-    [XmlIncludeAttribute(typeof(OrderQuantityIncrementNumericType))]
-    [XmlIncludeAttribute(typeof(OrderIntervalDaysNumericType))]
-    [XmlIncludeAttribute(typeof(MultiplierFactorNumericType))]
-    [XmlIncludeAttribute(typeof(MinimumNumberNumericType))]
-    [XmlIncludeAttribute(typeof(MaximumPaymentInstructionsNumericType))]
-    [XmlIncludeAttribute(typeof(MaximumNumberNumericType))]
-    [XmlIncludeAttribute(typeof(MaximumCopiesNumericType))]
-    [XmlIncludeAttribute(typeof(LineNumberNumericType))]
-    [XmlIncludeAttribute(typeof(LineCountNumericType))]
-    [XmlIncludeAttribute(typeof(FrozenPeriodDaysNumericType))]
-    [XmlIncludeAttribute(typeof(CalculationSequenceNumericType))]
-    [XmlIncludeAttribute(typeof(BudgetYearNumericType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(WeightNumericType))]
+    [XmlInclude(typeof(SequenceNumericType))]
+    [XmlInclude(typeof(ResidentOccupantsNumericType))]
+    [XmlInclude(typeof(ReminderSequenceNumericType))]
+    [XmlInclude(typeof(PackSizeNumericType))]
+    [XmlInclude(typeof(OrderQuantityIncrementNumericType))]
+    [XmlInclude(typeof(OrderIntervalDaysNumericType))]
+    [XmlInclude(typeof(MultiplierFactorNumericType))]
+    [XmlInclude(typeof(MinimumNumberNumericType))]
+    [XmlInclude(typeof(MaximumPaymentInstructionsNumericType))]
+    [XmlInclude(typeof(MaximumNumberNumericType))]
+    [XmlInclude(typeof(MaximumCopiesNumericType))]
+    [XmlInclude(typeof(LineNumberNumericType))]
+    [XmlInclude(typeof(LineCountNumericType))]
+    [XmlInclude(typeof(FrozenPeriodDaysNumericType))]
+    [XmlInclude(typeof(CalculationSequenceNumericType))]
+    [XmlInclude(typeof(BudgetYearNumericType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="NumericType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class NumericType1 : NumericType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="NumericType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class NumericType1 : NumericType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WeightNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class WeightNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SequenceNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SequenceNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResidentOccupantsNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResidentOccupantsNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReminderSequenceNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReminderSequenceNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PackSizeNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PackSizeNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrderQuantityIncrementNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OrderQuantityIncrementNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrderIntervalDaysNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OrderIntervalDaysNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MultiplierFactorNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MultiplierFactorNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumNumberNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumNumberNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumPaymentInstructionsNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumPaymentInstructionsNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumNumberNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumNumberNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumCopiesNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumCopiesNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LineNumberNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LineNumberNumericType : NumericType1
     {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FrozenPeriodDaysNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FrozenPeriodDaysNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CalculationSequenceNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CalculationSequenceNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BudgetYearNumericType : NumericType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BudgetYearNumericType : NumericType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TargetCurrencyBaseRateType : RateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TargetCurrencyBaseRateType : RateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SourceCurrencyBaseRateType : RateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SourceCurrencyBaseRateType : RateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="RateType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RateType1 : RateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="RateType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RateType1 : RateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrderableUnitFactorRateType : RateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OrderableUnitFactorRateType : RateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AmountRateType : RateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AmountRateType : RateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="DateType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DateType1 : DateType
-    {
-    }
-    
-        
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidityStartDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidationDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxPointDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubmissionDueDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubmissionDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StartDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SourceForecastIssueDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RevisionDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResponseDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResolutionDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequiredDeliveryDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequestedPublicationDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequestedDespatchDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequestedDeliveryDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegistrationExpirationDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegistrationDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegisteredDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReferenceDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReceivedDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreviousMeterReadingDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PlannedDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentDueDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaidDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OccurrenceDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NominationDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ManufactureDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestSecurityClearanceDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestProposalAcceptanceDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestPickupDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestMeterReadingDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestDeliveryDateType : DateType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LastRevisionDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="DateType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DateType1 : DateType
     {
     }
     
         
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InstallmentDueDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidityStartDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GuaranteedDespatchDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidationDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FirstShipmentAvailibilityDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxPointDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExpiryDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubmissionDueDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedDespatchDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubmissionDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedDeliveryDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class StartDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EndDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SourceForecastIssueDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EffectiveDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RevisionDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EarliestPickupDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResponseDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DueDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResolutionDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ComparisonForecastIssueDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequiredDeliveryDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CallDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequestedPublicationDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BirthDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequestedDespatchDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BestBeforeDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequestedDeliveryDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AwardDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegistrationExpirationDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AvailabilityDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegistrationDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ApprovalDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegisteredDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActualPickupDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReferenceDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActualDespatchDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReceivedDateType : DateType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActualDeliveryDateType : DateType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreviousMeterReadingDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PlannedDateType : DateType
+    {
+    }
+           
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaidDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OccurrenceDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NominationDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ManufactureDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestSecurityClearanceDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestProposalAcceptanceDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestPickupDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestMeterReadingDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestDeliveryDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LastRevisionDateType : DateType
+    {
+    }
+    
+        
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InstallmentDueDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GuaranteedDespatchDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FirstShipmentAvailibilityDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExpiryDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedDespatchDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedDeliveryDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EndDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EffectiveDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EarliestPickupDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DueDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ComparisonForecastIssueDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CallDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BirthDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BestBeforeDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AwardDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AvailabilityDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ApprovalDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActualPickupDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActualDespatchDateType : DateType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActualDeliveryDateType : DateType
     {
     }         
     
-    [XmlIncludeAttribute(typeof(VesselNameType))]
-    [XmlIncludeAttribute(typeof(TechnicalNameType))]
-    [XmlIncludeAttribute(typeof(StreetNameType))]
-    [XmlIncludeAttribute(typeof(ServiceNameType))]
-    [XmlIncludeAttribute(typeof(RoamingPartnerNameType))]
-    [XmlIncludeAttribute(typeof(RetailEventNameType))]
-    [XmlIncludeAttribute(typeof(RegistrationNameType))]
-    [XmlIncludeAttribute(typeof(OtherNameType))]
-    [XmlIncludeAttribute(typeof(NameType1))]
-    [XmlIncludeAttribute(typeof(ModelNameType))]
-    [XmlIncludeAttribute(typeof(MiddleNameType))]
-    [XmlIncludeAttribute(typeof(HolderNameType))]
-    [XmlIncludeAttribute(typeof(FirstNameType))]
-    [XmlIncludeAttribute(typeof(FileNameType))]
-    [XmlIncludeAttribute(typeof(FamilyNameType))]
-    [XmlIncludeAttribute(typeof(CitySubdivisionNameType))]
-    [XmlIncludeAttribute(typeof(CityNameType))]
-    [XmlIncludeAttribute(typeof(CategoryNameType))]
-    [XmlIncludeAttribute(typeof(BuildingNameType))]
-    [XmlIncludeAttribute(typeof(BrandNameType))]
-    [XmlIncludeAttribute(typeof(BlockNameType))]
-    [XmlIncludeAttribute(typeof(AliasNameType))]
-    [XmlIncludeAttribute(typeof(AdditionalStreetNameType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(VesselNameType))]
+    [XmlInclude(typeof(TechnicalNameType))]
+    [XmlInclude(typeof(StreetNameType))]
+    [XmlInclude(typeof(ServiceNameType))]
+    [XmlInclude(typeof(RoamingPartnerNameType))]
+    [XmlInclude(typeof(RetailEventNameType))]
+    [XmlInclude(typeof(RegistrationNameType))]
+    [XmlInclude(typeof(OtherNameType))]
+    [XmlInclude(typeof(NameType1))]
+    [XmlInclude(typeof(ModelNameType))]
+    [XmlInclude(typeof(MiddleNameType))]
+    [XmlInclude(typeof(HolderNameType))]
+    [XmlInclude(typeof(FirstNameType))]
+    [XmlInclude(typeof(FileNameType))]
+    [XmlInclude(typeof(FamilyNameType))]
+    [XmlInclude(typeof(CitySubdivisionNameType))]
+    [XmlInclude(typeof(CityNameType))]
+    [XmlInclude(typeof(CategoryNameType))]
+    [XmlInclude(typeof(BuildingNameType))]
+    [XmlInclude(typeof(BrandNameType))]
+    [XmlInclude(typeof(BlockNameType))]
+    [XmlInclude(typeof(AliasNameType))]
+    [XmlInclude(typeof(AdditionalStreetNameType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class NameType : TextType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class NameType : TextType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class VesselNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class VesselNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TechnicalNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TechnicalNameType : NameType
     {
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StreetNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ServiceNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RoamingPartnerNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RetailEventNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegistrationNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OtherNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="NameType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NameType1 : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ModelNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MiddleNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HolderNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FirstNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FileNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FamilyNameType : NameType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+            
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CitySubdivisionNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ServiceNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CityNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RoamingPartnerNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CategoryNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RetailEventNameType : NameType
     {
-    }
+    }   
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BuildingNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OtherNameType : NameType
     {
     }
+      
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BrandNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MiddleNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BlockNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HolderNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AliasNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FirstNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdditionalStreetNameType : NameType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FileNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FamilyNameType : NameType
     {
-    }
+    }   
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionAgencyNameType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CategoryNameType : NameType
     {
     }
+       
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class XPathType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AliasNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WorkPhaseType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdditionalStreetNameType : NameType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WeightType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public class ExtensionReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WarrantyInformationType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public class ExtensionAgencyNameType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValueType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class XPathType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValueQualifierType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class WorkPhaseType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidateToolVersionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class WeightType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidateToolType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class WarrantyInformationType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidateProcessType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValueType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportationServiceDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValueQualifierType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportUserSpecialTermsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidateToolVersionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportUserRemarksType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidateToolType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportServiceProviderSpecialTermsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidateProcessType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportServiceProviderRemarksType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportationServiceDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TradingRestrictionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportUserSpecialTermsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TitleType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportUserRemarksType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TimingComplaintType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportServiceProviderSpecialTermsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TimezoneOffsetType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportServiceProviderRemarksType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TimeAmountType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TradingRestrictionsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TierRangeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TitleType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="TextType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TextType2 : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TimingComplaintType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TestMethodType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TimezoneOffsetType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelephoneType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TimeAmountType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelefaxType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TierRangeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelecommunicationsSupplyTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="TextType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TextType2 : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelecommunicationsServiceCategoryType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TestMethodType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TelecommunicationsServiceCallType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelephoneType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TechnicalCommitteeDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelefaxType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxExemptionReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelecommunicationsSupplyTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TariffDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelecommunicationsServiceCategoryType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SummaryDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TelecommunicationsServiceCallType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubscriberTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TechnicalCommitteeDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StatusReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxExemptionReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SpecialTransportRequirementsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TariffDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SpecialTermsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SummaryDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SpecialServiceInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubscriberTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SpecialInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class StatusReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SignatureMethodType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SpecialTransportRequirementsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ShipsRequirementsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SpecialTermsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ShippingMarksType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SpecialServiceInstructionsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ServiceTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SpecialInstructionsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ServiceNumberCalledType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SignatureMethodType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SealingPartyTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ShipsRequirementsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RoomType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ShippingMarksType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RoleDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ServiceTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResolutionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ServiceNumberCalledType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResidenceTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SealingPartyTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReplenishmentOwnerDescriptionType : TextType1
-    {
-    }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RemarksType : TextType1
-    {
-    }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RejectionNoteType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RoleDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RejectReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResolutionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegulatoryDomainType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResidenceTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegistrationNationalityType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReplenishmentOwnerDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RemarksType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReferenceType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RejectionNoteType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RankType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RejectReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PurposeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegulatoryDomainType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProcessReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegistrationNationalityType : TextType1
     {
     }
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProcessDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReferenceType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrizeDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RankType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PriorityType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PurposeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrintQualifierType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProcessReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PriceTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProcessDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PriceRevisionFormulaDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrizeDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PriceChangeReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PriorityType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreviousMeterReadingMethodType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrintQualifierType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PostboxType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PriceTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PostalZoneType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PriceRevisionFormulaDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PlotIdentificationType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PriceChangeReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PlacardNotationType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreviousMeterReadingMethodType : TextType1
     {
     }
+       
+  
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PlacardEndorsementType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PlotIdentificationType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PhoneNumberType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PlacardNotationType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PersonalSituationType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PlacardEndorsementType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentOrderReferenceType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PhoneNumberType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentNoteType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PersonalSituationType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentOrderReferenceType : TextType1
     {
-    }
+    }   
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PayerReferenceType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PayPerViewType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PayerReferenceType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PasswordType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PayPerViewType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PartyTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PasswordType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PackingMaterialType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PartyTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OutstandingReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PackingMaterialType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OtherInstructionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OutstandingReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrganizationDepartmentType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OtherInstructionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrderableUnitType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OrganizationDepartmentType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OptionsDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OrderableUnitType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OneTimeChargeTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OptionsDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NegotiationDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OneTimeChargeTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NameSuffixType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NegotiationDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MovieTitleType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NameSuffixType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MonetaryScopeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MovieTitleType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumValueType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MonetaryScopeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumImprovementBidType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumValueType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeterReadingTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumImprovementBidType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeterReadingCommentsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeterReadingTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeterNumberType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeterReadingCommentsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeterNameType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeterNumberType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeterConstantType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeterNameType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumValueType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeterConstantType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MarkCareType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumValueType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MarkAttentionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MarkCareType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LowTendersDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MarkAttentionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LossRiskType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LowTendersDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LoginType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LossRiskType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LocationType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LoginType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ListValueType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LocationType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LineType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ListValueType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LimitationDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LineType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LegalReferenceType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LimitationDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestMeterReadingMethodType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LegalReferenceType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class KeywordType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestMeterReadingMethodType : TextType1
     {
     }
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class JustificationType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class JustificationType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class JustificationDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class JustificationDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class JobTitleType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class JobTitleType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InvoicingPartyReferenceType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InvoicingPartyReferenceType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InstructionsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InstructionNoteType : TextType1
-    {
-    }
+
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InhouseMailType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InhouseMailType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InformationType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InformationType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HeatingTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HeatingTypeType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HaulageInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HaulageInstructionsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HashAlgorithmMethodType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HashAlgorithmMethodType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HandlingInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HandlingInstructionsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FundingProgramType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FundingProgramType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FrequencyType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FrequencyType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ForwarderServiceInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ForwarderServiceInstructionsType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FloorType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FloorType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FeeDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FeeDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExtensionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExtensionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExpressionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExpressionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExemptionReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExemptionReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExclusionReasonType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExclusionReasonType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ElectronicMailType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ElectronicMailType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ElectronicDeviceDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ElectronicDeviceDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DutyType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DutyType : TextType1
     {
     }
           
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DocumentStatusReasonDescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DocumentStatusReasonDescriptionType : TextType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DocumentHashType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DocumentHashType : TextType1
+    {
+    }       
+   
+   
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DepartmentType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DemurrageInstructionsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DeliveryInstructionsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DataSendingCapabilityType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DamageRemarksType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CustomsClearanceServiceInstructionsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CustomerReferenceType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CurrentChargeTypeType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CountrySubentityType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CorrectionTypeType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContractTypeType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContractSubdivisionType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContractNameType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContentType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionTypeType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionLevelType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumersEnergyLevelType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConditionsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConditionsDescriptionType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConditionType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CompanyLegalFormType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CommentType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CodeValueType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CharacteristicsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChannelType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChangeConditionsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CertificateTypeType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CarrierServiceInstructionsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CanonicalizationMethodType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CandidateStatementType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CancellationNoteType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CalculationExpressionType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BuyerReferenceType : TextType1
+    {
+    }
+       
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BirthplaceNameType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BackorderReasonType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AwardingCriterionDescriptionType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ApprovalStatusType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AllowanceChargeReasonType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AgencyNameType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdditionalInformationType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdditionalConditionsType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActivityTypeType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AccountingCostType : TextType1
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AcceptedVariantsDescriptionType : TextType1
+    {
+    }
+       
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class StartTimeType : TimeType
+    {
+    }
+    
+    
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidationTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SourceForecastIssueTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RevisionTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResponseTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ResolutionTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequiredDeliveryTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequestedDespatchTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegisteredTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReferenceTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaidTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OccurrenceTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NominationTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ManufactureTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestPickupTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestDeliveryTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LastRevisionTimeType : TimeType
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DistrictType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GuaranteedDespatchTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DescriptionType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExpiryTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DepartmentType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedDespatchTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DemurrageInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedDeliveryTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DeliveryInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EndTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DataSendingCapabilityType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EffectiveTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DamageRemarksType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EarliestPickupTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CustomsClearanceServiceInstructionsType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ComparisonForecastIssueTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CustomerReferenceType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CallTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CurrentChargeTypeType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AwardTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CountrySubentityType : TextType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActualPickupTimeType : TimeType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CorrectionTypeType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContractTypeType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContractSubdivisionType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContractNameType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContentType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionTypeType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionLevelType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumersEnergyLevelType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConditionsType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConditionsDescriptionType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConditionType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CompanyLegalFormType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CommentType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CodeValueType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CharacteristicsType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChannelType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChangeConditionsType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CertificateTypeType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CarrierServiceInstructionsType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CanonicalizationMethodType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CandidateStatementType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CancellationNoteType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CalculationExpressionType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BuyerReferenceType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BuildingNumberType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BirthplaceNameType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BackorderReasonType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AwardingCriterionDescriptionType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ApprovalStatusType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AllowanceChargeReasonType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AgencyNameType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdditionalInformationType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdditionalConditionsType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActivityTypeType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AccountingCostType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AcceptedVariantsDescriptionType : TextType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PeriodType
-    {
-        #region Private fields
-        private StartDateType _startDate;
-        private StartTimeType _startTime;
-        private EndDateType _endDate;
-        private EndTimeType _endTime;
-        private DurationMeasureType _durationMeasure;
-        private DescriptionType _description;
-        #endregion
-        
-        public PeriodType()
-        {
-            _description = new DescriptionType();
-            _durationMeasure = new DurationMeasureType();
-            _endTime = new EndTimeType();
-            _endDate = new EndDateType();
-            _startTime = new StartTimeType();
-            _startDate = new StartDateType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public StartDateType StartDate
-        {
-            get
-            {
-                return _startDate;
-            }
-            set
-            {
-                _startDate = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public StartTimeType StartTime
-        {
-            get
-            {
-                return _startTime;
-            }
-            set
-            {
-                _startTime = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public EndDateType EndDate
-        {
-            get
-            {
-                return _endDate;
-            }
-            set
-            {
-                _endDate = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public EndTimeType EndTime
-        {
-            get
-            {
-                return _endTime;
-            }
-            set
-            {
-                _endTime = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
-        public DurationMeasureType DurationMeasure
-        {
-            get
-            {
-                return _durationMeasure;
-            }
-            set
-            {
-                _durationMeasure = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
-        public DescriptionType Description
-        {
-            get
-            {
-                return _description;
-            }
-            set
-            {
-                _description = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StartTimeType : TimeType
-    {
-    }
-    
-    
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidationTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SourceForecastIssueTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RevisionTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResponseTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ResolutionTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequiredDeliveryTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequestedDespatchTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegisteredTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReferenceTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaidTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OccurrenceTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NominationTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ManufactureTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestPickupTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestDeliveryTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LastRevisionTimeType : TimeType
-    {
-    }       
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GuaranteedDespatchTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExpiryTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedDespatchTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedDeliveryTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EndTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EffectiveTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EarliestPickupTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ComparisonForecastIssueTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CallTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AwardTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActualPickupTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActualDespatchTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActualDeliveryTimeType : TimeType
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DurationMeasureType : MeasureType1
-    {
-    }
-    
-    [XmlIncludeAttribute(typeof(ValueMeasureType))]
-    [XmlIncludeAttribute(typeof(TareWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(SourceValueMeasureType))]
-    [XmlIncludeAttribute(typeof(PreEventNotificationDurationMeasureType))]
-    [XmlIncludeAttribute(typeof(PostEventNotificationDurationMeasureType))]
-    [XmlIncludeAttribute(typeof(NetWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(NetVolumeMeasureType))]
-    [XmlIncludeAttribute(typeof(NetTonnageMeasureType))]
-    [XmlIncludeAttribute(typeof(NetNetWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(MinimumMeasureType))]
-    [XmlIncludeAttribute(typeof(MeasureType2))]
-    [XmlIncludeAttribute(typeof(MaximumMeasureType))]
-    [XmlIncludeAttribute(typeof(LongitudeMinutesMeasureType))]
-    [XmlIncludeAttribute(typeof(LongitudeDegreesMeasureType))]
-    [XmlIncludeAttribute(typeof(LoadingLengthMeasureType))]
-    [XmlIncludeAttribute(typeof(LeadTimeMeasureType))]
-    [XmlIncludeAttribute(typeof(LatitudeMinutesMeasureType))]
-    [XmlIncludeAttribute(typeof(LatitudeDegreesMeasureType))]
-    [XmlIncludeAttribute(typeof(GrossWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(GrossVolumeMeasureType))]
-    [XmlIncludeAttribute(typeof(GrossTonnageMeasureType))]
-    [XmlIncludeAttribute(typeof(DurationMeasureType))]
-    [XmlIncludeAttribute(typeof(ComparedValueMeasureType))]
-    [XmlIncludeAttribute(typeof(ChargeableWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(BaseUnitMeasureType))]
-    [XmlIncludeAttribute(typeof(AltitudeMeasureType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="MeasureType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class MeasureType1 : MeasureType
-    {
-    }
-    
-    [XmlIncludeAttribute(typeof(MeasureType1))]
-    [XmlIncludeAttribute(typeof(ValueMeasureType))]
-    [XmlIncludeAttribute(typeof(TareWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(SourceValueMeasureType))]
-    [XmlIncludeAttribute(typeof(PreEventNotificationDurationMeasureType))]
-    [XmlIncludeAttribute(typeof(PostEventNotificationDurationMeasureType))]
-    [XmlIncludeAttribute(typeof(NetWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(NetVolumeMeasureType))]
-    [XmlIncludeAttribute(typeof(NetTonnageMeasureType))]
-    [XmlIncludeAttribute(typeof(NetNetWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(MinimumMeasureType))]
-    [XmlIncludeAttribute(typeof(MeasureType2))]
-    [XmlIncludeAttribute(typeof(MaximumMeasureType))]
-    [XmlIncludeAttribute(typeof(LongitudeMinutesMeasureType))]
-    [XmlIncludeAttribute(typeof(LongitudeDegreesMeasureType))]
-    [XmlIncludeAttribute(typeof(LoadingLengthMeasureType))]
-    [XmlIncludeAttribute(typeof(LeadTimeMeasureType))]
-    [XmlIncludeAttribute(typeof(LatitudeMinutesMeasureType))]
-    [XmlIncludeAttribute(typeof(LatitudeDegreesMeasureType))]
-    [XmlIncludeAttribute(typeof(GrossWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(GrossVolumeMeasureType))]
-    [XmlIncludeAttribute(typeof(GrossTonnageMeasureType))]
-    [XmlIncludeAttribute(typeof(DurationMeasureType))]
-    [XmlIncludeAttribute(typeof(ComparedValueMeasureType))]
-    [XmlIncludeAttribute(typeof(ChargeableWeightMeasureType))]
-    [XmlIncludeAttribute(typeof(BaseUnitMeasureType))]
-    [XmlIncludeAttribute(typeof(AltitudeMeasureType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public partial class MeasureType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActualDespatchTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActualDeliveryTimeType : TimeType
+    {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DurationMeasureType : MeasureType1
+    {
+    }
+    
+    [XmlInclude(typeof(ValueMeasureType))]
+    [XmlInclude(typeof(TareWeightMeasureType))]
+    [XmlInclude(typeof(SourceValueMeasureType))]
+    [XmlInclude(typeof(PreEventNotificationDurationMeasureType))]
+    [XmlInclude(typeof(PostEventNotificationDurationMeasureType))]
+    [XmlInclude(typeof(NetWeightMeasureType))]
+    [XmlInclude(typeof(NetVolumeMeasureType))]
+    [XmlInclude(typeof(NetTonnageMeasureType))]
+    [XmlInclude(typeof(NetNetWeightMeasureType))]
+    [XmlInclude(typeof(MinimumMeasureType))]
+    [XmlInclude(typeof(MeasureType2))]
+    [XmlInclude(typeof(MaximumMeasureType))]
+    [XmlInclude(typeof(LongitudeMinutesMeasureType))]
+    [XmlInclude(typeof(LongitudeDegreesMeasureType))]
+    [XmlInclude(typeof(LoadingLengthMeasureType))]
+    [XmlInclude(typeof(LeadTimeMeasureType))]
+    [XmlInclude(typeof(LatitudeMinutesMeasureType))]
+    [XmlInclude(typeof(LatitudeDegreesMeasureType))]
+    [XmlInclude(typeof(GrossWeightMeasureType))]
+    [XmlInclude(typeof(GrossVolumeMeasureType))]
+    [XmlInclude(typeof(GrossTonnageMeasureType))]
+    [XmlInclude(typeof(DurationMeasureType))]
+    [XmlInclude(typeof(ComparedValueMeasureType))]
+    [XmlInclude(typeof(ChargeableWeightMeasureType))]
+    [XmlInclude(typeof(BaseUnitMeasureType))]
+    [XmlInclude(typeof(AltitudeMeasureType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="MeasureType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class MeasureType1 : MeasureType
+    {
+    }
+    
+    [XmlInclude(typeof(MeasureType1))]
+    [XmlInclude(typeof(ValueMeasureType))]
+    [XmlInclude(typeof(TareWeightMeasureType))]
+    [XmlInclude(typeof(SourceValueMeasureType))]
+    [XmlInclude(typeof(PreEventNotificationDurationMeasureType))]
+    [XmlInclude(typeof(PostEventNotificationDurationMeasureType))]
+    [XmlInclude(typeof(NetWeightMeasureType))]
+    [XmlInclude(typeof(NetVolumeMeasureType))]
+    [XmlInclude(typeof(NetTonnageMeasureType))]
+    [XmlInclude(typeof(NetNetWeightMeasureType))]
+    [XmlInclude(typeof(MinimumMeasureType))]
+    [XmlInclude(typeof(MeasureType2))]
+    [XmlInclude(typeof(MaximumMeasureType))]
+    [XmlInclude(typeof(LongitudeMinutesMeasureType))]
+    [XmlInclude(typeof(LongitudeDegreesMeasureType))]
+    [XmlInclude(typeof(LoadingLengthMeasureType))]
+    [XmlInclude(typeof(LeadTimeMeasureType))]
+    [XmlInclude(typeof(LatitudeMinutesMeasureType))]
+    [XmlInclude(typeof(LatitudeDegreesMeasureType))]
+    [XmlInclude(typeof(GrossWeightMeasureType))]
+    [XmlInclude(typeof(GrossVolumeMeasureType))]
+    [XmlInclude(typeof(GrossTonnageMeasureType))]
+    [XmlInclude(typeof(DurationMeasureType))]
+    [XmlInclude(typeof(ComparedValueMeasureType))]
+    [XmlInclude(typeof(ChargeableWeightMeasureType))]
+    [XmlInclude(typeof(BaseUnitMeasureType))]
+    [XmlInclude(typeof(AltitudeMeasureType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    public class MeasureType
     {
         #region Private fields
         private string _unitCode;
@@ -6060,550 +5728,477 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValueMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValueMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TareWeightMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TareWeightMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SourceValueMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SourceValueMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreEventNotificationDurationMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreEventNotificationDurationMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PostEventNotificationDurationMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PostEventNotificationDurationMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NetWeightMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NetWeightMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NetVolumeMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NetVolumeMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NetTonnageMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NetTonnageMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NetNetWeightMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NetNetWeightMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="MeasureType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MeasureType2 : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="MeasureType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MeasureType2 : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LongitudeMinutesMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LongitudeMinutesMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LongitudeDegreesMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LongitudeDegreesMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LoadingLengthMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LoadingLengthMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LeadTimeMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LeadTimeMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatitudeMinutesMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatitudeMinutesMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatitudeDegreesMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatitudeDegreesMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GrossWeightMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GrossWeightMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GrossVolumeMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GrossVolumeMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GrossTonnageMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GrossTonnageMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ComparedValueMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ComparedValueMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChargeableWeightMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChargeableWeightMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BaseUnitMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BaseUnitMeasureType : MeasureType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AltitudeMeasureType : MeasureType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AltitudeMeasureType : MeasureType1
     {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class FinancialAccountType
-    {
-        #region Private fields
-        private IDType _id;
-        private CurrencyCodeType _currencyCode;
-        private PaymentNoteType _paymentNote;
-        private BranchType _financialInstitutionBranch;
-        #endregion
-        
-        public FinancialAccountType()
-        {
-            _financialInstitutionBranch = new BranchType();
-            _paymentNote = new PaymentNoteType();
-            _currencyCode = new CurrencyCodeType();
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public CurrencyCodeType CurrencyCode
-        {
-            get
-            {
-                return _currencyCode;
-            }
-            set
-            {
-                _currencyCode = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public PaymentNoteType PaymentNote
-        {
-            get
-            {
-                return _paymentNote;
-            }
-            set
-            {
-                _paymentNote = value;
-            }
-        }
-        
-        [XmlElement(Order=3)]
-        public BranchType FinancialInstitutionBranch
-        {
-            get
-            {
-                return _financialInstitutionBranch;
-            }
-            set
-            {
-                _financialInstitutionBranch = value;
-            }
-        }
-    }
+
         
     
-    [XmlIncludeAttribute(typeof(ReferencedSignatureIDType))]
-    [XmlIncludeAttribute(typeof(ExtensionVersionIDType))]
-    [XmlIncludeAttribute(typeof(ExtensionURIType))]
-    [XmlIncludeAttribute(typeof(ExtensionAgencyURIType))]
-    [XmlIncludeAttribute(typeof(ExtensionAgencyIDType))]
-    [XmlIncludeAttribute(typeof(WebsiteURIType))]
-    [XmlIncludeAttribute(typeof(VesselIDType))]
-    [XmlIncludeAttribute(typeof(VersionIDType))]
-    [XmlIncludeAttribute(typeof(VariantIDType))]
-    [XmlIncludeAttribute(typeof(ValidatorIDType))]
-    [XmlIncludeAttribute(typeof(UpperOrangeHazardPlacardIDType))]
-    [XmlIncludeAttribute(typeof(UUIDType))]
-    [XmlIncludeAttribute(typeof(URIType))]
-    [XmlIncludeAttribute(typeof(UBLVersionIDType))]
-    [XmlIncludeAttribute(typeof(TransportationServiceDetailsURIType))]
-    [XmlIncludeAttribute(typeof(TransportExecutionPlanReferenceIDType))]
-    [XmlIncludeAttribute(typeof(TrainIDType))]
-    [XmlIncludeAttribute(typeof(TrackingIDType))]
-    [XmlIncludeAttribute(typeof(TraceIDType))]
-    [XmlIncludeAttribute(typeof(TenderEnvelopeIDType))]
-    [XmlIncludeAttribute(typeof(SupplierAssignedAccountIDType))]
-    [XmlIncludeAttribute(typeof(SuccessiveSequenceIDType))]
-    [XmlIncludeAttribute(typeof(SubscriberIDType))]
-    [XmlIncludeAttribute(typeof(SpecificationIDType))]
-    [XmlIncludeAttribute(typeof(SignatureIDType))]
-    [XmlIncludeAttribute(typeof(ShippingOrderIDType))]
-    [XmlIncludeAttribute(typeof(SerialIDType))]
-    [XmlIncludeAttribute(typeof(SequenceNumberIDType))]
-    [XmlIncludeAttribute(typeof(SequenceIDType))]
-    [XmlIncludeAttribute(typeof(SellerEventIDType))]
-    [XmlIncludeAttribute(typeof(SecurityIDType))]
-    [XmlIncludeAttribute(typeof(SchemeURIType))]
-    [XmlIncludeAttribute(typeof(SalesOrderLineIDType))]
-    [XmlIncludeAttribute(typeof(SalesOrderIDType))]
-    [XmlIncludeAttribute(typeof(RevisedForecastLineIDType))]
-    [XmlIncludeAttribute(typeof(RequiredCustomsIDType))]
-    [XmlIncludeAttribute(typeof(RequestForQuotationLineIDType))]
-    [XmlIncludeAttribute(typeof(ReleaseIDType))]
-    [XmlIncludeAttribute(typeof(RegistrationNationalityIDType))]
-    [XmlIncludeAttribute(typeof(RegistrationIDType))]
-    [XmlIncludeAttribute(typeof(ReferencedConsignmentIDType))]
-    [XmlIncludeAttribute(typeof(ReferenceIDType))]
-    [XmlIncludeAttribute(typeof(RailCarIDType))]
-    [XmlIncludeAttribute(typeof(RadioCallSignIDType))]
-    [XmlIncludeAttribute(typeof(ProfileIDType))]
-    [XmlIncludeAttribute(typeof(ProfileExecutionIDType))]
-    [XmlIncludeAttribute(typeof(ProductTraceIDType))]
-    [XmlIncludeAttribute(typeof(PrimaryAccountNumberIDType))]
-    [XmlIncludeAttribute(typeof(PreviousVersionIDType))]
-    [XmlIncludeAttribute(typeof(PreviousJobIDType))]
-    [XmlIncludeAttribute(typeof(PrepaidPaymentReferenceIDType))]
-    [XmlIncludeAttribute(typeof(PerformingCarrierAssignedIDType))]
-    [XmlIncludeAttribute(typeof(PaymentTermsDetailsURIType))]
-    [XmlIncludeAttribute(typeof(PaymentMeansIDType))]
-    [XmlIncludeAttribute(typeof(PaymentIDType))]
-    [XmlIncludeAttribute(typeof(ParentDocumentVersionIDType))]
-    [XmlIncludeAttribute(typeof(ParentDocumentLineReferenceIDType))]
-    [XmlIncludeAttribute(typeof(ParentDocumentIDType))]
-    [XmlIncludeAttribute(typeof(OriginalJobIDType))]
-    [XmlIncludeAttribute(typeof(OriginalContractingSystemIDType))]
-    [XmlIncludeAttribute(typeof(OpenTenderIDType))]
-    [XmlIncludeAttribute(typeof(OntologyURIType))]
-    [XmlIncludeAttribute(typeof(NetworkIDType))]
-    [XmlIncludeAttribute(typeof(NationalityIDType))]
-    [XmlIncludeAttribute(typeof(MarkingIDType))]
-    [XmlIncludeAttribute(typeof(LowerOrangeHazardPlacardIDType))]
-    [XmlIncludeAttribute(typeof(LotNumberIDType))]
-    [XmlIncludeAttribute(typeof(LogoReferenceIDType))]
-    [XmlIncludeAttribute(typeof(LocationIDType))]
-    [XmlIncludeAttribute(typeof(LoadingSequenceIDType))]
-    [XmlIncludeAttribute(typeof(LineIDType))]
-    [XmlIncludeAttribute(typeof(LicensePlateIDType))]
-    [XmlIncludeAttribute(typeof(LanguageIDType))]
-    [XmlIncludeAttribute(typeof(JourneyIDType))]
-    [XmlIncludeAttribute(typeof(IssuerIDType))]
-    [XmlIncludeAttribute(typeof(IssueNumberIDType))]
-    [XmlIncludeAttribute(typeof(InstructionIDType))]
-    [XmlIncludeAttribute(typeof(InformationURIType))]
-    [XmlIncludeAttribute(typeof(ImmobilizationCertificateIDType))]
-    [XmlIncludeAttribute(typeof(IdentificationIDType))]
-    [XmlIncludeAttribute(typeof(IDType))]
-    [XmlIncludeAttribute(typeof(HazardClassIDType))]
-    [XmlIncludeAttribute(typeof(FreightForwarderAssignedIDType))]
-    [XmlIncludeAttribute(typeof(ExtendedIDType))]
-    [XmlIncludeAttribute(typeof(ExchangeMarketIDType))]
-    [XmlIncludeAttribute(typeof(EndpointIDType))]
-    [XmlIncludeAttribute(typeof(EconomicOperatorRegistryURIType))]
-    [XmlIncludeAttribute(typeof(DocumentIDType))]
-    [XmlIncludeAttribute(typeof(CustomizationIDType))]
-    [XmlIncludeAttribute(typeof(CustomerAssignedAccountIDType))]
-    [XmlIncludeAttribute(typeof(ContractedCarrierAssignedIDType))]
-    [XmlIncludeAttribute(typeof(ContractFolderIDType))]
-    [XmlIncludeAttribute(typeof(ConsumptionReportIDType))]
-    [XmlIncludeAttribute(typeof(ConsumptionIDType))]
-    [XmlIncludeAttribute(typeof(ConsignorAssignedIDType))]
-    [XmlIncludeAttribute(typeof(ConsigneeAssignedIDType))]
-    [XmlIncludeAttribute(typeof(CompanyIDType))]
-    [XmlIncludeAttribute(typeof(ChipApplicationIDType))]
-    [XmlIncludeAttribute(typeof(CarrierAssignedIDType))]
-    [XmlIncludeAttribute(typeof(CV2IDType))]
-    [XmlIncludeAttribute(typeof(BuyerProfileURIType))]
-    [XmlIncludeAttribute(typeof(BuyerEventIDType))]
-    [XmlIncludeAttribute(typeof(BusinessIdentityEvidenceIDType))]
-    [XmlIncludeAttribute(typeof(BusinessClassificationEvidenceIDType))]
-    [XmlIncludeAttribute(typeof(BrokerAssignedIDType))]
-    [XmlIncludeAttribute(typeof(BarcodeSymbologyIDType))]
-    [XmlIncludeAttribute(typeof(AwardingCriterionIDType))]
-    [XmlIncludeAttribute(typeof(AuctionURIType))]
-    [XmlIncludeAttribute(typeof(AttributeIDType))]
-    [XmlIncludeAttribute(typeof(AircraftIDType))]
-    [XmlIncludeAttribute(typeof(AgencyIDType))]
-    [XmlIncludeAttribute(typeof(AdditionalAccountIDType))]
-    [XmlIncludeAttribute(typeof(AccountIDType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(ReferencedSignatureIDType))]
+    [XmlInclude(typeof(ExtensionVersionIDType))]
+    [XmlInclude(typeof(ExtensionURIType))]
+    [XmlInclude(typeof(ExtensionAgencyURIType))]
+    [XmlInclude(typeof(ExtensionAgencyIDType))]
+    [XmlInclude(typeof(WebsiteURIType))]
+    [XmlInclude(typeof(VesselIDType))]
+    [XmlInclude(typeof(VersionIDType))]
+    [XmlInclude(typeof(VariantIDType))]
+    [XmlInclude(typeof(ValidatorIDType))]
+    [XmlInclude(typeof(UpperOrangeHazardPlacardIDType))]
+    [XmlInclude(typeof(UUIDType))]
+    [XmlInclude(typeof(URIType))]
+    [XmlInclude(typeof(UBLVersionIDType))]
+    [XmlInclude(typeof(TransportationServiceDetailsURIType))]
+    [XmlInclude(typeof(TransportExecutionPlanReferenceIDType))]
+    [XmlInclude(typeof(TrainIDType))]
+    [XmlInclude(typeof(TrackingIDType))]
+    [XmlInclude(typeof(TraceIDType))]
+    [XmlInclude(typeof(TenderEnvelopeIDType))]
+    [XmlInclude(typeof(SupplierAssignedAccountIDType))]
+    [XmlInclude(typeof(SuccessiveSequenceIDType))]
+    [XmlInclude(typeof(SubscriberIDType))]
+    [XmlInclude(typeof(SpecificationIDType))]
+    [XmlInclude(typeof(SignatureIDType))]
+    [XmlInclude(typeof(ShippingOrderIDType))]
+    [XmlInclude(typeof(SerialIDType))]
+    [XmlInclude(typeof(SequenceNumberIDType))]
+    [XmlInclude(typeof(SequenceIDType))]
+    [XmlInclude(typeof(SellerEventIDType))]
+    [XmlInclude(typeof(SecurityIDType))]
+    [XmlInclude(typeof(SchemeURIType))]
+    [XmlInclude(typeof(SalesOrderLineIDType))]
+    [XmlInclude(typeof(SalesOrderIDType))]
+    [XmlInclude(typeof(RevisedForecastLineIDType))]
+    [XmlInclude(typeof(RequiredCustomsIDType))]
+    [XmlInclude(typeof(RequestForQuotationLineIDType))]
+    [XmlInclude(typeof(ReleaseIDType))]
+    [XmlInclude(typeof(RegistrationNationalityIDType))]
+    [XmlInclude(typeof(RegistrationIDType))]
+    [XmlInclude(typeof(ReferencedConsignmentIDType))]
+    [XmlInclude(typeof(ReferenceIDType))]
+    [XmlInclude(typeof(RailCarIDType))]
+    [XmlInclude(typeof(RadioCallSignIDType))]
+    [XmlInclude(typeof(ProfileIDType))]
+    [XmlInclude(typeof(ProfileExecutionIDType))]
+    [XmlInclude(typeof(ProductTraceIDType))]
+    [XmlInclude(typeof(PrimaryAccountNumberIDType))]
+    [XmlInclude(typeof(PreviousVersionIDType))]
+    [XmlInclude(typeof(PreviousJobIDType))]
+    [XmlInclude(typeof(PrepaidPaymentReferenceIDType))]
+    [XmlInclude(typeof(PerformingCarrierAssignedIDType))]
+    [XmlInclude(typeof(PaymentTermsDetailsURIType))]
+    [XmlInclude(typeof(PaymentMeansIDType))]
+    [XmlInclude(typeof(PaymentIDType))]
+    [XmlInclude(typeof(ParentDocumentVersionIDType))]
+    [XmlInclude(typeof(ParentDocumentLineReferenceIDType))]
+    [XmlInclude(typeof(ParentDocumentIDType))]
+    [XmlInclude(typeof(OriginalJobIDType))]
+    [XmlInclude(typeof(OriginalContractingSystemIDType))]
+    [XmlInclude(typeof(OpenTenderIDType))]
+    [XmlInclude(typeof(OntologyURIType))]
+    [XmlInclude(typeof(NetworkIDType))]
+    [XmlInclude(typeof(NationalityIDType))]
+    [XmlInclude(typeof(MarkingIDType))]
+    [XmlInclude(typeof(LowerOrangeHazardPlacardIDType))]
+    [XmlInclude(typeof(LotNumberIDType))]
+    [XmlInclude(typeof(LogoReferenceIDType))]
+    [XmlInclude(typeof(LocationIDType))]
+    [XmlInclude(typeof(LoadingSequenceIDType))]
+    [XmlInclude(typeof(LineIDType))]
+    [XmlInclude(typeof(LicensePlateIDType))]
+    [XmlInclude(typeof(LanguageIDType))]
+    [XmlInclude(typeof(JourneyIDType))]
+    [XmlInclude(typeof(IssuerIDType))]
+    [XmlInclude(typeof(IssueNumberIDType))]
+    [XmlInclude(typeof(InstructionIDType))]
+    [XmlInclude(typeof(InformationURIType))]
+    [XmlInclude(typeof(ImmobilizationCertificateIDType))]
+    [XmlInclude(typeof(IdentificationIDType))]
+    [XmlInclude(typeof(IDType))]
+    [XmlInclude(typeof(HazardClassIDType))]
+    [XmlInclude(typeof(FreightForwarderAssignedIDType))]
+    [XmlInclude(typeof(ExtendedIDType))]
+    [XmlInclude(typeof(ExchangeMarketIDType))]
+    [XmlInclude(typeof(EndpointIDType))]
+    [XmlInclude(typeof(EconomicOperatorRegistryURIType))]
+    [XmlInclude(typeof(DocumentIDType))]
+    [XmlInclude(typeof(CustomizationIDType))]
+    [XmlInclude(typeof(CustomerAssignedAccountIDType))]
+    [XmlInclude(typeof(ContractedCarrierAssignedIDType))]
+    [XmlInclude(typeof(ContractFolderIDType))]
+    [XmlInclude(typeof(ConsumptionReportIDType))]
+    [XmlInclude(typeof(ConsumptionIDType))]
+    [XmlInclude(typeof(ConsignorAssignedIDType))]
+    [XmlInclude(typeof(ConsigneeAssignedIDType))]
+    [XmlInclude(typeof(CompanyIDType))]
+    [XmlInclude(typeof(ChipApplicationIDType))]
+    [XmlInclude(typeof(CarrierAssignedIDType))]
+    [XmlInclude(typeof(CV2IDType))]
+    [XmlInclude(typeof(BuyerProfileURIType))]
+    [XmlInclude(typeof(BuyerEventIDType))]
+    [XmlInclude(typeof(BusinessIdentityEvidenceIDType))]
+    [XmlInclude(typeof(BusinessClassificationEvidenceIDType))]
+    [XmlInclude(typeof(BrokerAssignedIDType))]
+    [XmlInclude(typeof(BarcodeSymbologyIDType))]
+    [XmlInclude(typeof(AwardingCriterionIDType))]
+    [XmlInclude(typeof(AuctionURIType))]
+    [XmlInclude(typeof(AttributeIDType))]
+    [XmlInclude(typeof(AircraftIDType))]
+    [XmlInclude(typeof(AgencyIDType))]
+    [XmlInclude(typeof(AdditionalAccountIDType))]
+    [XmlInclude(typeof(AccountIDType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="IdentifierType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class IdentifierType1 : IdentifierType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="IdentifierType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class IdentifierType1 : IdentifierType
     {
     }
     
-    [XmlIncludeAttribute(typeof(IdentifierType1))]
-    [XmlIncludeAttribute(typeof(ReferencedSignatureIDType))]
-    [XmlIncludeAttribute(typeof(ExtensionVersionIDType))]
-    [XmlIncludeAttribute(typeof(ExtensionURIType))]
-    [XmlIncludeAttribute(typeof(ExtensionAgencyURIType))]
-    [XmlIncludeAttribute(typeof(ExtensionAgencyIDType))]
-    [XmlIncludeAttribute(typeof(WebsiteURIType))]
-    [XmlIncludeAttribute(typeof(VesselIDType))]
-    [XmlIncludeAttribute(typeof(VersionIDType))]
-    [XmlIncludeAttribute(typeof(VariantIDType))]
-    [XmlIncludeAttribute(typeof(ValidatorIDType))]
-    [XmlIncludeAttribute(typeof(UpperOrangeHazardPlacardIDType))]
-    [XmlIncludeAttribute(typeof(UUIDType))]
-    [XmlIncludeAttribute(typeof(URIType))]
-    [XmlIncludeAttribute(typeof(UBLVersionIDType))]
-    [XmlIncludeAttribute(typeof(TransportationServiceDetailsURIType))]
-    [XmlIncludeAttribute(typeof(TransportExecutionPlanReferenceIDType))]
-    [XmlIncludeAttribute(typeof(TrainIDType))]
-    [XmlIncludeAttribute(typeof(TrackingIDType))]
-    [XmlIncludeAttribute(typeof(TraceIDType))]
-    [XmlIncludeAttribute(typeof(TenderEnvelopeIDType))]
-    [XmlIncludeAttribute(typeof(SupplierAssignedAccountIDType))]
-    [XmlIncludeAttribute(typeof(SuccessiveSequenceIDType))]
-    [XmlIncludeAttribute(typeof(SubscriberIDType))]
-    [XmlIncludeAttribute(typeof(SpecificationIDType))]
-    [XmlIncludeAttribute(typeof(SignatureIDType))]
-    [XmlIncludeAttribute(typeof(ShippingOrderIDType))]
-    [XmlIncludeAttribute(typeof(SerialIDType))]
-    [XmlIncludeAttribute(typeof(SequenceNumberIDType))]
-    [XmlIncludeAttribute(typeof(SequenceIDType))]
-    [XmlIncludeAttribute(typeof(SellerEventIDType))]
-    [XmlIncludeAttribute(typeof(SecurityIDType))]
-    [XmlIncludeAttribute(typeof(SchemeURIType))]
-    [XmlIncludeAttribute(typeof(SalesOrderLineIDType))]
-    [XmlIncludeAttribute(typeof(SalesOrderIDType))]
-    [XmlIncludeAttribute(typeof(RevisedForecastLineIDType))]
-    [XmlIncludeAttribute(typeof(RequiredCustomsIDType))]
-    [XmlIncludeAttribute(typeof(RequestForQuotationLineIDType))]
-    [XmlIncludeAttribute(typeof(ReleaseIDType))]
-    [XmlIncludeAttribute(typeof(RegistrationNationalityIDType))]
-    [XmlIncludeAttribute(typeof(RegistrationIDType))]
-    [XmlIncludeAttribute(typeof(ReferencedConsignmentIDType))]
-    [XmlIncludeAttribute(typeof(ReferenceIDType))]
-    [XmlIncludeAttribute(typeof(RailCarIDType))]
-    [XmlIncludeAttribute(typeof(RadioCallSignIDType))]
-    [XmlIncludeAttribute(typeof(ProfileIDType))]
-    [XmlIncludeAttribute(typeof(ProfileExecutionIDType))]
-    [XmlIncludeAttribute(typeof(ProductTraceIDType))]
-    [XmlIncludeAttribute(typeof(PrimaryAccountNumberIDType))]
-    [XmlIncludeAttribute(typeof(PreviousVersionIDType))]
-    [XmlIncludeAttribute(typeof(PreviousJobIDType))]
-    [XmlIncludeAttribute(typeof(PrepaidPaymentReferenceIDType))]
-    [XmlIncludeAttribute(typeof(PerformingCarrierAssignedIDType))]
-    [XmlIncludeAttribute(typeof(PaymentTermsDetailsURIType))]
-    [XmlIncludeAttribute(typeof(PaymentMeansIDType))]
-    [XmlIncludeAttribute(typeof(PaymentIDType))]
-    [XmlIncludeAttribute(typeof(ParentDocumentVersionIDType))]
-    [XmlIncludeAttribute(typeof(ParentDocumentLineReferenceIDType))]
-    [XmlIncludeAttribute(typeof(ParentDocumentIDType))]
-    [XmlIncludeAttribute(typeof(OriginalJobIDType))]
-    [XmlIncludeAttribute(typeof(OriginalContractingSystemIDType))]
-    [XmlIncludeAttribute(typeof(OpenTenderIDType))]
-    [XmlIncludeAttribute(typeof(OntologyURIType))]
-    [XmlIncludeAttribute(typeof(NetworkIDType))]
-    [XmlIncludeAttribute(typeof(NationalityIDType))]
-    [XmlIncludeAttribute(typeof(MarkingIDType))]
-    [XmlIncludeAttribute(typeof(LowerOrangeHazardPlacardIDType))]
-    [XmlIncludeAttribute(typeof(LotNumberIDType))]
-    [XmlIncludeAttribute(typeof(LogoReferenceIDType))]
-    [XmlIncludeAttribute(typeof(LocationIDType))]
-    [XmlIncludeAttribute(typeof(LoadingSequenceIDType))]
-    [XmlIncludeAttribute(typeof(LineIDType))]
-    [XmlIncludeAttribute(typeof(LicensePlateIDType))]
-    [XmlIncludeAttribute(typeof(LanguageIDType))]
-    [XmlIncludeAttribute(typeof(JourneyIDType))]
-    [XmlIncludeAttribute(typeof(IssuerIDType))]
-    [XmlIncludeAttribute(typeof(IssueNumberIDType))]
-    [XmlIncludeAttribute(typeof(InstructionIDType))]
-    [XmlIncludeAttribute(typeof(InformationURIType))]
-    [XmlIncludeAttribute(typeof(ImmobilizationCertificateIDType))]
-    [XmlIncludeAttribute(typeof(IdentificationIDType))]
-    [XmlIncludeAttribute(typeof(IDType))]
-    [XmlIncludeAttribute(typeof(HazardClassIDType))]
-    [XmlIncludeAttribute(typeof(FreightForwarderAssignedIDType))]
-    [XmlIncludeAttribute(typeof(ExtendedIDType))]
-    [XmlIncludeAttribute(typeof(ExchangeMarketIDType))]
-    [XmlIncludeAttribute(typeof(EndpointIDType))]
-    [XmlIncludeAttribute(typeof(EconomicOperatorRegistryURIType))]
-    [XmlIncludeAttribute(typeof(DocumentIDType))]
-    [XmlIncludeAttribute(typeof(CustomizationIDType))]
-    [XmlIncludeAttribute(typeof(CustomerAssignedAccountIDType))]
-    [XmlIncludeAttribute(typeof(ContractedCarrierAssignedIDType))]
-    [XmlIncludeAttribute(typeof(ContractFolderIDType))]
-    [XmlIncludeAttribute(typeof(ConsumptionReportIDType))]
-    [XmlIncludeAttribute(typeof(ConsumptionIDType))]
-    [XmlIncludeAttribute(typeof(ConsignorAssignedIDType))]
-    [XmlIncludeAttribute(typeof(ConsigneeAssignedIDType))]
-    [XmlIncludeAttribute(typeof(CompanyIDType))]
-    [XmlIncludeAttribute(typeof(ChipApplicationIDType))]
-    [XmlIncludeAttribute(typeof(CarrierAssignedIDType))]
-    [XmlIncludeAttribute(typeof(CV2IDType))]
-    [XmlIncludeAttribute(typeof(BuyerProfileURIType))]
-    [XmlIncludeAttribute(typeof(BuyerEventIDType))]
-    [XmlIncludeAttribute(typeof(BusinessIdentityEvidenceIDType))]
-    [XmlIncludeAttribute(typeof(BusinessClassificationEvidenceIDType))]
-    [XmlIncludeAttribute(typeof(BrokerAssignedIDType))]
-    [XmlIncludeAttribute(typeof(BarcodeSymbologyIDType))]
-    [XmlIncludeAttribute(typeof(AwardingCriterionIDType))]
-    [XmlIncludeAttribute(typeof(AuctionURIType))]
-    [XmlIncludeAttribute(typeof(AttributeIDType))]
-    [XmlIncludeAttribute(typeof(AircraftIDType))]
-    [XmlIncludeAttribute(typeof(AgencyIDType))]
-    [XmlIncludeAttribute(typeof(AdditionalAccountIDType))]
-    [XmlIncludeAttribute(typeof(AccountIDType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(IdentifierType1))]
+    [XmlInclude(typeof(ReferencedSignatureIDType))]
+    [XmlInclude(typeof(ExtensionVersionIDType))]
+    [XmlInclude(typeof(ExtensionURIType))]
+    [XmlInclude(typeof(ExtensionAgencyURIType))]
+    [XmlInclude(typeof(ExtensionAgencyIDType))]
+    [XmlInclude(typeof(WebsiteURIType))]
+    [XmlInclude(typeof(VesselIDType))]
+    [XmlInclude(typeof(VersionIDType))]
+    [XmlInclude(typeof(VariantIDType))]
+    [XmlInclude(typeof(ValidatorIDType))]
+    [XmlInclude(typeof(UpperOrangeHazardPlacardIDType))]
+    [XmlInclude(typeof(UUIDType))]
+    [XmlInclude(typeof(URIType))]
+    [XmlInclude(typeof(UBLVersionIDType))]
+    [XmlInclude(typeof(TransportationServiceDetailsURIType))]
+    [XmlInclude(typeof(TransportExecutionPlanReferenceIDType))]
+    [XmlInclude(typeof(TrainIDType))]
+    [XmlInclude(typeof(TrackingIDType))]
+    [XmlInclude(typeof(TraceIDType))]
+    [XmlInclude(typeof(TenderEnvelopeIDType))]
+    [XmlInclude(typeof(SupplierAssignedAccountIDType))]
+    [XmlInclude(typeof(SuccessiveSequenceIDType))]
+    [XmlInclude(typeof(SubscriberIDType))]
+    [XmlInclude(typeof(SpecificationIDType))]
+    [XmlInclude(typeof(SignatureIDType))]
+    [XmlInclude(typeof(ShippingOrderIDType))]
+    [XmlInclude(typeof(SerialIDType))]
+    [XmlInclude(typeof(SequenceNumberIDType))]
+    [XmlInclude(typeof(SequenceIDType))]
+    [XmlInclude(typeof(SellerEventIDType))]
+    [XmlInclude(typeof(SecurityIDType))]
+    [XmlInclude(typeof(SchemeURIType))]
+    [XmlInclude(typeof(SalesOrderLineIDType))]
+    [XmlInclude(typeof(SalesOrderIDType))]
+    [XmlInclude(typeof(RevisedForecastLineIDType))]
+    [XmlInclude(typeof(RequiredCustomsIDType))]
+    [XmlInclude(typeof(RequestForQuotationLineIDType))]
+    [XmlInclude(typeof(ReleaseIDType))]
+    [XmlInclude(typeof(RegistrationNationalityIDType))]
+    [XmlInclude(typeof(RegistrationIDType))]
+    [XmlInclude(typeof(ReferencedConsignmentIDType))]
+    [XmlInclude(typeof(ReferenceIDType))]
+    [XmlInclude(typeof(RailCarIDType))]
+    [XmlInclude(typeof(RadioCallSignIDType))]
+    [XmlInclude(typeof(ProfileIDType))]
+    [XmlInclude(typeof(ProfileExecutionIDType))]
+    [XmlInclude(typeof(ProductTraceIDType))]
+    [XmlInclude(typeof(PrimaryAccountNumberIDType))]
+    [XmlInclude(typeof(PreviousVersionIDType))]
+    [XmlInclude(typeof(PreviousJobIDType))]
+    [XmlInclude(typeof(PrepaidPaymentReferenceIDType))]
+    [XmlInclude(typeof(PerformingCarrierAssignedIDType))]
+    [XmlInclude(typeof(PaymentTermsDetailsURIType))]
+    [XmlInclude(typeof(PaymentMeansIDType))]
+    [XmlInclude(typeof(PaymentIDType))]
+    [XmlInclude(typeof(ParentDocumentVersionIDType))]
+    [XmlInclude(typeof(ParentDocumentLineReferenceIDType))]
+    [XmlInclude(typeof(ParentDocumentIDType))]
+    [XmlInclude(typeof(OriginalJobIDType))]
+    [XmlInclude(typeof(OriginalContractingSystemIDType))]
+    [XmlInclude(typeof(OpenTenderIDType))]
+    [XmlInclude(typeof(OntologyURIType))]
+    [XmlInclude(typeof(NetworkIDType))]
+    [XmlInclude(typeof(NationalityIDType))]
+    [XmlInclude(typeof(MarkingIDType))]
+    [XmlInclude(typeof(LowerOrangeHazardPlacardIDType))]
+    [XmlInclude(typeof(LotNumberIDType))]
+    [XmlInclude(typeof(LogoReferenceIDType))]
+    [XmlInclude(typeof(LocationIDType))]
+    [XmlInclude(typeof(LoadingSequenceIDType))]
+    [XmlInclude(typeof(LineIDType))]
+    [XmlInclude(typeof(LicensePlateIDType))]
+    [XmlInclude(typeof(LanguageIDType))]
+    [XmlInclude(typeof(JourneyIDType))]
+    [XmlInclude(typeof(IssuerIDType))]
+    [XmlInclude(typeof(IssueNumberIDType))]
+    [XmlInclude(typeof(InstructionIDType))]
+    [XmlInclude(typeof(InformationURIType))]
+    [XmlInclude(typeof(ImmobilizationCertificateIDType))]
+    [XmlInclude(typeof(IdentificationIDType))]
+    [XmlInclude(typeof(IDType))]
+    [XmlInclude(typeof(HazardClassIDType))]
+    [XmlInclude(typeof(FreightForwarderAssignedIDType))]
+    [XmlInclude(typeof(ExtendedIDType))]
+    [XmlInclude(typeof(ExchangeMarketIDType))]
+    [XmlInclude(typeof(EndpointIDType))]
+    [XmlInclude(typeof(EconomicOperatorRegistryURIType))]
+    [XmlInclude(typeof(DocumentIDType))]
+    [XmlInclude(typeof(CustomizationIDType))]
+    [XmlInclude(typeof(CustomerAssignedAccountIDType))]
+    [XmlInclude(typeof(ContractedCarrierAssignedIDType))]
+    [XmlInclude(typeof(ContractFolderIDType))]
+    [XmlInclude(typeof(ConsumptionReportIDType))]
+    [XmlInclude(typeof(ConsumptionIDType))]
+    [XmlInclude(typeof(ConsignorAssignedIDType))]
+    [XmlInclude(typeof(ConsigneeAssignedIDType))]
+    [XmlInclude(typeof(CompanyIDType))]
+    [XmlInclude(typeof(ChipApplicationIDType))]
+    [XmlInclude(typeof(CarrierAssignedIDType))]
+    [XmlInclude(typeof(CV2IDType))]
+    [XmlInclude(typeof(BuyerProfileURIType))]
+    [XmlInclude(typeof(BuyerEventIDType))]
+    [XmlInclude(typeof(BusinessIdentityEvidenceIDType))]
+    [XmlInclude(typeof(BusinessClassificationEvidenceIDType))]
+    [XmlInclude(typeof(BrokerAssignedIDType))]
+    [XmlInclude(typeof(BarcodeSymbologyIDType))]
+    [XmlInclude(typeof(AwardingCriterionIDType))]
+    [XmlInclude(typeof(AuctionURIType))]
+    [XmlInclude(typeof(AttributeIDType))]
+    [XmlInclude(typeof(AircraftIDType))]
+    [XmlInclude(typeof(AgencyIDType))]
+    [XmlInclude(typeof(AdditionalAccountIDType))]
+    [XmlInclude(typeof(AccountIDType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public partial class IdentifierType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    public class IdentifierType
     {
         #region Private fields
         private string _schemeID;
@@ -6721,1032 +6316,955 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2")]
-    public partial class ReferencedSignatureIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2")]
+    public class ReferencedSignatureIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionVersionIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public class ExtensionVersionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public class ExtensionURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionAgencyURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public class ExtensionAgencyURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionAgencyIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public class ExtensionAgencyIDType : IdentifierType1
+    {
+    }
+        
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class VesselIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class WebsiteURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class VersionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class VesselIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class VariantIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class VersionIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValidatorIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class VariantIDType : IdentifierType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValidatorIDType : IdentifierType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class UpperOrangeHazardPlacardIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class UpperOrangeHazardPlacardIDType : IdentifierType1
     {
     }
             
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class URIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class URIType : IdentifierType1
     {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportationServiceDetailsURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportationServiceDetailsURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TransportExecutionPlanReferenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TransportExecutionPlanReferenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TrainIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TrainIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TrackingIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TrackingIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TraceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TraceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TenderEnvelopeIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TenderEnvelopeIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SupplierAssignedAccountIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SupplierAssignedAccountIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SuccessiveSequenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SuccessiveSequenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SubscriberIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SubscriberIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SpecificationIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SpecificationIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SignatureIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SignatureIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ShippingOrderIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ShippingOrderIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SerialIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SerialIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SequenceNumberIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SequenceNumberIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SequenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SequenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SellerEventIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SellerEventIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SecurityIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SecurityIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SchemeURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SchemeURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SalesOrderLineIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SalesOrderLineIDType : IdentifierType1
     {
     }
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SalesOrderIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RevisedForecastLineIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RevisedForecastLineIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequiredCustomsIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequiredCustomsIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequestForQuotationLineIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequestForQuotationLineIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReleaseIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReleaseIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegistrationNationalityIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegistrationNationalityIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RegistrationIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RegistrationIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReferencedConsignmentIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReferencedConsignmentIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReferenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReferenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RailCarIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RailCarIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RadioCallSignIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RadioCallSignIDType : IdentifierType1
-    {
-    }
-    
     
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProfileExecutionIDType : IdentifierType1
-    {
-    }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ProductTraceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProfileExecutionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrimaryAccountNumberIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ProductTraceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreviousVersionIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrimaryAccountNumberIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreviousJobIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreviousVersionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrepaidPaymentReferenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreviousJobIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PerformingCarrierAssignedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrepaidPaymentReferenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentTermsDetailsURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PerformingCarrierAssignedIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentMeansIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentTermsDetailsURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PaymentIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentMeansIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ParentDocumentVersionIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PaymentIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ParentDocumentLineReferenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ParentDocumentVersionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ParentDocumentIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ParentDocumentLineReferenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OriginalJobIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ParentDocumentIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OriginalContractingSystemIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OriginalJobIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OpenTenderIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OriginalContractingSystemIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OntologyURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OpenTenderIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NetworkIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OntologyURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NationalityIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NetworkIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MarkingIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NationalityIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LowerOrangeHazardPlacardIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MarkingIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LotNumberIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LowerOrangeHazardPlacardIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LogoReferenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LotNumberIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LocationIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LogoReferenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LoadingSequenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LocationIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LineIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LoadingSequenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LicensePlateIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LineIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LanguageIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LicensePlateIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class JourneyIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LanguageIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class IssuerIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class JourneyIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class IssueNumberIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class IssuerIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InstructionIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class IssueNumberIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InformationURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InstructionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ImmobilizationCertificateIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class InformationURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class IdentificationIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ImmobilizationCertificateIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HazardClassIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class IdentificationIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FreightForwarderAssignedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HazardClassIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExtendedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FreightForwarderAssignedIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExchangeMarketIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExtendedIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EndpointIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExchangeMarketIDType : IdentifierType1
     {
     }
+   
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EconomicOperatorRegistryURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EconomicOperatorRegistryURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DocumentIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DocumentIDType : IdentifierType1
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CustomerAssignedAccountIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CustomerAssignedAccountIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContractedCarrierAssignedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContractedCarrierAssignedIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContractFolderIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContractFolderIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionReportIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionReportIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsignorAssignedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsignorAssignedIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsigneeAssignedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsigneeAssignedIDType : IdentifierType1
+    {
+    }
+       
+    
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [Serializable]
+    [DebuggerStepThrough]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChipApplicationIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CompanyIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CarrierAssignedIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChipApplicationIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CV2IDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CarrierAssignedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BuyerProfileURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CV2IDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BuyerEventIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BuyerProfileURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BusinessIdentityEvidenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BuyerEventIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BusinessClassificationEvidenceIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BusinessIdentityEvidenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BrokerAssignedIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BusinessClassificationEvidenceIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BarcodeSymbologyIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BrokerAssignedIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AwardingCriterionIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BarcodeSymbologyIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AuctionURIType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AwardingCriterionIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AttributeIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AuctionURIType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AircraftIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AttributeIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AgencyIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AircraftIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdditionalAccountIDType : IdentifierType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AgencyIDType : IdentifierType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AccountIDType : IdentifierType1
     {
     }
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdditionalAccountIDType : IdentifierType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AccountIDType : IdentifierType1
-    {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class BranchType
-    {
-        #region Private fields
-        private NameType1 _name;
-        private FinancialInstitutionType _financialInstitution;
-        #endregion
-        
-        public BranchType()
-        {
-            _financialInstitution = new FinancialInstitutionType();
-            _name = new NameType1();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public NameType1 Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-        
-        [XmlElement(Order=1)]
-        public FinancialInstitutionType FinancialInstitution
-        {
-            get
-            {
-                return _financialInstitution;
-            }
-            set
-            {
-                _financialInstitution = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class FinancialInstitutionType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class FinancialInstitutionType
     {
         #region Private fields
         private NameType1 _name;
@@ -7771,12 +7289,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class CustomsDeclarationType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class CustomsDeclarationType
     {
         #region Private fields
         private IDType _id;
@@ -7815,329 +7333,13 @@ namespace EInvoice.Xsd.Invoice {
             }
         }
     }
-    
-        
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+                         
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PartyIdentificationType
-    {
-        #region Private fields
-        private IDType _id;
-        #endregion
-        
-        public PartyIdentificationType()
-        {
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PartyNameType
-    {
-        #region Private fields
-        private NameType1 _name;
-        #endregion
-        
-        public PartyNameType()
-        {
-            _name = new NameType1();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public NameType1 Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class AddressType
-    {
-        #region Private fields
-        private IDType _id;
-        private PostboxType _postbox;
-        private RoomType _room;
-        private StreetNameType _streetName;
-        private BlockNameType _blockName;
-        private BuildingNameType _buildingName;
-        private BuildingNumberType _buildingNumber;
-        private CitySubdivisionNameType _citySubdivisionName;
-        private CityNameType _cityName;
-        private PostalZoneType _postalZone;
-        private RegionType _region;
-        private DistrictType _district;
-        private CountryType _country;
-        #endregion
-        
-        public AddressType()
-        {
-            _country = new CountryType();
-            _district = new DistrictType();
-            _region = new RegionType();
-            _postalZone = new PostalZoneType();
-            _cityName = new CityNameType();
-            _citySubdivisionName = new CitySubdivisionNameType();
-            _buildingNumber = new BuildingNumberType();
-            _buildingName = new BuildingNameType();
-            _blockName = new BlockNameType();
-            _streetName = new StreetNameType();
-            _room = new RoomType();
-            _postbox = new PostboxType();
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public PostboxType Postbox
-        {
-            get
-            {
-                return _postbox;
-            }
-            set
-            {
-                _postbox = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public RoomType Room
-        {
-            get
-            {
-                return _room;
-            }
-            set
-            {
-                _room = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public StreetNameType StreetName
-        {
-            get
-            {
-                return _streetName;
-            }
-            set
-            {
-                _streetName = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
-        public BlockNameType BlockName
-        {
-            get
-            {
-                return _blockName;
-            }
-            set
-            {
-                _blockName = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
-        public BuildingNameType BuildingName
-        {
-            get
-            {
-                return _buildingName;
-            }
-            set
-            {
-                _buildingName = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
-        public BuildingNumberType BuildingNumber
-        {
-            get
-            {
-                return _buildingNumber;
-            }
-            set
-            {
-                _buildingNumber = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
-        public CitySubdivisionNameType CitySubdivisionName
-        {
-            get
-            {
-                return _citySubdivisionName;
-            }
-            set
-            {
-                _citySubdivisionName = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
-        public CityNameType CityName
-        {
-            get
-            {
-                return _cityName;
-            }
-            set
-            {
-                _cityName = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
-        public PostalZoneType PostalZone
-        {
-            get
-            {
-                return _postalZone;
-            }
-            set
-            {
-                _postalZone = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
-        public RegionType Region
-        {
-            get
-            {
-                return _region;
-            }
-            set
-            {
-                _region = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
-        public DistrictType District
-        {
-            get
-            {
-                return _district;
-            }
-            set
-            {
-                _district = value;
-            }
-        }
-        
-        [XmlElement(Order=12)]
-        public CountryType Country
-        {
-            get
-            {
-                return _country;
-            }
-            set
-            {
-                _country = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class CountryType
-    {
-        #region Private fields
-        private IdentificationCodeType _identificationCode;
-        private NameType1 _name;
-        #endregion
-        
-        public CountryType()
-        {
-            _name = new NameType1();
-            _identificationCode = new IdentificationCodeType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IdentificationCodeType IdentificationCode
-        {
-            get
-            {
-                return _identificationCode;
-            }
-            set
-            {
-                _identificationCode = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public NameType1 Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="LocationType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class LocationType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="LocationType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class LocationType1
     {
         #region Private fields
         private IDType _id;
@@ -8177,132 +7379,15 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PartyTaxSchemeType
-    {
-        #region Private fields
-        private RegistrationNameType _registrationName;
-        private CompanyIDType _companyID;
-        private TaxSchemeType _taxScheme;
-        #endregion
-        
-        public PartyTaxSchemeType()
-        {
-            _taxScheme = new TaxSchemeType();
-            _companyID = new CompanyIDType();
-            _registrationName = new RegistrationNameType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public RegistrationNameType RegistrationName
-        {
-            get
-            {
-                return _registrationName;
-            }
-            set
-            {
-                _registrationName = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public CompanyIDType CompanyID
-        {
-            get
-            {
-                return _companyID;
-            }
-            set
-            {
-                _companyID = value;
-            }
-        }
-        
-        [XmlElement(Order=2)]
-        public TaxSchemeType TaxScheme
-        {
-            get
-            {
-                return _taxScheme;
-            }
-            set
-            {
-                _taxScheme = value;
-            }
-        }
-    }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class TaxSchemeType
-    {
-        #region Private fields
-        private IDType _id;
-        private NameType1 _name;
-        private TaxTypeCodeType _taxTypeCode;
-        #endregion
-        
-        public TaxSchemeType()
-        {
-            _taxTypeCode = new TaxTypeCodeType();
-            _name = new NameType1();
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public NameType1 Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public TaxTypeCodeType TaxTypeCode
-        {
-            get
-            {
-                return _taxTypeCode;
-            }
-            set
-            {
-                _taxTypeCode = value;
-            }
-        }
-    }
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PartyLegalEntityType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class PartyLegalEntityType
     {
         #region Private fields
         private RegistrationNameType _registrationName;
@@ -8432,547 +7517,547 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SoleProprietorshipIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SoleProprietorshipIndicatorType : IndicatorType
     {
     }
     
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class VariantConstraintIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class VariantConstraintIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class UnknownPriceIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class UnknownPriceIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ToOrderIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ToOrderIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ThirdPartyPayerIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ThirdPartyPayerIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxIncludedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxIncludedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TaxEvidenceIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TaxEvidenceIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class StatusAvailableIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class StatusAvailableIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SplitConsignmentIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SplitConsignmentIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SpecialSecurityIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SpecialSecurityIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReturnableMaterialIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReturnableMaterialIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReturnabilityIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReturnabilityIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RequiredCurriculaIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RequiredCurriculaIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RefrigerationOnIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RefrigerationOnIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RefrigeratedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RefrigeratedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PublishAwardIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PublishAwardIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrizeIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrizeIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PricingUpdateRequestIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PricingUpdateRequestIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PrepaidIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PrepaidIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreCarriageIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreCarriageIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PowerIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PowerIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PartialDeliveryIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PartialDeliveryIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OtherConditionsIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OtherConditionsIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OrderableIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OrderableIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OptionalLineItemIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OptionalLineItemIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OnCarriageIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OnCarriageIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MarkCareIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MarkCareIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MarkAttentionIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MarkAttentionIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LivestockIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LivestockIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LegalStatusIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LegalStatusIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ItemUpdateRequestIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ItemUpdateRequestIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class IndicationIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class IndicationIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HumanFoodIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HumanFoodIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HumanFoodApprovedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HumanFoodApprovedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class HazardousRiskIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class HazardousRiskIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GovernmentAgreementConstraintIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GovernmentAgreementConstraintIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GeneralCargoIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GeneralCargoIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FullyPaidSharesIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FullyPaidSharesIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FrozenDocumentIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FrozenDocumentIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FreeOfChargeIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FreeOfChargeIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class FollowupContractIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class FollowupContractIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DangerousGoodsApprovedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DangerousGoodsApprovedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CustomsImportClassifiedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CustomsImportClassifiedIndicatorType : IndicatorType
     {
     }
     
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContainerizedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContainerizedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsolidatableIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsolidatableIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CompletionIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CompletionIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChargeIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChargeIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CatalogueIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CatalogueIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CandidateReductionConstraintIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CandidateReductionConstraintIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BulkCargoIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BulkCargoIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BindingOnBuyerIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BindingOnBuyerIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BasedOnConsensusIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BasedOnConsensusIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BalanceBroughtForwardIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BalanceBroughtForwardIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BackOrderAllowedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BackOrderAllowedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AuctionConstraintIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AuctionConstraintIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AnimalFoodIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AnimalFoodIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AnimalFoodApprovedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AnimalFoodApprovedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AdValoremIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AdValoremIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class AcceptedIndicatorType : IndicatorType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class AcceptedIndicatorType : IndicatorType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class CorporateRegistrationSchemeType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class CorporateRegistrationSchemeType
     {
         #region Private fields
         private IDType _id;
@@ -9041,133 +8126,14 @@ namespace EInvoice.Xsd.Invoice {
             }
         }
     }
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ContactType
-    {
-        #region Private fields
-        private IDType _id;
-        private NameType1 _name;
-        private TelephoneType _telephone;
-        private TelefaxType _telefax;
-        private ElectronicMailType _electronicMail;
-        private NoteType _note;
-        private List<CommunicationType> _otherCommunication;
-        #endregion
-        
-        public ContactType()
-        {
-            _otherCommunication = new List<CommunicationType>();
-            _note = new NoteType();
-            _electronicMail = new ElectronicMailType();
-            _telefax = new TelefaxType();
-            _telephone = new TelephoneType();
-            _name = new NameType1();
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public NameType1 Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public TelephoneType Telephone
-        {
-            get
-            {
-                return _telephone;
-            }
-            set
-            {
-                _telephone = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public TelefaxType Telefax
-        {
-            get
-            {
-                return _telefax;
-            }
-            set
-            {
-                _telefax = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
-        public ElectronicMailType ElectronicMail
-        {
-            get
-            {
-                return _electronicMail;
-            }
-            set
-            {
-                _electronicMail = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
-        public NoteType Note
-        {
-            get
-            {
-                return _note;
-            }
-            set
-            {
-                _note = value;
-            }
-        }
-        
-        [XmlElement("OtherCommunication", Order=6)]
-        public List<CommunicationType> OtherCommunication
-        {
-            get
-            {
-                return _otherCommunication;
-            }
-            set
-            {
-                _otherCommunication = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class CommunicationType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class CommunicationType
     {
         #region Private fields
         private ChannelCodeType _channelCode;
@@ -9222,12 +8188,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PersonType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class PersonType
     {
         #region Private fields
         private FirstNameType _firstName;
@@ -9359,50 +8325,50 @@ namespace EInvoice.Xsd.Invoice {
                        
            
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class VideoType : BinaryObjectType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class VideoType : BinaryObjectType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class SoundType : BinaryObjectType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class SoundType : BinaryObjectType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class PictureType : BinaryObjectType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class PictureType : BinaryObjectType
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class GraphicType : BinaryObjectType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class GraphicType : BinaryObjectType
     {
     }
     
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class HazardousGoodsTransitType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class HazardousGoodsTransitType
     {
         #region Private fields
         private TransportEmergencyCardCodeType _transportEmergencyCardCode;
@@ -9517,12 +8483,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class TemperatureType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class TemperatureType
     {
         #region Private fields
         private AttributeIDType _attributeID;
@@ -9577,12 +8543,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class TransportEquipmentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class TransportEquipmentType
     {
         #region Private fields
         private IDType _id;
@@ -9637,12 +8603,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PackageType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class PackageType
     {
         #region Private fields
         private IDType _id;
@@ -9787,161 +8753,161 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="QuantityType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class QuantityType2 : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="QuantityType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class QuantityType2 : QuantityType1
     {
     }
     
-    [XmlIncludeAttribute(typeof(VarianceQuantityType))]
-    [XmlIncludeAttribute(typeof(ValueQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalTransportHandlingUnitQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalPackagesQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalPackageQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalMeteredQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalGoodsItemQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalDeliveredQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalConsumedQuantityType))]
-    [XmlIncludeAttribute(typeof(TimeDeltaDaysQuantityType))]
-    [XmlIncludeAttribute(typeof(ThresholdQuantityType))]
-    [XmlIncludeAttribute(typeof(TargetInventoryQuantityType))]
-    [XmlIncludeAttribute(typeof(ShortQuantityType))]
-    [XmlIncludeAttribute(typeof(SharesNumberQuantityType))]
-    [XmlIncludeAttribute(typeof(ReturnableQuantityType))]
-    [XmlIncludeAttribute(typeof(RejectedQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedTenderQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedForeignTenderQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedElectronicTenderQuantityType))]
-    [XmlIncludeAttribute(typeof(QuantityType2))]
-    [XmlIncludeAttribute(typeof(PreviousMeterQuantityType))]
-    [XmlIncludeAttribute(typeof(PerformanceValueQuantityType))]
-    [XmlIncludeAttribute(typeof(PassengerQuantityType))]
-    [XmlIncludeAttribute(typeof(PackQuantityType))]
-    [XmlIncludeAttribute(typeof(OversupplyQuantityType))]
-    [XmlIncludeAttribute(typeof(OutstandingQuantityType))]
-    [XmlIncludeAttribute(typeof(OperatingYearsQuantityType))]
-    [XmlIncludeAttribute(typeof(NormalTemperatureReductionQuantityType))]
-    [XmlIncludeAttribute(typeof(MultipleOrderQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumOrderQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumInventoryQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumBackorderQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumVariantQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumOrderQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumOperatorQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumBackorderQuantityType))]
-    [XmlIncludeAttribute(typeof(LatestMeterQuantityType))]
-    [XmlIncludeAttribute(typeof(InvoicedQuantityType))]
-    [XmlIncludeAttribute(typeof(GasPressureQuantityType))]
-    [XmlIncludeAttribute(typeof(ExpectedQuantityType))]
-    [XmlIncludeAttribute(typeof(ExpectedOperatorQuantityType))]
-    [XmlIncludeAttribute(typeof(EstimatedOverallContractQuantityType))]
-    [XmlIncludeAttribute(typeof(EstimatedConsumedQuantityType))]
-    [XmlIncludeAttribute(typeof(EmployeeQuantityType))]
-    [XmlIncludeAttribute(typeof(DifferenceTemperatureReductionQuantityType))]
-    [XmlIncludeAttribute(typeof(DeliveredQuantityType))]
-    [XmlIncludeAttribute(typeof(DebitedQuantityType))]
-    [XmlIncludeAttribute(typeof(CustomsTariffQuantityType))]
-    [XmlIncludeAttribute(typeof(CrewQuantityType))]
-    [XmlIncludeAttribute(typeof(CreditedQuantityType))]
-    [XmlIncludeAttribute(typeof(ContentUnitQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsumptionWaterQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsumptionEnergyQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsumerUnitQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsignmentQuantityType))]
-    [XmlIncludeAttribute(typeof(ChildConsignmentQuantityType))]
-    [XmlIncludeAttribute(typeof(ChargeableQuantityType))]
-    [XmlIncludeAttribute(typeof(BatchQuantityType))]
-    [XmlIncludeAttribute(typeof(BasicConsumedQuantityType))]
-    [XmlIncludeAttribute(typeof(BaseQuantityType))]
-    [XmlIncludeAttribute(typeof(BackorderQuantityType))]
-    [XmlIncludeAttribute(typeof(ActualTemperatureReductionQuantityType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(VarianceQuantityType))]
+    [XmlInclude(typeof(ValueQuantityType))]
+    [XmlInclude(typeof(TotalTransportHandlingUnitQuantityType))]
+    [XmlInclude(typeof(TotalPackagesQuantityType))]
+    [XmlInclude(typeof(TotalPackageQuantityType))]
+    [XmlInclude(typeof(TotalMeteredQuantityType))]
+    [XmlInclude(typeof(TotalGoodsItemQuantityType))]
+    [XmlInclude(typeof(TotalDeliveredQuantityType))]
+    [XmlInclude(typeof(TotalConsumedQuantityType))]
+    [XmlInclude(typeof(TimeDeltaDaysQuantityType))]
+    [XmlInclude(typeof(ThresholdQuantityType))]
+    [XmlInclude(typeof(TargetInventoryQuantityType))]
+    [XmlInclude(typeof(ShortQuantityType))]
+    [XmlInclude(typeof(SharesNumberQuantityType))]
+    [XmlInclude(typeof(ReturnableQuantityType))]
+    [XmlInclude(typeof(RejectedQuantityType))]
+    [XmlInclude(typeof(ReceivedTenderQuantityType))]
+    [XmlInclude(typeof(ReceivedQuantityType))]
+    [XmlInclude(typeof(ReceivedForeignTenderQuantityType))]
+    [XmlInclude(typeof(ReceivedElectronicTenderQuantityType))]
+    [XmlInclude(typeof(QuantityType2))]
+    [XmlInclude(typeof(PreviousMeterQuantityType))]
+    [XmlInclude(typeof(PerformanceValueQuantityType))]
+    [XmlInclude(typeof(PassengerQuantityType))]
+    [XmlInclude(typeof(PackQuantityType))]
+    [XmlInclude(typeof(OversupplyQuantityType))]
+    [XmlInclude(typeof(OutstandingQuantityType))]
+    [XmlInclude(typeof(OperatingYearsQuantityType))]
+    [XmlInclude(typeof(NormalTemperatureReductionQuantityType))]
+    [XmlInclude(typeof(MultipleOrderQuantityType))]
+    [XmlInclude(typeof(MinimumQuantityType))]
+    [XmlInclude(typeof(MinimumOrderQuantityType))]
+    [XmlInclude(typeof(MinimumInventoryQuantityType))]
+    [XmlInclude(typeof(MinimumBackorderQuantityType))]
+    [XmlInclude(typeof(MaximumVariantQuantityType))]
+    [XmlInclude(typeof(MaximumQuantityType))]
+    [XmlInclude(typeof(MaximumOrderQuantityType))]
+    [XmlInclude(typeof(MaximumOperatorQuantityType))]
+    [XmlInclude(typeof(MaximumBackorderQuantityType))]
+    [XmlInclude(typeof(LatestMeterQuantityType))]
+    [XmlInclude(typeof(InvoicedQuantityType))]
+    [XmlInclude(typeof(GasPressureQuantityType))]
+    [XmlInclude(typeof(ExpectedQuantityType))]
+    [XmlInclude(typeof(ExpectedOperatorQuantityType))]
+    [XmlInclude(typeof(EstimatedOverallContractQuantityType))]
+    [XmlInclude(typeof(EstimatedConsumedQuantityType))]
+    [XmlInclude(typeof(EmployeeQuantityType))]
+    [XmlInclude(typeof(DifferenceTemperatureReductionQuantityType))]
+    [XmlInclude(typeof(DeliveredQuantityType))]
+    [XmlInclude(typeof(DebitedQuantityType))]
+    [XmlInclude(typeof(CustomsTariffQuantityType))]
+    [XmlInclude(typeof(CrewQuantityType))]
+    [XmlInclude(typeof(CreditedQuantityType))]
+    [XmlInclude(typeof(ContentUnitQuantityType))]
+    [XmlInclude(typeof(ConsumptionWaterQuantityType))]
+    [XmlInclude(typeof(ConsumptionEnergyQuantityType))]
+    [XmlInclude(typeof(ConsumerUnitQuantityType))]
+    [XmlInclude(typeof(ConsignmentQuantityType))]
+    [XmlInclude(typeof(ChildConsignmentQuantityType))]
+    [XmlInclude(typeof(ChargeableQuantityType))]
+    [XmlInclude(typeof(BatchQuantityType))]
+    [XmlInclude(typeof(BasicConsumedQuantityType))]
+    [XmlInclude(typeof(BaseQuantityType))]
+    [XmlInclude(typeof(BackorderQuantityType))]
+    [XmlInclude(typeof(ActualTemperatureReductionQuantityType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(TypeName="QuantityType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class QuantityType1 : QuantityType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(TypeName="QuantityType", Namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public class QuantityType1 : QuantityType
     {
     }
     
-    [XmlIncludeAttribute(typeof(QuantityType1))]
-    [XmlIncludeAttribute(typeof(VarianceQuantityType))]
-    [XmlIncludeAttribute(typeof(ValueQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalTransportHandlingUnitQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalPackagesQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalPackageQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalMeteredQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalGoodsItemQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalDeliveredQuantityType))]
-    [XmlIncludeAttribute(typeof(TotalConsumedQuantityType))]
-    [XmlIncludeAttribute(typeof(TimeDeltaDaysQuantityType))]
-    [XmlIncludeAttribute(typeof(ThresholdQuantityType))]
-    [XmlIncludeAttribute(typeof(TargetInventoryQuantityType))]
-    [XmlIncludeAttribute(typeof(ShortQuantityType))]
-    [XmlIncludeAttribute(typeof(SharesNumberQuantityType))]
-    [XmlIncludeAttribute(typeof(ReturnableQuantityType))]
-    [XmlIncludeAttribute(typeof(RejectedQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedTenderQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedForeignTenderQuantityType))]
-    [XmlIncludeAttribute(typeof(ReceivedElectronicTenderQuantityType))]
-    [XmlIncludeAttribute(typeof(QuantityType2))]
-    [XmlIncludeAttribute(typeof(PreviousMeterQuantityType))]
-    [XmlIncludeAttribute(typeof(PerformanceValueQuantityType))]
-    [XmlIncludeAttribute(typeof(PassengerQuantityType))]
-    [XmlIncludeAttribute(typeof(PackQuantityType))]
-    [XmlIncludeAttribute(typeof(OversupplyQuantityType))]
-    [XmlIncludeAttribute(typeof(OutstandingQuantityType))]
-    [XmlIncludeAttribute(typeof(OperatingYearsQuantityType))]
-    [XmlIncludeAttribute(typeof(NormalTemperatureReductionQuantityType))]
-    [XmlIncludeAttribute(typeof(MultipleOrderQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumOrderQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumInventoryQuantityType))]
-    [XmlIncludeAttribute(typeof(MinimumBackorderQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumVariantQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumOrderQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumOperatorQuantityType))]
-    [XmlIncludeAttribute(typeof(MaximumBackorderQuantityType))]
-    [XmlIncludeAttribute(typeof(LatestMeterQuantityType))]
-    [XmlIncludeAttribute(typeof(InvoicedQuantityType))]
-    [XmlIncludeAttribute(typeof(GasPressureQuantityType))]
-    [XmlIncludeAttribute(typeof(ExpectedQuantityType))]
-    [XmlIncludeAttribute(typeof(ExpectedOperatorQuantityType))]
-    [XmlIncludeAttribute(typeof(EstimatedOverallContractQuantityType))]
-    [XmlIncludeAttribute(typeof(EstimatedConsumedQuantityType))]
-    [XmlIncludeAttribute(typeof(EmployeeQuantityType))]
-    [XmlIncludeAttribute(typeof(DifferenceTemperatureReductionQuantityType))]
-    [XmlIncludeAttribute(typeof(DeliveredQuantityType))]
-    [XmlIncludeAttribute(typeof(DebitedQuantityType))]
-    [XmlIncludeAttribute(typeof(CustomsTariffQuantityType))]
-    [XmlIncludeAttribute(typeof(CrewQuantityType))]
-    [XmlIncludeAttribute(typeof(CreditedQuantityType))]
-    [XmlIncludeAttribute(typeof(ContentUnitQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsumptionWaterQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsumptionEnergyQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsumerUnitQuantityType))]
-    [XmlIncludeAttribute(typeof(ConsignmentQuantityType))]
-    [XmlIncludeAttribute(typeof(ChildConsignmentQuantityType))]
-    [XmlIncludeAttribute(typeof(ChargeableQuantityType))]
-    [XmlIncludeAttribute(typeof(BatchQuantityType))]
-    [XmlIncludeAttribute(typeof(BasicConsumedQuantityType))]
-    [XmlIncludeAttribute(typeof(BaseQuantityType))]
-    [XmlIncludeAttribute(typeof(BackorderQuantityType))]
-    [XmlIncludeAttribute(typeof(ActualTemperatureReductionQuantityType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(QuantityType1))]
+    [XmlInclude(typeof(VarianceQuantityType))]
+    [XmlInclude(typeof(ValueQuantityType))]
+    [XmlInclude(typeof(TotalTransportHandlingUnitQuantityType))]
+    [XmlInclude(typeof(TotalPackagesQuantityType))]
+    [XmlInclude(typeof(TotalPackageQuantityType))]
+    [XmlInclude(typeof(TotalMeteredQuantityType))]
+    [XmlInclude(typeof(TotalGoodsItemQuantityType))]
+    [XmlInclude(typeof(TotalDeliveredQuantityType))]
+    [XmlInclude(typeof(TotalConsumedQuantityType))]
+    [XmlInclude(typeof(TimeDeltaDaysQuantityType))]
+    [XmlInclude(typeof(ThresholdQuantityType))]
+    [XmlInclude(typeof(TargetInventoryQuantityType))]
+    [XmlInclude(typeof(ShortQuantityType))]
+    [XmlInclude(typeof(SharesNumberQuantityType))]
+    [XmlInclude(typeof(ReturnableQuantityType))]
+    [XmlInclude(typeof(RejectedQuantityType))]
+    [XmlInclude(typeof(ReceivedTenderQuantityType))]
+    [XmlInclude(typeof(ReceivedQuantityType))]
+    [XmlInclude(typeof(ReceivedForeignTenderQuantityType))]
+    [XmlInclude(typeof(ReceivedElectronicTenderQuantityType))]
+    [XmlInclude(typeof(QuantityType2))]
+    [XmlInclude(typeof(PreviousMeterQuantityType))]
+    [XmlInclude(typeof(PerformanceValueQuantityType))]
+    [XmlInclude(typeof(PassengerQuantityType))]
+    [XmlInclude(typeof(PackQuantityType))]
+    [XmlInclude(typeof(OversupplyQuantityType))]
+    [XmlInclude(typeof(OutstandingQuantityType))]
+    [XmlInclude(typeof(OperatingYearsQuantityType))]
+    [XmlInclude(typeof(NormalTemperatureReductionQuantityType))]
+    [XmlInclude(typeof(MultipleOrderQuantityType))]
+    [XmlInclude(typeof(MinimumQuantityType))]
+    [XmlInclude(typeof(MinimumOrderQuantityType))]
+    [XmlInclude(typeof(MinimumInventoryQuantityType))]
+    [XmlInclude(typeof(MinimumBackorderQuantityType))]
+    [XmlInclude(typeof(MaximumVariantQuantityType))]
+    [XmlInclude(typeof(MaximumQuantityType))]
+    [XmlInclude(typeof(MaximumOrderQuantityType))]
+    [XmlInclude(typeof(MaximumOperatorQuantityType))]
+    [XmlInclude(typeof(MaximumBackorderQuantityType))]
+    [XmlInclude(typeof(LatestMeterQuantityType))]
+    [XmlInclude(typeof(InvoicedQuantityType))]
+    [XmlInclude(typeof(GasPressureQuantityType))]
+    [XmlInclude(typeof(ExpectedQuantityType))]
+    [XmlInclude(typeof(ExpectedOperatorQuantityType))]
+    [XmlInclude(typeof(EstimatedOverallContractQuantityType))]
+    [XmlInclude(typeof(EstimatedConsumedQuantityType))]
+    [XmlInclude(typeof(EmployeeQuantityType))]
+    [XmlInclude(typeof(DifferenceTemperatureReductionQuantityType))]
+    [XmlInclude(typeof(DeliveredQuantityType))]
+    [XmlInclude(typeof(DebitedQuantityType))]
+    [XmlInclude(typeof(CustomsTariffQuantityType))]
+    [XmlInclude(typeof(CrewQuantityType))]
+    [XmlInclude(typeof(CreditedQuantityType))]
+    [XmlInclude(typeof(ContentUnitQuantityType))]
+    [XmlInclude(typeof(ConsumptionWaterQuantityType))]
+    [XmlInclude(typeof(ConsumptionEnergyQuantityType))]
+    [XmlInclude(typeof(ConsumerUnitQuantityType))]
+    [XmlInclude(typeof(ConsignmentQuantityType))]
+    [XmlInclude(typeof(ChildConsignmentQuantityType))]
+    [XmlInclude(typeof(ChargeableQuantityType))]
+    [XmlInclude(typeof(BatchQuantityType))]
+    [XmlInclude(typeof(BasicConsumedQuantityType))]
+    [XmlInclude(typeof(BaseQuantityType))]
+    [XmlInclude(typeof(BackorderQuantityType))]
+    [XmlInclude(typeof(ActualTemperatureReductionQuantityType))]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public partial class QuantityType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    public class QuantityType
     {
         #region Private fields
         private string _unitCode;
@@ -10017,588 +8983,579 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class VarianceQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class VarianceQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ValueQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ValueQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalTransportHandlingUnitQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalTransportHandlingUnitQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalPackagesQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalPackagesQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalPackageQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalPackageQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalMeteredQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalMeteredQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalGoodsItemQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalGoodsItemQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalDeliveredQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalDeliveredQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TotalConsumedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TotalConsumedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TimeDeltaDaysQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TimeDeltaDaysQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ThresholdQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ThresholdQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class TargetInventoryQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class TargetInventoryQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ShortQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ShortQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class SharesNumberQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class SharesNumberQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReturnableQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReturnableQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class RejectedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class RejectedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReceivedTenderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReceivedTenderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReceivedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReceivedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReceivedForeignTenderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReceivedForeignTenderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ReceivedElectronicTenderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ReceivedElectronicTenderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PreviousMeterQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PreviousMeterQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PerformanceValueQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PerformanceValueQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PassengerQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PassengerQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class PackQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class PackQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OversupplyQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OversupplyQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OutstandingQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OutstandingQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class OperatingYearsQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class OperatingYearsQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class NormalTemperatureReductionQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class NormalTemperatureReductionQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MultipleOrderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MultipleOrderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumOrderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumOrderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumInventoryQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumInventoryQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MinimumBackorderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MinimumBackorderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumVariantQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumVariantQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumOrderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumOrderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumOperatorQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumOperatorQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class MaximumBackorderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class MaximumBackorderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class LatestMeterQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class LatestMeterQuantityType : QuantityType1
     {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class InvoicedQuantityType : QuantityType1
-    {
-    }
+    }       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class GasPressureQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class GasPressureQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExpectedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExpectedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ExpectedOperatorQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ExpectedOperatorQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedOverallContractQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedOverallContractQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EstimatedConsumedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EstimatedConsumedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class EmployeeQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class EmployeeQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DifferenceTemperatureReductionQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DifferenceTemperatureReductionQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DeliveredQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DeliveredQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class DebitedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class DebitedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CustomsTariffQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CustomsTariffQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CrewQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CrewQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class CreditedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class CreditedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ContentUnitQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ContentUnitQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionWaterQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionWaterQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumptionEnergyQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumptionEnergyQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsumerUnitQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsumerUnitQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ConsignmentQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ConsignmentQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChildConsignmentQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChildConsignmentQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ChargeableQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ChargeableQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BatchQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BatchQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BasicConsumedQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BasicConsumedQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BaseQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BaseQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class BackorderQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class BackorderQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-    public partial class ActualTemperatureReductionQuantityType : QuantityType1
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+    public class ActualTemperatureReductionQuantityType : QuantityType1
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class GoodsItemType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class GoodsItemType
     {
         #region Private fields
         private IDType _id;
@@ -11027,403 +9984,15 @@ namespace EInvoice.Xsd.Invoice {
             }
         }
     }
+          
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ItemType
-    {
-        #region Private fields
-        private DescriptionType _description;
-        private NameType1 _name;
-        private KeywordType _keyword;
-        private BrandNameType _brandName;
-        private ModelNameType _modelName;
-        private ItemIdentificationType _buyersItemIdentification;
-        private ItemIdentificationType _sellersItemIdentification;
-        private ItemIdentificationType _manufacturersItemIdentification;
-        private List<ItemIdentificationType> _additionalItemIdentification;
-        private CountryType _originCountry;
-        private List<CommodityClassificationType> _commodityClassification;
-        private List<ItemInstanceType> _itemInstance;
-        #endregion
-        
-        public ItemType()
-        {
-            _itemInstance = new List<ItemInstanceType>();
-            _commodityClassification = new List<CommodityClassificationType>();
-            _originCountry = new CountryType();
-            _additionalItemIdentification = new List<ItemIdentificationType>();
-            _manufacturersItemIdentification = new ItemIdentificationType();
-            _sellersItemIdentification = new ItemIdentificationType();
-            _buyersItemIdentification = new ItemIdentificationType();
-            _modelName = new ModelNameType();
-            _brandName = new BrandNameType();
-            _keyword = new KeywordType();
-            _name = new NameType1();
-            _description = new DescriptionType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public DescriptionType Description
-        {
-            get
-            {
-                return _description;
-            }
-            set
-            {
-                _description = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public NameType1 Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public KeywordType Keyword
-        {
-            get
-            {
-                return _keyword;
-            }
-            set
-            {
-                _keyword = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public BrandNameType BrandName
-        {
-            get
-            {
-                return _brandName;
-            }
-            set
-            {
-                _brandName = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
-        public ModelNameType ModelName
-        {
-            get
-            {
-                return _modelName;
-            }
-            set
-            {
-                _modelName = value;
-            }
-        }
-        
-        [XmlElement(Order=5)]
-        public ItemIdentificationType BuyersItemIdentification
-        {
-            get
-            {
-                return _buyersItemIdentification;
-            }
-            set
-            {
-                _buyersItemIdentification = value;
-            }
-        }
-        
-        [XmlElement(Order=6)]
-        public ItemIdentificationType SellersItemIdentification
-        {
-            get
-            {
-                return _sellersItemIdentification;
-            }
-            set
-            {
-                _sellersItemIdentification = value;
-            }
-        }
-        
-        [XmlElement(Order=7)]
-        public ItemIdentificationType ManufacturersItemIdentification
-        {
-            get
-            {
-                return _manufacturersItemIdentification;
-            }
-            set
-            {
-                _manufacturersItemIdentification = value;
-            }
-        }
-        
-        [XmlElement("AdditionalItemIdentification", Order=8)]
-        public List<ItemIdentificationType> AdditionalItemIdentification
-        {
-            get
-            {
-                return _additionalItemIdentification;
-            }
-            set
-            {
-                _additionalItemIdentification = value;
-            }
-        }
-        
-        [XmlElement(Order=9)]
-        public CountryType OriginCountry
-        {
-            get
-            {
-                return _originCountry;
-            }
-            set
-            {
-                _originCountry = value;
-            }
-        }
-        
-        [XmlElement("CommodityClassification", Order=10)]
-        public List<CommodityClassificationType> CommodityClassification
-        {
-            get
-            {
-                return _commodityClassification;
-            }
-            set
-            {
-                _commodityClassification = value;
-            }
-        }
-        
-        [XmlElement("ItemInstance", Order=11)]
-        public List<ItemInstanceType> ItemInstance
-        {
-            get
-            {
-                return _itemInstance;
-            }
-            set
-            {
-                _itemInstance = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ItemIdentificationType
-    {
-        #region Private fields
-        private IDType _id;
-        #endregion
-        
-        public ItemIdentificationType()
-        {
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class CommodityClassificationType
-    {
-        #region Private fields
-        private ItemClassificationCodeType _itemClassificationCode;
-        #endregion
-        
-        public CommodityClassificationType()
-        {
-            _itemClassificationCode = new ItemClassificationCodeType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public ItemClassificationCodeType ItemClassificationCode
-        {
-            get
-            {
-                return _itemClassificationCode;
-            }
-            set
-            {
-                _itemClassificationCode = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ItemInstanceType
-    {
-        #region Private fields
-        private ProductTraceIDType _productTraceID;
-        private ManufactureDateType _manufactureDate;
-        private ManufactureTimeType _manufactureTime;
-        private BestBeforeDateType _bestBeforeDate;
-        private RegistrationIDType _registrationID;
-        private SerialIDType _serialID;
-        private List<ItemPropertyType> _additionalItemProperty;
-        private LotIdentificationType _lotIdentification;
-        #endregion
-        
-        public ItemInstanceType()
-        {
-            _lotIdentification = new LotIdentificationType();
-            _additionalItemProperty = new List<ItemPropertyType>();
-            _serialID = new SerialIDType();
-            _registrationID = new RegistrationIDType();
-            _bestBeforeDate = new BestBeforeDateType();
-            _manufactureTime = new ManufactureTimeType();
-            _manufactureDate = new ManufactureDateType();
-            _productTraceID = new ProductTraceIDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public ProductTraceIDType ProductTraceID
-        {
-            get
-            {
-                return _productTraceID;
-            }
-            set
-            {
-                _productTraceID = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public ManufactureDateType ManufactureDate
-        {
-            get
-            {
-                return _manufactureDate;
-            }
-            set
-            {
-                _manufactureDate = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public ManufactureTimeType ManufactureTime
-        {
-            get
-            {
-                return _manufactureTime;
-            }
-            set
-            {
-                _manufactureTime = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public BestBeforeDateType BestBeforeDate
-        {
-            get
-            {
-                return _bestBeforeDate;
-            }
-            set
-            {
-                _bestBeforeDate = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
-        public RegistrationIDType RegistrationID
-        {
-            get
-            {
-                return _registrationID;
-            }
-            set
-            {
-                _registrationID = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
-        public SerialIDType SerialID
-        {
-            get
-            {
-                return _serialID;
-            }
-            set
-            {
-                _serialID = value;
-            }
-        }
-        
-        [XmlElement("AdditionalItemProperty", Order=6)]
-        public List<ItemPropertyType> AdditionalItemProperty
-        {
-            get
-            {
-                return _additionalItemProperty;
-            }
-            set
-            {
-                _additionalItemProperty = value;
-            }
-        }
-        
-        [XmlElement(Order=7)]
-        public LotIdentificationType LotIdentification
-        {
-            get
-            {
-                return _lotIdentification;
-            }
-            set
-            {
-                _lotIdentification = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ItemPropertyType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class ItemPropertyType
     {
         #region Private fields
         private IDType _id;
@@ -11628,12 +10197,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ItemPropertyGroupType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class ItemPropertyGroupType
     {
         #region Private fields
         private IDType _id;
@@ -11688,12 +10257,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class DimensionType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class DimensionType
     {
         #region Private fields
         private AttributeIDType _attributeID;
@@ -11778,12 +10347,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ItemPropertyRangeType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class ItemPropertyRangeType
     {
         #region Private fields
         private MinimumValueType _minimumValue;
@@ -11823,12 +10392,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class LotIdentificationType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class LotIdentificationType
     {
         #region Private fields
         private LotNumberIDType _lotNumberID;
@@ -11883,418 +10452,15 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
       
+       
+       
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class InvoiceLineType
-    {
-        #region Private fields
-        private IDType _id;
-        private List<NoteType> _note;
-        private InvoicedQuantityType _invoicedQuantity;
-        private LineExtensionAmountType _lineExtensionAmount;
-        private List<OrderLineReferenceType> _orderLineReference;
-        private List<LineReferenceType> _despatchLineReference;
-        private List<LineReferenceType> _receiptLineReference;
-        private List<DeliveryType> _delivery;
-        private List<AllowanceChargeType> _allowanceCharge;
-        private TaxTotalType _taxTotal;
-        private List<TaxTotalType> _withholdingTaxTotal;
-        private ItemType _item;
-        private PriceType _price;
-        private List<InvoiceLineType> _subInvoiceLine;
-        #endregion
-        
-        public InvoiceLineType()
-        {
-            _subInvoiceLine = new List<InvoiceLineType>();
-            _price = new PriceType();
-            _item = new ItemType();
-            _withholdingTaxTotal = new List<TaxTotalType>();
-            _taxTotal = new TaxTotalType();
-            _allowanceCharge = new List<AllowanceChargeType>();
-            _delivery = new List<DeliveryType>();
-            _receiptLineReference = new List<LineReferenceType>();
-            _despatchLineReference = new List<LineReferenceType>();
-            _orderLineReference = new List<OrderLineReferenceType>();
-            _lineExtensionAmount = new LineExtensionAmountType();
-            _invoicedQuantity = new InvoicedQuantityType();
-            _note = new List<NoteType>();
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-        
-        [XmlElement("Note", Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public List<NoteType> Note
-        {
-            get
-            {
-                return _note;
-            }
-            set
-            {
-                _note = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public InvoicedQuantityType InvoicedQuantity
-        {
-            get
-            {
-                return _invoicedQuantity;
-            }
-            set
-            {
-                _invoicedQuantity = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public LineExtensionAmountType LineExtensionAmount
-        {
-            get
-            {
-                return _lineExtensionAmount;
-            }
-            set
-            {
-                _lineExtensionAmount = value;
-            }
-        }
-        
-        [XmlElement("OrderLineReference", Order=4)]
-        public List<OrderLineReferenceType> OrderLineReference
-        {
-            get
-            {
-                return _orderLineReference;
-            }
-            set
-            {
-                _orderLineReference = value;
-            }
-        }
-        
-        [XmlElement("DespatchLineReference", Order=5)]
-        public List<LineReferenceType> DespatchLineReference
-        {
-            get
-            {
-                return _despatchLineReference;
-            }
-            set
-            {
-                _despatchLineReference = value;
-            }
-        }
-        
-        [XmlElement("ReceiptLineReference", Order=6)]
-        public List<LineReferenceType> ReceiptLineReference
-        {
-            get
-            {
-                return _receiptLineReference;
-            }
-            set
-            {
-                _receiptLineReference = value;
-            }
-        }
-        
-        [XmlElement("Delivery", Order=7)]
-        public List<DeliveryType> Delivery
-        {
-            get
-            {
-                return _delivery;
-            }
-            set
-            {
-                _delivery = value;
-            }
-        }
-        
-        [XmlElement("AllowanceCharge", Order=8)]
-        public List<AllowanceChargeType> AllowanceCharge
-        {
-            get
-            {
-                return _allowanceCharge;
-            }
-            set
-            {
-                _allowanceCharge = value;
-            }
-        }
-        
-        [XmlElement(Order=9)]
-        public TaxTotalType TaxTotal
-        {
-            get
-            {
-                return _taxTotal;
-            }
-            set
-            {
-                _taxTotal = value;
-            }
-        }
-        
-        [XmlElement("WithholdingTaxTotal", Order=10)]
-        public List<TaxTotalType> WithholdingTaxTotal
-        {
-            get
-            {
-                return _withholdingTaxTotal;
-            }
-            set
-            {
-                _withholdingTaxTotal = value;
-            }
-        }
-        
-        [XmlElement(Order=11)]
-        public ItemType Item
-        {
-            get
-            {
-                return _item;
-            }
-            set
-            {
-                _item = value;
-            }
-        }
-        
-        [XmlElement(Order=12)]
-        public PriceType Price
-        {
-            get
-            {
-                return _price;
-            }
-            set
-            {
-                _price = value;
-            }
-        }
-        
-        [XmlElement("SubInvoiceLine", Order=13)]
-        public List<InvoiceLineType> SubInvoiceLine
-        {
-            get
-            {
-                return _subInvoiceLine;
-            }
-            set
-            {
-                _subInvoiceLine = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class OrderLineReferenceType
-    {
-        #region Private fields
-        private LineIDType _lineID;
-        private SalesOrderLineIDType _salesOrderLineID;
-        private UUIDType _uUID;
-        private LineStatusCodeType _lineStatusCode;
-        private OrderReferenceType _orderReference;
-        #endregion
-        
-        public OrderLineReferenceType()
-        {
-            _orderReference = new OrderReferenceType();
-            _lineStatusCode = new LineStatusCodeType();
-            _uUID = new UUIDType();
-            _salesOrderLineID = new SalesOrderLineIDType();
-            _lineID = new LineIDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public LineIDType LineID
-        {
-            get
-            {
-                return _lineID;
-            }
-            set
-            {
-                _lineID = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public SalesOrderLineIDType SalesOrderLineID
-        {
-            get
-            {
-                return _salesOrderLineID;
-            }
-            set
-            {
-                _salesOrderLineID = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public UUIDType UUID
-        {
-            get
-            {
-                return _uUID;
-            }
-            set
-            {
-                _uUID = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public LineStatusCodeType LineStatusCode
-        {
-            get
-            {
-                return _lineStatusCode;
-            }
-            set
-            {
-                _lineStatusCode = value;
-            }
-        }
-        
-        [XmlElement(Order=4)]
-        public OrderReferenceType OrderReference
-        {
-            get
-            {
-                return _orderReference;
-            }
-            set
-            {
-                _orderReference = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class OrderReferenceType
-    {
-        #region Private fields
-        private IDType _id;
-        private SalesOrderIDType _salesOrderID;
-        private IssueDateType _issueDate;
-        private OrderTypeCodeType _orderTypeCode;
-        private DocumentReferenceType _documentReference;
-        #endregion
-        
-        public OrderReferenceType()
-        {
-            _documentReference = new DocumentReferenceType();
-            _orderTypeCode = new OrderTypeCodeType();
-            _issueDate = new IssueDateType();
-            _salesOrderID = new SalesOrderIDType();
-            _id = new IDType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IDType ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public SalesOrderIDType SalesOrderID
-        {
-            get
-            {
-                return _salesOrderID;
-            }
-            set
-            {
-                _salesOrderID = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public IssueDateType IssueDate
-        {
-            get
-            {
-                return _issueDate;
-            }
-            set
-            {
-                _issueDate = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public OrderTypeCodeType OrderTypeCode
-        {
-            get
-            {
-                return _orderTypeCode;
-            }
-            set
-            {
-                _orderTypeCode = value;
-            }
-        }
-        
-        [XmlElement(Order=4)]
-        public DocumentReferenceType DocumentReference
-        {
-            get
-            {
-                return _documentReference;
-            }
-            set
-            {
-                _documentReference = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class LineReferenceType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class LineReferenceType
     {
         #region Private fields
         private LineIDType _lineID;
@@ -12351,12 +10517,12 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class DespatchType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class DespatchType
     {
         #region Private fields
         private IDType _id;
@@ -12486,12 +10652,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class DeliveryTermsType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class DeliveryTermsType
     {
         #region Private fields
         private IDType _id;
@@ -12546,12 +10712,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ShipmentType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class ShipmentType
     {
         #region Private fields
         private IDType _id;
@@ -12891,12 +11057,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class ShipmentStageType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class ShipmentStageType
     {
         #region Private fields
         private IDType _id;
@@ -13026,12 +11192,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class TransportMeansType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class TransportMeansType
     {
         #region Private fields
         private JourneyIDType _journeyID;
@@ -13236,12 +11402,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class StowageType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class StowageType
     {
         #region Private fields
         private LocationIDType _locationID;
@@ -13296,12 +11462,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class AirTransportType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class AirTransportType
     {
         #region Private fields
         private AircraftIDType _aircraftID;
@@ -13326,12 +11492,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class RoadTransportType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class RoadTransportType
     {
         #region Private fields
         private LicensePlateIDType _licensePlateID;
@@ -13356,12 +11522,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class RailTransportType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class RailTransportType
     {
         #region Private fields
         private TrainIDType _trainID;
@@ -13401,12 +11567,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class MaritimeTransportType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class MaritimeTransportType
     {
         #region Private fields
         private VesselIDType _vesselID;
@@ -13536,12 +11702,12 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class TransportHandlingUnitType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class TransportHandlingUnitType
     {
         #region Private fields
         private IDType _id;
@@ -13852,254 +12018,19 @@ namespace EInvoice.Xsd.Invoice {
     }
     
         
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class TaxSubtotalType
-    {
-        #region Private fields
-        private TaxableAmountType _taxableAmount;
-        private TaxAmountType _taxAmount;
-        private CalculationSequenceNumericType _calculationSequenceNumeric;
-        private TransactionCurrencyTaxAmountType _transactionCurrencyTaxAmount;
-        private PercentType1 _percent;
-        private BaseUnitMeasureType _baseUnitMeasure;
-        private PerUnitAmountType _perUnitAmount;
-        private TaxCategoryType _taxCategory;
-        #endregion
-        
-        public TaxSubtotalType()
-        {
-            _taxCategory = new TaxCategoryType();
-            _perUnitAmount = new PerUnitAmountType();
-            _baseUnitMeasure = new BaseUnitMeasureType();
-            _percent = new PercentType1();
-            _transactionCurrencyTaxAmount = new TransactionCurrencyTaxAmountType();
-            _calculationSequenceNumeric = new CalculationSequenceNumericType();
-            _taxAmount = new TaxAmountType();
-            _taxableAmount = new TaxableAmountType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public TaxableAmountType TaxableAmount
-        {
-            get
-            {
-                return _taxableAmount;
-            }
-            set
-            {
-                _taxableAmount = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public TaxAmountType TaxAmount
-        {
-            get
-            {
-                return _taxAmount;
-            }
-            set
-            {
-                _taxAmount = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public CalculationSequenceNumericType CalculationSequenceNumeric
-        {
-            get
-            {
-                return _calculationSequenceNumeric;
-            }
-            set
-            {
-                _calculationSequenceNumeric = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
-        public TransactionCurrencyTaxAmountType TransactionCurrencyTaxAmount
-        {
-            get
-            {
-                return _transactionCurrencyTaxAmount;
-            }
-            set
-            {
-                _transactionCurrencyTaxAmount = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
-        public PercentType1 Percent
-        {
-            get
-            {
-                return _percent;
-            }
-            set
-            {
-                _percent = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
-        public BaseUnitMeasureType BaseUnitMeasure
-        {
-            get
-            {
-                return _baseUnitMeasure;
-            }
-            set
-            {
-                _baseUnitMeasure = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
-        public PerUnitAmountType PerUnitAmount
-        {
-            get
-            {
-                return _perUnitAmount;
-            }
-            set
-            {
-                _perUnitAmount = value;
-            }
-        }
-        
-        [XmlElement(Order=7)]
-        public TaxCategoryType TaxCategory
-        {
-            get
-            {
-                return _taxCategory;
-            }
-            set
-            {
-                _taxCategory = value;
-            }
-        }
-    }
+  
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class TaxCategoryType
-    {
-        #region Private fields
-        private NameType1 _name;
-        private TaxExemptionReasonCodeType _taxExemptionReasonCode;
-        private TaxExemptionReasonType _taxExemptionReason;
-        private TaxSchemeType _taxScheme;
-        #endregion
-        
-        public TaxCategoryType()
-        {
-            _taxScheme = new TaxSchemeType();
-            _taxExemptionReason = new TaxExemptionReasonType();
-            _taxExemptionReasonCode = new TaxExemptionReasonCodeType();
-            _name = new NameType1();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public NameType1 Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
-        public TaxExemptionReasonCodeType TaxExemptionReasonCode
-        {
-            get
-            {
-                return _taxExemptionReasonCode;
-            }
-            set
-            {
-                _taxExemptionReasonCode = value;
-            }
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
-        public TaxExemptionReasonType TaxExemptionReason
-        {
-            get
-            {
-                return _taxExemptionReason;
-            }
-            set
-            {
-                _taxExemptionReason = value;
-            }
-        }
-        
-        [XmlElement(Order=3)]
-        public TaxSchemeType TaxScheme
-        {
-            get
-            {
-                return _taxScheme;
-            }
-            set
-            {
-                _taxScheme = value;
-            }
-        }
-    }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [Serializable]
-    [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class PriceType
-    {
-        #region Private fields
-        private PriceAmountType _priceAmount;
-        #endregion
         
-        public PriceType()
-        {
-            _priceAmount = new PriceAmountType();
-        }
-        
-        [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public PriceAmountType PriceAmount
-        {
-            get
-            {
-                return _priceAmount;
-            }
-            set
-            {
-                _priceAmount = value;
-            }
-        }
-    }
     
              
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-    public partial class BillingReferenceLineType
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    public class BillingReferenceLineType
     {
         #region Private fields
         private IDType _id;
