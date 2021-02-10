@@ -26,6 +26,7 @@ else {
 }
 ```
 
+A sample XML data.
 ```xml
 <UserList>
 	<User>
