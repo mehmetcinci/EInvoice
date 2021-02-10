@@ -25,3 +25,17 @@ else {
     Assert.False(true, $"Exception: {exception.Message}");
 }
 ```
+
+```xml
+<UserList>
+	<User>
+		<Identifier>0010030481</Identifier>
+		<Alias>urn:mail:defaultpk@abalioglu.com.tr</Alias>
+		<Title>ABALIOĞLU HOLDİNG ANONİM ŞİRKETİ</Title>
+		<Type>Özel</Type>
+		<FirstCreationTime>2015-09-29T11:34:24</FirstCreationTime>
+		<AliasCreationTime>2020-03-12T15:41:37</AliasCreationTime>
+		<AccountType>1</AccountType>
+	</User>
+</UserList>
+```
