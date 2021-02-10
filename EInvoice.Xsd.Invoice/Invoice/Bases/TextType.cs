@@ -1,4 +1,6 @@
-﻿using EInvoice.Xsd.Invoice.DocumentReference;
+﻿using EInvoice.Xsd.Invoice.Bases.Name;
+using EInvoice.Xsd.Invoice.Bases.Text;
+using EInvoice.Xsd.Invoice.DocumentReference;
 using EInvoice.Xsd.Invoice.Party.Address;
 using EInvoice.Xsd.Invoice.PartyTaxScheme;
 using EInvoice.Xsd.Invoice.PaymentMeans;
