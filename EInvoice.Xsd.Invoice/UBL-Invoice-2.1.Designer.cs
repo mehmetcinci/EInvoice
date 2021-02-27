@@ -7272,12 +7272,7 @@ namespace EInvoice.Xsd.Invoice {
         #region Private fields
         private NameType1 _name;
         #endregion
-        
-        public FinancialInstitutionType()
-        {
-            _name = new NameType1();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public NameType1 Name
         {
@@ -7304,12 +7299,7 @@ namespace EInvoice.Xsd.Invoice {
         private PartyType _issuerParty;
         #endregion
         
-        public CustomsDeclarationType()
-        {
-            _issuerParty = new PartyType();
-            _id = new IDType();
-        }
-        
+       
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -7349,11 +7339,6 @@ namespace EInvoice.Xsd.Invoice {
         private AddressType _address;
         #endregion
         
-        public LocationType1()
-        {
-            _address = new AddressType();
-            _id = new IDType();
-        }
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
@@ -7401,19 +7386,7 @@ namespace EInvoice.Xsd.Invoice {
         private FullyPaidSharesIndicatorType _fullyPaidSharesIndicator;
         private CorporateRegistrationSchemeType _corporateRegistrationScheme;
         private PartyType _headOfficeParty;
-        #endregion
-        
-        public PartyLegalEntityType()
-        {
-            _headOfficeParty = new PartyType();
-            _corporateRegistrationScheme = new CorporateRegistrationSchemeType();
-            _fullyPaidSharesIndicator = new FullyPaidSharesIndicatorType();
-            _corporateStockAmount = new CorporateStockAmountType();
-            _soleProprietorshipIndicator = new SoleProprietorshipIndicatorType();
-            _registrationDate = new RegistrationDateType();
-            _companyID = new CompanyIDType();
-            _registrationName = new RegistrationNameType();
-        }
+        #endregion               
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public RegistrationNameType RegistrationName
@@ -8068,14 +8041,7 @@ namespace EInvoice.Xsd.Invoice {
         private CorporateRegistrationTypeCodeType _corporateRegistrationTypeCode;
         private List<AddressType> _jurisdictionRegionAddress;
         #endregion
-        
-        public CorporateRegistrationSchemeType()
-        {
-            _jurisdictionRegionAddress = new List<AddressType>();
-            _corporateRegistrationTypeCode = new CorporateRegistrationTypeCodeType();
-            _name = new NameType1();
-            _id = new IDType();
-        }
+                
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
@@ -8143,14 +8109,7 @@ namespace EInvoice.Xsd.Invoice {
         private ChannelType _channel;
         private ValueType _value;
         #endregion
-        
-        public CommunicationType()
-        {
-            _value = new ValueType();
-            _channel = new ChannelType();
-            _channelCode = new ChannelCodeType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public ChannelCodeType ChannelCode
         {
@@ -8208,19 +8167,7 @@ namespace EInvoice.Xsd.Invoice {
         private FinancialAccountType _financialAccount;
         private DocumentReferenceType _identityDocumentReference;
         #endregion
-        
-        public PersonType()
-        {
-            _identityDocumentReference = new DocumentReferenceType();
-            _financialAccount = new FinancialAccountType();
-            _nationalityID = new NationalityIDType();
-            _nameSuffix = new NameSuffixType();
-            _middleName = new MiddleNameType();
-            _title = new TitleType();
-            _familyName = new FamilyNameType();
-            _firstName = new FirstNameType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public FirstNameType FirstName
         {
@@ -8382,17 +8329,7 @@ namespace EInvoice.Xsd.Invoice {
         private TemperatureType _maximumTemperature;
         private TemperatureType _minimumTemperature;
         #endregion
-        
-        public HazardousGoodsTransitType()
-        {
-            _minimumTemperature = new TemperatureType();
-            _maximumTemperature = new TemperatureType();
-            _transportAuthorizationCode = new TransportAuthorizationCodeType();
-            _inhalationToxicityZoneCode = new InhalationToxicityZoneCodeType();
-            _hazardousRegulationCode = new HazardousRegulationCodeType();
-            _packingCriteriaCode = new PackingCriteriaCodeType();
-            _transportEmergencyCardCode = new TransportEmergencyCardCodeType();
-        }
+               
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TransportEmergencyCardCodeType TransportEmergencyCardCode
@@ -8498,14 +8435,7 @@ namespace EInvoice.Xsd.Invoice {
         private MeasureType2 _measure;
         private List<DescriptionType> _description;
         #endregion
-        
-        public TemperatureType()
-        {
-            _description = new List<DescriptionType>();
-            _measure = new MeasureType2();
-            _attributeID = new AttributeIDType();
-        }
-        
+                        
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public AttributeIDType AttributeID
         {
@@ -8558,13 +8488,7 @@ namespace EInvoice.Xsd.Invoice {
         private TransportEquipmentTypeCodeType _transportEquipmentTypeCode;
         private DescriptionType _description;
         #endregion
-        
-        public TransportEquipmentType()
-        {
-            _description = new DescriptionType();
-            _transportEquipmentTypeCode = new TransportEquipmentTypeCodeType();
-            _id = new IDType();
-        }
+               
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
@@ -8624,20 +8548,7 @@ namespace EInvoice.Xsd.Invoice {
         private List<GoodsItemType> _goodsItem;
         private List<DimensionType> _measurementDimension;
         #endregion
-        
-        public PackageType()
-        {
-            _measurementDimension = new List<DimensionType>();
-            _goodsItem = new List<GoodsItemType>();
-            _containedPackage = new List<PackageType>();
-            _packingMaterial = new List<PackingMaterialType>();
-            _packagingTypeCode = new PackagingTypeCodeType();
-            _packageLevelCode = new PackageLevelCodeType();
-            _returnableMaterialIndicator = new ReturnableMaterialIndicatorType();
-            _quantity = new QuantityType2();
-            _id = new IDType();
-        }
-        
+               
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -9590,39 +9501,7 @@ namespace EInvoice.Xsd.Invoice {
         private AddressType _originAddress;
         private List<DimensionType> _measurementDimension;
         #endregion
-        
-        public GoodsItemType()
-        {
-            _measurementDimension = new List<DimensionType>();
-            _originAddress = new AddressType();
-            _temperature = new List<TemperatureType>();
-            _invoiceLine = new List<InvoiceLineType>();
-            _freightAllowanceCharge = new List<AllowanceChargeType>();
-            _item = new List<ItemType>();
-            _traceID = new TraceIDType();
-            _returnableQuantity = new ReturnableQuantityType();
-            _chargeableQuantity = new ChargeableQuantityType();
-            _customsImportClassifiedIndicator = new CustomsImportClassifiedIndicatorType();
-            _customsTariffQuantity = new CustomsTariffQuantityType();
-            _customsStatusCode = new CustomsStatusCodeType();
-            _requiredCustomsID = new RequiredCustomsIDType();
-            _quantity = new QuantityType2();
-            _netVolumeMeasure = new NetVolumeMeasureType();
-            _grossVolumeMeasure = new GrossVolumeMeasureType();
-            _chargeableWeightMeasure = new ChargeableWeightMeasureType();
-            _netWeightMeasure = new NetWeightMeasureType();
-            _grossWeightMeasure = new GrossWeightMeasureType();
-            _valueAmount = new ValueAmountType();
-            _insuranceValueAmount = new InsuranceValueAmountType();
-            _freeOnBoardValueAmount = new FreeOnBoardValueAmountType();
-            _declaredStatisticsValueAmount = new DeclaredStatisticsValueAmountType();
-            _declaredForCarriageValueAmount = new DeclaredForCarriageValueAmountType();
-            _declaredCustomsValueAmount = new DeclaredCustomsValueAmountType();
-            _hazardousRiskIndicator = new HazardousRiskIndicatorType();
-            _description = new List<DescriptionType>();
-            _id = new IDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -10012,24 +9891,7 @@ namespace EInvoice.Xsd.Invoice {
         private DimensionType _rangeDimension;
         private ItemPropertyRangeType _itemPropertyRange;
         #endregion
-        
-        public ItemPropertyType()
-        {
-            _itemPropertyRange = new ItemPropertyRangeType();
-            _rangeDimension = new DimensionType();
-            _itemPropertyGroup = new List<ItemPropertyGroupType>();
-            _usabilityPeriod = new PeriodType();
-            _listValue = new List<ListValueType>();
-            _importanceCode = new ImportanceCodeType();
-            _valueQualifier = new List<ValueQualifierType>();
-            _valueQuantity = new ValueQuantityType();
-            _value = new ValueType();
-            _testMethod = new TestMethodType();
-            _nameCode = new NameCodeType();
-            _name = new NameType1();
-            _id = new IDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -10213,12 +10075,6 @@ namespace EInvoice.Xsd.Invoice {
         private ImportanceCodeType _importanceCode;
         #endregion
         
-        public ItemPropertyGroupType()
-        {
-            _importanceCode = new ImportanceCodeType();
-            _name = new NameType1();
-            _id = new IDType();
-        }
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
@@ -10274,16 +10130,7 @@ namespace EInvoice.Xsd.Invoice {
         private MinimumMeasureType _minimumMeasure;
         private MaximumMeasureType _maximumMeasure;
         #endregion
-        
-        public DimensionType()
-        {
-            _maximumMeasure = new MaximumMeasureType();
-            _minimumMeasure = new MinimumMeasureType();
-            _description = new List<DescriptionType>();
-            _measure = new MeasureType2();
-            _attributeID = new AttributeIDType();
-        }
-        
+                       
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public AttributeIDType AttributeID
         {
@@ -10361,13 +10208,7 @@ namespace EInvoice.Xsd.Invoice {
         private MinimumValueType _minimumValue;
         private MaximumValueType _maximumValue;
         #endregion
-        
-        public ItemPropertyRangeType()
-        {
-            _maximumValue = new MaximumValueType();
-            _minimumValue = new MinimumValueType();
-        }
-        
+                       
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public MinimumValueType MinimumValue
         {
@@ -10407,14 +10248,7 @@ namespace EInvoice.Xsd.Invoice {
         private ExpiryDateType _expiryDate;
         private List<ItemPropertyType> _additionalItemProperty;
         #endregion
-        
-        public LotIdentificationType()
-        {
-            _additionalItemProperty = new List<ItemPropertyType>();
-            _expiryDate = new ExpiryDateType();
-            _lotNumberID = new LotNumberIDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public LotNumberIDType LotNumberID
         {
@@ -10470,13 +10304,7 @@ namespace EInvoice.Xsd.Invoice {
         private LineStatusCodeType _lineStatusCode;
         private DocumentReferenceType _documentReference;
         #endregion
-        
-        public LineReferenceType()
-        {
-            _documentReference = new DocumentReferenceType();
-            _lineStatusCode = new LineStatusCodeType();
-            _lineID = new LineIDType();
-        }
+               
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public LineIDType LineID
@@ -10537,19 +10365,7 @@ namespace EInvoice.Xsd.Invoice {
         private ContactType _contact;
         private PeriodType _estimatedDespatchPeriod;
         #endregion
-        
-        public DespatchType()
-        {
-            _estimatedDespatchPeriod = new PeriodType();
-            _contact = new ContactType();
-            _despatchParty = new PartyType();
-            _despatchAddress = new AddressType();
-            _instructions = new InstructionsType();
-            _actualDespatchTime = new ActualDespatchTimeType();
-            _actualDespatchDate = new ActualDespatchDateType();
-            _id = new IDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -10667,14 +10483,7 @@ namespace EInvoice.Xsd.Invoice {
         private SpecialTermsType _specialTerms;
         private AmountType2 _amount;
         #endregion
-        
-        public DeliveryTermsType()
-        {
-            _amount = new AmountType2();
-            _specialTerms = new SpecialTermsType();
-            _id = new IDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -10746,33 +10555,7 @@ namespace EInvoice.Xsd.Invoice {
         private LocationType1 _firstArrivalPortLocation;
         private LocationType1 _lastExitPortLocation;
         #endregion
-        
-        public ShipmentType()
-        {
-            _lastExitPortLocation = new LocationType1();
-            _firstArrivalPortLocation = new LocationType1();
-            _returnAddress = new AddressType();
-            _transportHandlingUnit = new List<TransportHandlingUnitType>();
-            _delivery = new DeliveryType();
-            _shipmentStage = new List<ShipmentStageType>();
-            _goodsItem = new List<GoodsItemType>();
-            _specialInstructions = new List<SpecialInstructionsType>();
-            _freeOnBoardValueAmount = new FreeOnBoardValueAmountType();
-            _declaredStatisticsValueAmount = new DeclaredStatisticsValueAmountType();
-            _declaredForCarriageValueAmount = new DeclaredForCarriageValueAmountType();
-            _declaredCustomsValueAmount = new DeclaredCustomsValueAmountType();
-            _insuranceValueAmount = new InsuranceValueAmountType();
-            _totalTransportHandlingUnitQuantity = new TotalTransportHandlingUnitQuantityType();
-            _totalGoodsItemQuantity = new TotalGoodsItemQuantityType();
-            _netVolumeMeasure = new NetVolumeMeasureType();
-            _grossVolumeMeasure = new GrossVolumeMeasureType();
-            _netWeightMeasure = new NetWeightMeasureType();
-            _grossWeightMeasure = new GrossWeightMeasureType();
-            _handlingInstructions = new HandlingInstructionsType();
-            _handlingCode = new HandlingCodeType();
-            _id = new IDType();
-        }
-        
+                        
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -11077,19 +10860,7 @@ namespace EInvoice.Xsd.Invoice {
         private TransportMeansType _transportMeans;
         private List<PersonType> _driverPerson;
         #endregion
-        
-        public ShipmentStageType()
-        {
-            _driverPerson = new List<PersonType>();
-            _transportMeans = new TransportMeansType();
-            _transitPeriod = new PeriodType();
-            _instructions = new List<InstructionsType>();
-            _transitDirectionCode = new TransitDirectionCodeType();
-            _transportMeansTypeCode = new TransportMeansTypeCodeType();
-            _transportModeCode = new TransportModeCodeType();
-            _id = new IDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -11217,24 +10988,7 @@ namespace EInvoice.Xsd.Invoice {
         private PartyType _ownerParty;
         private List<DimensionType> _measurementDimension;
         #endregion
-        
-        public TransportMeansType()
-        {
-            _measurementDimension = new List<DimensionType>();
-            _ownerParty = new PartyType();
-            _maritimeTransport = new MaritimeTransportType();
-            _railTransport = new RailTransportType();
-            _roadTransport = new RoadTransportType();
-            _airTransport = new AirTransportType();
-            _stowage = new StowageType();
-            _tradeServiceCode = new TradeServiceCodeType();
-            _transportMeansTypeCode = new TransportMeansTypeCodeType();
-            _directionCode = new DirectionCodeType();
-            _registrationNationality = new List<RegistrationNationalityType>();
-            _registrationNationalityID = new RegistrationNationalityIDType();
-            _journeyID = new JourneyIDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public JourneyIDType JourneyID
         {
@@ -11417,13 +11171,7 @@ namespace EInvoice.Xsd.Invoice {
         private List<LocationType> _location;
         private List<DimensionType> _measurementDimension;
         #endregion
-        
-        public StowageType()
-        {
-            _measurementDimension = new List<DimensionType>();
-            _location = new List<LocationType>();
-            _locationID = new LocationIDType();
-        }
+               
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public LocationIDType LocationID
@@ -11475,12 +11223,7 @@ namespace EInvoice.Xsd.Invoice {
         #region Private fields
         private AircraftIDType _aircraftID;
         #endregion
-        
-        public AirTransportType()
-        {
-            _aircraftID = new AircraftIDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public AircraftIDType AircraftID
         {
@@ -11505,12 +11248,7 @@ namespace EInvoice.Xsd.Invoice {
         #region Private fields
         private LicensePlateIDType _licensePlateID;
         #endregion
-        
-        public RoadTransportType()
-        {
-            _licensePlateID = new LicensePlateIDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public LicensePlateIDType LicensePlateID
         {
@@ -11536,13 +11274,7 @@ namespace EInvoice.Xsd.Invoice {
         private TrainIDType _trainID;
         private RailCarIDType _railCarID;
         #endregion
-        
-        public RailTransportType()
-        {
-            _railCarID = new RailCarIDType();
-            _trainID = new TrainIDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TrainIDType TrainID
         {
@@ -11587,19 +11319,7 @@ namespace EInvoice.Xsd.Invoice {
         private DocumentReferenceType _registryCertificateDocumentReference;
         private LocationType1 _registryPortLocation;
         #endregion
-        
-        public MaritimeTransportType()
-        {
-            _registryPortLocation = new LocationType1();
-            _registryCertificateDocumentReference = new DocumentReferenceType();
-            _netTonnageMeasure = new NetTonnageMeasureType();
-            _grossTonnageMeasure = new GrossTonnageMeasureType();
-            _shipsRequirements = new List<ShipsRequirementsType>();
-            _radioCallSignID = new RadioCallSignIDType();
-            _vesselName = new VesselNameType();
-            _vesselID = new VesselIDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public VesselIDType VesselID
         {
@@ -11734,31 +11454,7 @@ namespace EInvoice.Xsd.Invoice {
         private List<DocumentReferenceType> _shipmentDocumentReference;
         private List<CustomsDeclarationType> _customsDeclaration;
         #endregion
-        
-        public TransportHandlingUnitType()
-        {
-            _customsDeclaration = new List<CustomsDeclarationType>();
-            _shipmentDocumentReference = new List<DocumentReferenceType>();
-            _palletSpaceMeasurementDimension = new DimensionType();
-            _floorSpaceMeasurementDimension = new DimensionType();
-            _maximumTemperature = new TemperatureType();
-            _minimumTemperature = new TemperatureType();
-            _measurementDimension = new List<DimensionType>();
-            _hazardousGoodsTransit = new List<HazardousGoodsTransitType>();
-            _transportMeans = new List<TransportMeansType>();
-            _transportEquipment = new List<TransportEquipmentType>();
-            _actualPackage = new List<PackageType>();
-            _traceID = new TraceIDType();
-            _damageRemarks = new List<DamageRemarksType>();
-            _totalPackageQuantity = new TotalPackageQuantityType();
-            _totalGoodsItemQuantity = new TotalGoodsItemQuantityType();
-            _hazardousRiskIndicator = new HazardousRiskIndicatorType();
-            _handlingInstructions = new HandlingInstructionsType();
-            _handlingCode = new HandlingCodeType();
-            _transportHandlingUnitTypeCode = new TransportHandlingUnitTypeCodeType();
-            _id = new IDType();
-        }
-        
+                
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
         {
@@ -12019,15 +11715,7 @@ namespace EInvoice.Xsd.Invoice {
             }
         }
     }
-    
-        
-  
-    
-    
-        
-    
-             
-    
+                                    
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
     [Serializable]
     [DebuggerStepThrough]
@@ -12040,13 +11728,7 @@ namespace EInvoice.Xsd.Invoice {
         private AmountType2 _amount;
         private List<AllowanceChargeType> _allowanceCharge;
         #endregion
-        
-        public BillingReferenceLineType()
-        {
-            _allowanceCharge = new List<AllowanceChargeType>();
-            _amount = new AmountType2();
-            _id = new IDType();
-        }
+               
         
         [XmlElement(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IDType ID
