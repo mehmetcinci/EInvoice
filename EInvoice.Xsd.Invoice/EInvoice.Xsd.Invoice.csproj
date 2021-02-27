@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Company>Mehmet CINCI</Company>
+    <PackageProjectUrl>https://github.com/mehmetcinci/EInvoice</PackageProjectUrl>
+    <Authors>Mehmet CINCI</Authors>
   </PropertyGroup>
 
   <ItemGroup>
