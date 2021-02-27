@@ -6,6 +6,8 @@ EInvoice.Xsd.Envelope
 # EInvoice.Xsd.Invoice
 A simple C# code for EInvoice.Xsd.Invoice
 
+[![EInvoice.Xsd.NewUserList on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.Invoice/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.Invoice) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.Invoice?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.Invoice/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
+
 ```c#
 InvoiceType invoiceType = new InvoiceType();
 invoiceType.UBLVersionID = GetUBLVersionID();
@@ -41,9 +43,7 @@ private MonetaryTotalType GetLegalMonetaryTotal() {
     };
 }
 ```	    
-
 [![EInvoice.Xsd.NewUserList on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.NewUserList?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.NewUserList/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
-
 
 # EInvoice.Xsd.NewUserList
 A simple C# code for EInvoice.Xsd.NewUserList
