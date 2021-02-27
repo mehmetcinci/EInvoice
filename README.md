@@ -42,7 +42,34 @@ private MonetaryTotalType GetLegalMonetaryTotal() {
 	PayableAmount = new PayableAmountType { currencyID = "EUR", Value = 2207.09M }
     };
 }
-```	    
+```
+
+A sample XML data.
+
+```xml
+<Invoice xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:CustomizationID>TR1.2</cbc:CustomizationID>
+  <cbc:ProfileID>IHRACAT</cbc:ProfileID>
+  <cbc:ID>BGL2021000000001</cbc:ID>
+  <cbc:CopyIndicator>false</cbc:CopyIndicator>
+  <cbc:UUID>D9A37D80-6523-11EB-AE93-0242AC130002</cbc:UUID>
+  <cbc:IssueDate>2021-02-02</cbc:IssueDate>
+  <cbc:InvoiceTypeCode>ISTISNA</cbc:InvoiceTypeCode>
+  <cbc:Note>Sicil No: 1 İşletme Merkezi: 1</cbc:Note>
+  <cbc:DocumentCurrencyCode>TRY</cbc:DocumentCurrencyCode>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>852D34D85AD149</cbc:ID>
+    <cbc:IssueDate>2021-02-02</cbc:IssueDate>
+    <cbc:DocumentType>XSLT</cbc:DocumentType>
+    <cac:Attachment>
+      <cbc:EmbeddedDocumentBinaryObject mimeCode="application/xml" encodingCode="Base64" characterSetCode="UTF-8" filename="BGL2021000000001.xslt" />
+    </cac:Attachment>
+  </cac:AdditionalDocumentReference>
+</Invoice>
+```
+
 [![EInvoice.Xsd.NewUserList on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.NewUserList?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.NewUserList/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
 
 # EInvoice.Xsd.NewUserList
@@ -61,8 +88,8 @@ else {
     Assert.False(true, $"Exception: {exception.Message}");
 }
 ```
-
 A sample XML data.
+
 ```xml
 <UserList>
 	<User>
