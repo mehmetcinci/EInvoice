@@ -12,6 +12,7 @@ namespace EInvoice.Xsd.Invoice.Invoice.InvoiceLine {
     [System.ComponentModel.DesignerCategory("code")]
     [XmlType(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
     public class OrderLineReferenceType {
+        [XmlElement(Order = 2)]
         public UUIDType UUID { get; set; }
 
         [XmlElement(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 3)]

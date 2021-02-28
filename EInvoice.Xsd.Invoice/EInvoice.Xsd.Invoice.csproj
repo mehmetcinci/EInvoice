@@ -5,6 +5,7 @@
     <Company>Mehmet CINCI</Company>
     <PackageProjectUrl>https://github.com/mehmetcinci/EInvoice</PackageProjectUrl>
     <Authors>Mehmet CINCI</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
