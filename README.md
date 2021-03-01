@@ -3,7 +3,7 @@
 # EInvoice.Xsd.Envelope
 EInvoice.Xsd.Envelope
 
-[![EInvoice.Xsd.Envelope on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.Envelope/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.Envelope) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.Envelope?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.Envelope/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
+[![EInvoice.Xsd.Envelope on fuget.org](https://www.fuget.org/packages/eInvoice.xsd.envelope/badge.svg)](https://www.fuget.org/packages/eInvoice.xsd.envelope) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.Envelope?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.Envelope/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
 
 # EInvoice.Xsd.Invoice
 A simple C# code for EInvoice.Xsd.Invoice
