@@ -1,14 +1,14 @@
-[![Build Status](https://dev.azure.com/cincimehmet/EInvoice/_apis/build/status/mehmetcinci.EInvoice?branchName=main)](https://dev.azure.com/cincimehmet/EInvoice/_build/latest?definitionId=1&branchName=main)
+[![Build Status](https://dev.azure.com/cincimehmet/EInvoice/_apis/build/status/mehmetcinci.EInvoice?branchName=main)](https://dev.azure.com/cincimehmet/EInvoice/_build/latest?definitionId=1&branchName=main) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
 
 # EInvoice.Xsd.Envelope
 EInvoice.Xsd.Envelope
 
-[![EInvoice.Xsd.Envelope on fuget.org](https://www.fuget.org/packages/eInvoice.xsd.envelope/badge.svg)](https://www.fuget.org/packages/eInvoice.xsd.envelope) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.Envelope?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.Envelope/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
+[![EInvoice.Xsd.Envelope on fuget.org](https://www.fuget.org/packages/eInvoice.xsd.envelope/badge.svg)](https://www.fuget.org/packages/eInvoice.xsd.envelope) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.Envelope?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.Envelope/)
 
 # EInvoice.Xsd.Invoice
 A simple C# code for EInvoice.Xsd.Invoice
 
-[![EInvoice.Xsd.Invoice on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.Invoice/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.Invoice) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.Invoice?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.Invoice/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
+[![EInvoice.Xsd.Invoice on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.Invoice/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.Invoice) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.Invoice?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.Invoice/)
 
 ```c#
 InvoiceType invoiceType = new InvoiceType();
@@ -72,7 +72,7 @@ A sample XML data.
 </Invoice>
 ```
 
-[![EInvoice.Xsd.NewUserList on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.NewUserList?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.NewUserList/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/majorimi/blazor-components/blob/master/LICENSE)
+[![EInvoice.Xsd.NewUserList on fuget.org](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList/badge.svg)](https://www.fuget.org/packages/EInvoice.Xsd.NewUserList) [![NuGet Downloads](https://img.shields.io/nuget/dt/EInvoice.Xsd.NewUserList?label=Downloads)](https://www.nuget.org/packages/EInvoice.Xsd.NewUserList/)
 
 # EInvoice.Xsd.NewUserList
 A simple C# code for EInvoice.Xsd.NewUserList
