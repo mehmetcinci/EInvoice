@@ -6,6 +6,9 @@
     <PackageProjectUrl>https://github.com/mehmetcinci/EInvoice</PackageProjectUrl>
     <Authors>Mehmet CINCI</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <DebugSymbols>true</DebugSymbols>
+	<EmbedAllSources>true</EmbedAllSources>
+	<DebugType>portable</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
