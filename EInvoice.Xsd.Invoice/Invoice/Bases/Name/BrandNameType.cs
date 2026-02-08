@@ -2,8 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace EInvoice.Xsd.Invoice.Bases.Name {
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+namespace EInvoice.Xsd.Invoice.Bases.Name {    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]

@@ -1,6 +1,5 @@
 ﻿using EInvoice.Xsd.Invoice.Bases.Name;
 using EInvoice.Xsd.Invoice.Bases.Text;
-using EInvoice.Xsd.Invoice.Invoice.InvoiceLine.Item;
 using EInvoice.Xsd.Invoice.InvoiceLine.Item;
 using EInvoice.Xsd.Invoice.Party.Address;
 using System;
@@ -8,8 +7,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace EInvoice.Xsd.Invoice.Invoice.InvoiceLine {
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+namespace EInvoice.Xsd.Invoice.InvoiceLine
+{
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]

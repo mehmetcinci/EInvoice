@@ -223,39 +223,38 @@ namespace EInvoice.Xsd.Invoice.Bases {
     [XmlInclude(typeof(ActionCodeType))]
     [XmlInclude(typeof(AccountingCostCodeType))]
     [XmlInclude(typeof(AccountTypeCodeType))]
-    [XmlInclude(typeof(AccountFormatCodeType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(AccountFormatCodeType))]    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
     [XmlType(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
     public class CodeType {        
-        [XmlAttribute(DataType = "normalizedString")]
-        public string listID { get; set; }
+        [XmlAttribute("listID", DataType = "normalizedString")]
+        public string ListID { get; set; }
 
-        [XmlAttribute(DataType = "normalizedString")]
-        public string listAgencyID { get; set; }
+        [XmlAttribute("listAgencyID", DataType = "normalizedString")]
+        public string ListAgencyID { get; set; }
 
-        [XmlAttribute]
-        public string listAgencyName { get; set; }
+        [XmlAttribute("listAgencyName")]
+        public string ListAgencyName { get; set; }
 
-        [XmlAttribute]
-        public string listName { get; set; }
+        [XmlAttribute("listName")]
+        public string ListName { get; set; }
 
-        [XmlAttribute(DataType = "normalizedString")]
-        public string listVersionID { get; set; }
+        [XmlAttribute("listVersionID", DataType = "normalizedString")]
+        public string ListVersionID { get; set; }
 
-        [XmlAttribute]
-        public string name { get; set; }
+        [XmlAttribute("name")]
+        public string Name { get; set; }
 
-        [XmlAttribute(DataType = "language")]
-        public string languageID { get; set; }
+        [XmlAttribute("languageID", DataType = "language")]
+        public string LanguageID { get; set; }
 
-        [XmlAttribute(DataType = "anyURI")]
-        public string listURI { get; set; }
+        [XmlAttribute("listURI", DataType = "anyURI")]
+        public string ListURI { get; set; }
 
-        [XmlAttribute(DataType = "anyURI")]
-        public string listSchemeURI { get; set; }
+        [XmlAttribute("listSchemeURI", DataType = "anyURI")]
+        public string ListSchemeURI { get; set; }
 
         [XmlTextAttribute(DataType = "normalizedString")]
         public string Value { get; set; }

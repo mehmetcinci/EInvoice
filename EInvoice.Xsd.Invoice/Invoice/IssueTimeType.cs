@@ -1,11 +1,9 @@
-﻿
-using EInvoice.Xsd.Invoice.Bases;
+﻿using EInvoice.Xsd.Invoice.Bases;
 using System;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace EInvoice.Xsd.Invoice {
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+namespace EInvoice.Xsd.Invoice {    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]

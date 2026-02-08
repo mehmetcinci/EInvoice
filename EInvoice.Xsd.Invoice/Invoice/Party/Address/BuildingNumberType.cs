@@ -3,8 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace EInvoice.Xsd.Invoice.Party.Address {
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+namespace EInvoice.Xsd.Invoice.Party.Address {    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36908.2 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EInvoice.Xsd.Invoice", "EInvoice.Xsd.Invoice\EInvoice.Xsd.Invoice.csproj", "{F2AB41F8-2356-4E86-9B41-3E5EDC7958E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EInvoice.Xsd", "EInvoice.Xsd.Invoice\EInvoice.Xsd.csproj", "{F2AB41F8-2356-4E86-9B41-3E5EDC7958E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

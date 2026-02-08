@@ -9,31 +9,30 @@ namespace EInvoice.Xsd.Invoice.Bases {
     [XmlInclude(typeof(PictureType))]
     [XmlInclude(typeof(GraphicType))]
     [XmlInclude(typeof(BinaryObjectType1))]
-    [XmlInclude(typeof(EmbeddedDocumentBinaryObjectType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    [XmlInclude(typeof(EmbeddedDocumentBinaryObjectType))]    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
     [XmlType(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
     public class BinaryObjectType {        
 
-        [XmlAttribute]
-        public string format { get; set; }
+        [XmlAttribute("format")]
+        public string Format { get; set; }
 
-        [XmlAttribute(DataType = "normalizedString")]
-        public string mimeCode { get; set; }
+        [XmlAttribute("mimeCode", DataType = "normalizedString")]
+        public string MimeCode { get; set; }
 
-        [XmlAttribute(DataType = "normalizedString")]
-        public string encodingCode { get; set; }
+        [XmlAttribute("encodingCode", DataType = "normalizedString")]
+        public string EncodingCode { get; set; }
 
-        [XmlAttribute(DataType = "normalizedString")]
-        public string characterSetCode { get; set; }
+        [XmlAttribute("characterSetCode", DataType = "normalizedString")]
+        public string CharacterSetCode { get; set; }
 
-        [XmlAttribute(DataType = "anyURI")]
-        public string uri { get; set; }
+        [XmlAttribute("uri", DataType = "anyURI")]
+        public string Uri { get; set; }
 
-        [XmlAttribute]
-        public string filename { get; set; }
+        [XmlAttribute("filename")]
+        public string Filename { get; set; }
 
         [XmlTextAttribute(DataType = "base64Binary")]
         public byte[] Value { get; set; }

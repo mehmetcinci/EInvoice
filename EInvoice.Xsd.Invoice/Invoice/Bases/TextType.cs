@@ -224,7 +224,7 @@ namespace EInvoice.Xsd.Invoice.Bases {
     [XmlInclude(typeof(ActivityTypeType))]
     [XmlInclude(typeof(AccountingCostType))]
     [XmlInclude(typeof(AcceptedVariantsDescriptionType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]

@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Xml.Serialization;
 
 namespace EInvoice.Xsd.Invoice.Invoice.InvoiceLine {
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]

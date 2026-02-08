@@ -5,7 +5,7 @@ using EInvoice.Xsd.Invoice.Bases.Identifier;
 using EInvoice.Xsd.Invoice.Bases.Name;
 using EInvoice.Xsd.Invoice.Bases.Text;
 using EInvoice.Xsd.Invoice.Invoice.Bases.Quantity;
-using EInvoice.Xsd.Invoice.Invoice.InvoiceLine;
+using EInvoice.Xsd.Invoice.InvoiceLine;
 using EInvoice.Xsd.Invoice.MonetaryTotal;
 using EInvoice.Xsd.Invoice.Party;
 using EInvoice.Xsd.Invoice.Party.Address;
@@ -87,7 +87,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(AmountType2))]
     [XmlInclude(typeof(AllowanceTotalAmountType))]
     [XmlInclude(typeof(AdvertisementAmountType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -165,7 +165,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(AmountType2))]
     [XmlInclude(typeof(AllowanceTotalAmountType))]
     [XmlInclude(typeof(AdvertisementAmountType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -218,7 +218,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -227,7 +227,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -236,7 +236,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -245,7 +245,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -254,7 +254,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -263,7 +263,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -272,7 +272,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -281,7 +281,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -290,7 +290,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -299,7 +299,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -308,7 +308,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -317,7 +317,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -328,7 +328,7 @@ namespace EInvoice.Xsd.Invoice {
        
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -337,7 +337,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -346,7 +346,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -356,7 +356,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -365,7 +365,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -374,7 +374,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -384,7 +384,7 @@ namespace EInvoice.Xsd.Invoice {
     }
         
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -393,7 +393,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -402,7 +402,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -411,7 +411,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -420,7 +420,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -429,7 +429,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -438,7 +438,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -447,7 +447,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -456,7 +456,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -465,7 +465,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -474,7 +474,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -483,7 +483,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -492,7 +492,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -501,7 +501,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -510,7 +510,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -519,7 +519,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -528,7 +528,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -537,7 +537,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -546,7 +546,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -555,7 +555,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -564,7 +564,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -573,7 +573,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -582,7 +582,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -591,7 +591,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -600,7 +600,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -609,7 +609,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -618,7 +618,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -627,7 +627,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -636,7 +636,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -645,7 +645,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -654,7 +654,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -663,7 +663,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -672,7 +672,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -681,7 +681,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -690,7 +690,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -699,7 +699,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -708,7 +708,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -717,7 +717,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -726,7 +726,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -735,7 +735,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -744,7 +744,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -753,7 +753,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -762,7 +762,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -772,7 +772,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -782,7 +782,7 @@ namespace EInvoice.Xsd.Invoice {
     }
     
         
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -793,7 +793,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -802,7 +802,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -811,7 +811,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -820,7 +820,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -829,7 +829,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -838,7 +838,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -847,7 +847,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -856,7 +856,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -865,7 +865,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -874,7 +874,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -883,7 +883,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -892,7 +892,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -901,7 +901,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -910,7 +910,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -919,7 +919,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -928,7 +928,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -937,7 +937,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -946,7 +946,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -955,7 +955,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -964,7 +964,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -973,7 +973,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -982,7 +982,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -991,7 +991,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1000,7 +1000,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1009,7 +1009,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1018,7 +1018,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1027,7 +1027,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1036,7 +1036,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1045,7 +1045,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1054,7 +1054,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1063,7 +1063,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1072,7 +1072,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1081,7 +1081,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1090,7 +1090,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1099,7 +1099,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1108,7 +1108,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1117,7 +1117,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1126,7 +1126,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1135,7 +1135,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1144,7 +1144,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1153,7 +1153,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1162,7 +1162,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1171,7 +1171,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1180,7 +1180,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1189,7 +1189,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1198,7 +1198,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1207,7 +1207,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1216,7 +1216,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1225,7 +1225,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1234,7 +1234,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1243,7 +1243,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1252,7 +1252,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1261,7 +1261,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1270,7 +1270,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1279,7 +1279,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1288,7 +1288,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1297,7 +1297,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1306,7 +1306,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1315,7 +1315,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1324,7 +1324,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1333,7 +1333,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1342,7 +1342,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1351,7 +1351,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1360,7 +1360,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1369,7 +1369,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1378,7 +1378,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1387,7 +1387,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1396,7 +1396,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1405,7 +1405,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1414,7 +1414,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1423,7 +1423,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1432,7 +1432,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1441,7 +1441,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1450,7 +1450,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1459,7 +1459,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1468,7 +1468,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1477,7 +1477,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1486,7 +1486,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1495,7 +1495,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1504,7 +1504,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1513,7 +1513,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1522,7 +1522,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1531,7 +1531,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1540,7 +1540,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1549,7 +1549,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1558,7 +1558,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1567,7 +1567,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1576,7 +1576,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1585,7 +1585,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1596,7 +1596,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1605,7 +1605,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1616,7 +1616,7 @@ namespace EInvoice.Xsd.Invoice {
     
 
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1625,7 +1625,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1634,7 +1634,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1643,7 +1643,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1652,7 +1652,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1661,7 +1661,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1670,7 +1670,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1679,7 +1679,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1688,7 +1688,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1698,7 +1698,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1707,7 +1707,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1716,7 +1716,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1725,7 +1725,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1734,7 +1734,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1743,7 +1743,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1752,7 +1752,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1761,7 +1761,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1770,7 +1770,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1779,7 +1779,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1788,7 +1788,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1797,7 +1797,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1806,7 +1806,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1815,7 +1815,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1824,7 +1824,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1833,7 +1833,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1843,7 +1843,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1852,7 +1852,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1861,7 +1861,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1870,7 +1870,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1879,7 +1879,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1888,7 +1888,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1898,7 +1898,7 @@ namespace EInvoice.Xsd.Invoice {
     }
       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1907,7 +1907,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1916,7 +1916,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1925,7 +1925,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1934,7 +1934,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1943,7 +1943,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1952,7 +1952,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1961,7 +1961,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1970,7 +1970,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1979,7 +1979,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1988,7 +1988,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -1997,7 +1997,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2006,7 +2006,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2015,7 +2015,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2024,7 +2024,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2033,7 +2033,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2042,7 +2042,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2051,7 +2051,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2060,7 +2060,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2069,7 +2069,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2078,7 +2078,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2087,7 +2087,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2096,7 +2096,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2105,7 +2105,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2114,7 +2114,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2123,7 +2123,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2132,7 +2132,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2141,7 +2141,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2150,7 +2150,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2159,7 +2159,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2170,7 +2170,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2179,7 +2179,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2188,7 +2188,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2197,7 +2197,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2206,7 +2206,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2215,7 +2215,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2224,7 +2224,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2233,7 +2233,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2242,7 +2242,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2252,7 +2252,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2261,7 +2261,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2270,7 +2270,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2279,7 +2279,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2288,7 +2288,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2297,7 +2297,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2306,7 +2306,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2315,7 +2315,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2324,7 +2324,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2333,7 +2333,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2342,7 +2342,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2351,7 +2351,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2360,7 +2360,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2369,7 +2369,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2378,7 +2378,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2387,7 +2387,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2396,7 +2396,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2405,7 +2405,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2414,7 +2414,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2423,7 +2423,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2432,7 +2432,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2441,7 +2441,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2450,7 +2450,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2459,7 +2459,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2468,7 +2468,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2477,7 +2477,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2486,7 +2486,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2495,7 +2495,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2504,7 +2504,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2513,7 +2513,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2522,7 +2522,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2531,7 +2531,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2540,7 +2540,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2549,7 +2549,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2558,7 +2558,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2567,7 +2567,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2576,7 +2576,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2585,7 +2585,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2594,7 +2594,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2603,7 +2603,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2612,7 +2612,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2621,7 +2621,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2630,7 +2630,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2645,7 +2645,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(OrderableUnitFactorRateType))]
     [XmlInclude(typeof(CalculationRateType))]
     [XmlInclude(typeof(AmountRateType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2695,7 +2695,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(FrozenPeriodDaysNumericType))]
     [XmlInclude(typeof(CalculationSequenceNumericType))]
     [XmlInclude(typeof(BudgetYearNumericType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2748,7 +2748,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(MaximumPercentType))]
     [XmlInclude(typeof(HumidityPercentType))]
     [XmlInclude(typeof(AirFlowPercentType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2757,7 +2757,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2766,7 +2766,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2775,7 +2775,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2784,7 +2784,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2793,7 +2793,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2802,7 +2802,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2811,7 +2811,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2820,7 +2820,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2829,7 +2829,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2838,7 +2838,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2847,7 +2847,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2856,7 +2856,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2865,7 +2865,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2874,7 +2874,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2883,7 +2883,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2909,7 +2909,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(FrozenPeriodDaysNumericType))]
     [XmlInclude(typeof(CalculationSequenceNumericType))]
     [XmlInclude(typeof(BudgetYearNumericType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2918,7 +2918,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2927,7 +2927,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2936,7 +2936,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2945,7 +2945,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2954,7 +2954,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2963,7 +2963,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2972,7 +2972,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2981,7 +2981,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2990,7 +2990,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -2999,7 +2999,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3008,7 +3008,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3017,7 +3017,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3026,7 +3026,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3036,7 +3036,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3045,7 +3045,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3054,7 +3054,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3063,7 +3063,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3072,7 +3072,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3081,7 +3081,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3090,7 +3090,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3099,7 +3099,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3108,7 +3108,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3118,7 +3118,7 @@ namespace EInvoice.Xsd.Invoice {
     }
     
         
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3127,7 +3127,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3136,7 +3136,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3145,7 +3145,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3154,7 +3154,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3163,7 +3163,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3172,7 +3172,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3181,7 +3181,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3190,7 +3190,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3199,7 +3199,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3208,7 +3208,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3217,7 +3217,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3226,7 +3226,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3235,7 +3235,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3244,7 +3244,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3253,7 +3253,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3262,7 +3262,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3271,7 +3271,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3280,7 +3280,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3289,7 +3289,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3298,7 +3298,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3307,7 +3307,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
            
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3316,7 +3316,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3325,7 +3325,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3334,7 +3334,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3343,7 +3343,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3352,7 +3352,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3361,7 +3361,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3370,7 +3370,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3379,7 +3379,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3388,7 +3388,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3398,7 +3398,7 @@ namespace EInvoice.Xsd.Invoice {
     }
     
         
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3407,7 +3407,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3416,7 +3416,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3425,7 +3425,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3434,7 +3434,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3443,7 +3443,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3452,7 +3452,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3461,7 +3461,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3470,7 +3470,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3479,7 +3479,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3488,7 +3488,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3497,7 +3497,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3506,7 +3506,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3515,7 +3515,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3524,7 +3524,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3533,7 +3533,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3542,7 +3542,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3551,7 +3551,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3560,7 +3560,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3569,7 +3569,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3601,7 +3601,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(BlockNameType))]
     [XmlInclude(typeof(AliasNameType))]
     [XmlInclude(typeof(AdditionalStreetNameType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3610,7 +3610,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3619,7 +3619,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3628,7 +3628,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
             
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3637,7 +3637,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3646,7 +3646,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3655,7 +3655,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }   
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3665,7 +3665,7 @@ namespace EInvoice.Xsd.Invoice {
     }
       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3674,7 +3674,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3683,7 +3683,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3692,7 +3692,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3701,7 +3701,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3711,7 +3711,7 @@ namespace EInvoice.Xsd.Invoice {
     }   
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3722,7 +3722,7 @@ namespace EInvoice.Xsd.Invoice {
        
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3731,7 +3731,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3740,7 +3740,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3749,7 +3749,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3758,7 +3758,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3767,7 +3767,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3776,7 +3776,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3785,7 +3785,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3794,7 +3794,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3803,7 +3803,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3812,7 +3812,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3821,7 +3821,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3830,7 +3830,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3839,7 +3839,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3848,7 +3848,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3857,7 +3857,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3866,7 +3866,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3875,7 +3875,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3884,7 +3884,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3893,7 +3893,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3902,7 +3902,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3911,7 +3911,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3920,7 +3920,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3929,7 +3929,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3938,7 +3938,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3947,7 +3947,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3956,7 +3956,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3965,7 +3965,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3974,7 +3974,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3983,7 +3983,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -3992,7 +3992,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4001,7 +4001,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4010,7 +4010,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4019,7 +4019,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4028,7 +4028,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4037,7 +4037,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4046,7 +4046,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4055,7 +4055,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4064,7 +4064,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4073,7 +4073,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4082,7 +4082,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4091,7 +4091,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4100,7 +4100,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4109,7 +4109,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4118,7 +4118,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4127,7 +4127,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4136,7 +4136,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4147,7 +4147,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4156,7 +4156,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4165,7 +4165,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4174,7 +4174,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4183,7 +4183,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4192,7 +4192,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4201,7 +4201,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4210,7 +4210,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4219,7 +4219,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4229,7 +4229,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4238,7 +4238,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4247,7 +4247,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4256,7 +4256,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4265,7 +4265,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4274,7 +4274,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4283,7 +4283,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4292,7 +4292,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4301,7 +4301,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4310,7 +4310,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4319,7 +4319,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4328,7 +4328,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4339,7 +4339,7 @@ namespace EInvoice.Xsd.Invoice {
        
   
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4348,7 +4348,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4357,7 +4357,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4366,7 +4366,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4375,7 +4375,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4384,7 +4384,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4393,7 +4393,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }   
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4402,7 +4402,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4411,7 +4411,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4420,7 +4420,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4429,7 +4429,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4438,7 +4438,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4447,7 +4447,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4456,7 +4456,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4465,7 +4465,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4474,7 +4474,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4483,7 +4483,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4492,7 +4492,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4501,7 +4501,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4510,7 +4510,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4519,7 +4519,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4528,7 +4528,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4537,7 +4537,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4546,7 +4546,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4555,7 +4555,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4564,7 +4564,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4573,7 +4573,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4582,7 +4582,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4591,7 +4591,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4600,7 +4600,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4609,7 +4609,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4618,7 +4618,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4627,7 +4627,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4636,7 +4636,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4645,7 +4645,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4654,7 +4654,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4663,7 +4663,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4672,7 +4672,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4681,7 +4681,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4690,7 +4690,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4699,7 +4699,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4709,7 +4709,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4718,7 +4718,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4727,7 +4727,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4736,7 +4736,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4745,7 +4745,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4756,7 +4756,7 @@ namespace EInvoice.Xsd.Invoice {
     
 
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4765,7 +4765,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4774,7 +4774,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4783,7 +4783,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4792,7 +4792,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4801,7 +4801,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4810,7 +4810,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4819,7 +4819,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4828,7 +4828,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4837,7 +4837,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4846,7 +4846,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4855,7 +4855,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4864,7 +4864,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4873,7 +4873,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4882,7 +4882,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4891,7 +4891,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4900,7 +4900,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4909,7 +4909,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4918,7 +4918,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
           
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4927,7 +4927,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4938,7 +4938,7 @@ namespace EInvoice.Xsd.Invoice {
    
    
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4947,7 +4947,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4956,7 +4956,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4965,7 +4965,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4974,7 +4974,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4983,7 +4983,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -4992,7 +4992,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5001,7 +5001,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5010,7 +5010,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5019,7 +5019,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5028,7 +5028,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5037,7 +5037,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5046,7 +5046,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5055,7 +5055,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5064,7 +5064,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5073,7 +5073,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5082,7 +5082,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5091,7 +5091,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5100,7 +5100,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5109,7 +5109,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5118,7 +5118,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5127,7 +5127,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5136,7 +5136,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5145,7 +5145,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5154,7 +5154,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5163,7 +5163,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5172,7 +5172,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5181,7 +5181,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5190,7 +5190,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5199,7 +5199,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5208,7 +5208,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5217,7 +5217,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5226,7 +5226,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5236,7 +5236,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5245,7 +5245,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5254,7 +5254,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5263,7 +5263,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5272,7 +5272,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5281,7 +5281,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5290,7 +5290,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5299,7 +5299,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5308,7 +5308,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5317,7 +5317,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5326,7 +5326,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5335,7 +5335,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
        
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5346,7 +5346,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5355,7 +5355,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5364,7 +5364,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5373,7 +5373,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5382,7 +5382,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5391,7 +5391,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5400,7 +5400,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5409,7 +5409,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5418,7 +5418,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5427,7 +5427,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5436,7 +5436,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5445,7 +5445,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5454,7 +5454,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5463,7 +5463,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5472,7 +5472,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5481,7 +5481,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5490,7 +5490,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5499,7 +5499,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5508,7 +5508,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5517,7 +5517,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5526,7 +5526,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5535,7 +5535,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5544,7 +5544,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5553,7 +5553,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5562,7 +5562,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5571,7 +5571,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5580,7 +5580,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5589,7 +5589,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5598,7 +5598,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5607,7 +5607,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5642,7 +5642,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(ChargeableWeightMeasureType))]
     [XmlInclude(typeof(BaseUnitMeasureType))]
     [XmlInclude(typeof(AltitudeMeasureType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5678,7 +5678,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(ChargeableWeightMeasureType))]
     [XmlInclude(typeof(BaseUnitMeasureType))]
     [XmlInclude(typeof(AltitudeMeasureType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5731,7 +5731,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5740,7 +5740,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5749,7 +5749,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5758,7 +5758,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5767,7 +5767,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5776,7 +5776,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5785,7 +5785,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5794,7 +5794,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5803,7 +5803,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5812,7 +5812,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5821,7 +5821,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5830,7 +5830,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5839,7 +5839,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5848,7 +5848,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5857,7 +5857,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5866,7 +5866,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5875,7 +5875,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5884,7 +5884,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5893,7 +5893,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5902,7 +5902,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5911,7 +5911,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5920,7 +5920,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5929,7 +5929,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5938,7 +5938,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -5947,7 +5947,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6073,7 +6073,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(AgencyIDType))]
     [XmlInclude(typeof(AdditionalAccountIDType))]
     [XmlInclude(typeof(AccountIDType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6196,7 +6196,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(AgencyIDType))]
     [XmlInclude(typeof(AdditionalAccountIDType))]
     [XmlInclude(typeof(AccountIDType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6319,7 +6319,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6328,7 +6328,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6337,7 +6337,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6346,7 +6346,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6355,7 +6355,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6364,7 +6364,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
         
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6373,7 +6373,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6382,7 +6382,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6391,7 +6391,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6400,7 +6400,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6409,7 +6409,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
             
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6419,7 +6419,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6428,7 +6428,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6437,7 +6437,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6446,7 +6446,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6455,7 +6455,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6464,7 +6464,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6473,7 +6473,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6482,7 +6482,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6491,7 +6491,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6500,7 +6500,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6509,7 +6509,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6518,7 +6518,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6527,7 +6527,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6536,7 +6536,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6545,7 +6545,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6554,7 +6554,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6563,7 +6563,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6572,7 +6572,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6581,7 +6581,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6591,7 +6591,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6600,7 +6600,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6609,7 +6609,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6618,7 +6618,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6627,7 +6627,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6636,7 +6636,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6645,7 +6645,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6654,7 +6654,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6663,7 +6663,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6672,7 +6672,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6683,7 +6683,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6692,7 +6692,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6701,7 +6701,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6710,7 +6710,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6719,7 +6719,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6728,7 +6728,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6737,7 +6737,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6746,7 +6746,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6755,7 +6755,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6764,7 +6764,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6773,7 +6773,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6782,7 +6782,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6791,7 +6791,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6800,7 +6800,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6809,7 +6809,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6818,7 +6818,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6827,7 +6827,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6836,7 +6836,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6845,7 +6845,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6854,7 +6854,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6863,7 +6863,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6872,7 +6872,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6881,7 +6881,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6890,7 +6890,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6899,7 +6899,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6908,7 +6908,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6917,7 +6917,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6926,7 +6926,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6935,7 +6935,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6944,7 +6944,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6953,7 +6953,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6962,7 +6962,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6971,7 +6971,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6980,7 +6980,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6989,7 +6989,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -6998,7 +6998,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7007,7 +7007,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7016,7 +7016,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7025,7 +7025,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7035,7 +7035,7 @@ namespace EInvoice.Xsd.Invoice {
     }
    
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7044,7 +7044,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7053,7 +7053,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7062,7 +7062,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7071,7 +7071,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7080,7 +7080,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7089,7 +7089,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7098,7 +7098,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7107,7 +7107,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7117,7 +7117,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7126,7 +7126,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7135,7 +7135,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7144,7 +7144,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7153,7 +7153,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7162,7 +7162,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7171,7 +7171,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7180,7 +7180,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7189,7 +7189,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7198,7 +7198,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7207,7 +7207,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7216,7 +7216,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7225,7 +7225,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7234,7 +7234,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7243,7 +7243,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7252,7 +7252,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7262,7 +7262,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7287,7 +7287,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7327,7 +7327,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
                          
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7370,7 +7370,7 @@ namespace EInvoice.Xsd.Invoice {
     
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7493,7 +7493,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7504,7 +7504,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7513,7 +7513,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7522,7 +7522,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7531,7 +7531,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7540,7 +7540,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7549,7 +7549,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7558,7 +7558,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7567,7 +7567,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7576,7 +7576,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7585,7 +7585,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7594,7 +7594,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7603,7 +7603,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7612,7 +7612,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7621,7 +7621,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7630,7 +7630,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7639,7 +7639,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7648,7 +7648,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7657,7 +7657,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7666,7 +7666,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7675,7 +7675,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7684,7 +7684,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7693,7 +7693,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7702,7 +7702,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7711,7 +7711,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7720,7 +7720,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7729,7 +7729,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7738,7 +7738,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7747,7 +7747,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7756,7 +7756,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7765,7 +7765,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7774,7 +7774,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7783,7 +7783,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7792,7 +7792,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7801,7 +7801,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7810,7 +7810,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7819,7 +7819,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7828,7 +7828,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7837,7 +7837,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7846,7 +7846,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7855,7 +7855,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7864,7 +7864,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7873,7 +7873,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7884,7 +7884,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7893,7 +7893,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7902,7 +7902,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7911,7 +7911,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7920,7 +7920,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7929,7 +7929,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7938,7 +7938,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7947,7 +7947,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7956,7 +7956,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7965,7 +7965,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7974,7 +7974,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7983,7 +7983,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -7992,7 +7992,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8001,7 +8001,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8010,7 +8010,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8019,7 +8019,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8028,7 +8028,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8097,7 +8097,7 @@ namespace EInvoice.Xsd.Invoice {
     }
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8150,7 +8150,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8275,7 +8275,7 @@ namespace EInvoice.Xsd.Invoice {
                        
            
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8284,7 +8284,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8293,7 +8293,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8302,7 +8302,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8313,7 +8313,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8423,7 +8423,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8476,7 +8476,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8530,7 +8530,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8667,7 +8667,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8741,7 +8741,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(BaseQuantityType))]
     [XmlInclude(typeof(BackorderQuantityType))]
     [XmlInclude(typeof(ActualTemperatureReductionQuantityType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8816,7 +8816,7 @@ namespace EInvoice.Xsd.Invoice {
     [XmlInclude(typeof(BaseQuantityType))]
     [XmlInclude(typeof(BackorderQuantityType))]
     [XmlInclude(typeof(ActualTemperatureReductionQuantityType))]
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8897,7 +8897,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8906,7 +8906,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8915,7 +8915,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8924,7 +8924,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8933,7 +8933,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8942,7 +8942,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8951,7 +8951,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8960,7 +8960,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8969,7 +8969,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8978,7 +8978,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8987,7 +8987,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -8996,7 +8996,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9005,7 +9005,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9014,7 +9014,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9023,7 +9023,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9032,7 +9032,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9041,7 +9041,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9050,7 +9050,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9059,7 +9059,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9068,7 +9068,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9077,7 +9077,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9086,7 +9086,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9095,7 +9095,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9104,7 +9104,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9113,7 +9113,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9122,7 +9122,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9131,7 +9131,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9140,7 +9140,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9149,7 +9149,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9158,7 +9158,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9167,7 +9167,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9176,7 +9176,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9185,7 +9185,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9194,7 +9194,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9203,7 +9203,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9212,7 +9212,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9221,7 +9221,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9230,7 +9230,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9239,7 +9239,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9248,7 +9248,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }       
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9257,7 +9257,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9266,7 +9266,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9275,7 +9275,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9284,7 +9284,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9293,7 +9293,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9302,7 +9302,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9311,7 +9311,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9320,7 +9320,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9329,7 +9329,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9338,7 +9338,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9347,7 +9347,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9356,7 +9356,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9365,7 +9365,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9374,7 +9374,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9383,7 +9383,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9392,7 +9392,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9401,7 +9401,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9410,7 +9410,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9419,7 +9419,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9428,7 +9428,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9437,7 +9437,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9446,7 +9446,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9455,7 +9455,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9464,7 +9464,7 @@ namespace EInvoice.Xsd.Invoice {
     {
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -9869,7 +9869,7 @@ namespace EInvoice.Xsd.Invoice {
           
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10062,7 +10062,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10116,7 +10116,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10197,7 +10197,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10236,7 +10236,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10292,7 +10292,7 @@ namespace EInvoice.Xsd.Invoice {
        
        
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10348,7 +10348,7 @@ namespace EInvoice.Xsd.Invoice {
     
     
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10471,7 +10471,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10524,7 +10524,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10843,7 +10843,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -10966,7 +10966,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -11159,7 +11159,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -11213,7 +11213,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -11238,7 +11238,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -11263,7 +11263,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -11302,7 +11302,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -11425,7 +11425,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
@@ -11716,7 +11716,7 @@ namespace EInvoice.Xsd.Invoice {
         }
     }
                                     
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]

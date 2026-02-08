@@ -1,20 +1,21 @@
-﻿using EInvoice.Xsd.Invoice.InvoiceLine.OrderLineReference;
+﻿using EInvoice.Xsd.Invoice;
+using EInvoice.Xsd.Invoice.InvoiceLine.OrderLineReference;
 using EInvoice.Xsd.Invoice.Party.Address;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace EInvoice.Xsd.Invoice {
-    [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.8.3752.0")]
+namespace EInvoice.Xsd
+{    
     [Serializable]
     [DebuggerStepThrough]
     [System.ComponentModel.DesignerCategory("code")]
     [XmlType(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2")]
-    [XmlRootAttribute("Invoice", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2", IsNullable = false)]
-    public class InvoiceType: Bases.XmlSerializerBase<InvoiceType> {        
-        [XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order = 0)]
-        [XmlArrayItemAttribute("UBLExtension", IsNullable = false)]
+    [XmlRoot("Invoice", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2", IsNullable = false)]
+    public class InvoiceType: Invoice.Bases.XmlSerializerBase<InvoiceType> {        
+        [XmlArray(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order = 0)]
+        [XmlArrayItem("UBLExtension", IsNullable = false)]
         public List<UBLExtensionType> UBLExtensions { get; set; }
 
         [XmlElement(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 1)]
